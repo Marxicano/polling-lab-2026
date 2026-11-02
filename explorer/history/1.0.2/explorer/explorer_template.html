@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Polling Lab 2026 — Senate explorer (v20, post-freeze)</title>
+<meta name="description" content="Explore 2026 Senate polling: 15 races, every poll with its source and evidence status, the frozen v19 snapshot beside the post-freeze v20 analysis, and documented historical-miss scenarios. Polling averages and scenarios, not forecasts.">
+<meta name="theme-color" content="#14202e">
+<style>
+:root{--bg:#f6f5f1;--card:#ffffff;--ink:#16191d;--muted:#5b636b;--line:#e1ded7;--d:#2a5ea8;--dbg:#e3ecf8;--r:#b5362f;--rbg:#f8e4e2;--i:#8a6a12;--ibg:#f5ecd4;--accent:#1f4f7a;--chip:#eceef1;--warn:#875800;--warnbg:#fff2d4;--top:#14202e;--topink:#f2f4f7}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#101316;--card:#191d21;--ink:#ebe8e2;--muted:#a2a8ad;--line:#2d3338;--d:#7fa9e8;--dbg:#1b2a3d;--r:#ee8b84;--rbg:#3a1f1d;--i:#dcb663;--ibg:#33290f;--accent:#8db4dc;--chip:#252a2f;--warn:#f0c46a;--warnbg:#382c12;--top:#0b1118;--topink:#e8ecf1;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#101316;--card:#191d21;--ink:#ebe8e2;--muted:#a2a8ad;--line:#2d3338;--d:#7fa9e8;--dbg:#1b2a3d;--r:#ee8b84;--rbg:#3a1f1d;--i:#dcb663;--ibg:#33290f;--accent:#8db4dc;--chip:#252a2f;--warn:#f0c46a;--warnbg:#382c12;--top:#0b1118;--topink:#e8ecf1;color-scheme:dark}
+:root{box-sizing:border-box;padding-bottom:env(safe-area-inset-bottom,0px)}
+*,*:before,*:after{box-sizing:inherit}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 104px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-text-size-adjust:100%}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--top)}
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--top);color:var(--topink);padding:10px 14px 0;padding-top:calc(10px + env(safe-area-inset-top,0px));margin-top:calc(-1 * env(safe-area-inset-top,0px))}
+.brand{display:flex;align-items:center;gap:8px;font-weight:650;letter-spacing:.01em;flex-wrap:wrap}
+.ver{font-weight:500;font-size:.75rem;background:rgba(255,255,255,.14);padding:2px 8px;border-radius:999px}
+.tabs{display:flex;gap:2px;overflow-x:auto;-webkit-overflow-scrolling:touch;margin:8px -14px 0;padding:0 8px;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tabs a{color:var(--topink);opacity:.72;text-decoration:none;padding:10px 12px 11px;font-size:.95rem;white-space:nowrap;border-bottom:3px solid transparent}
+.tabs a.on{opacity:1;border-bottom-color:#7fb0ff;font-weight:600}
+main{max-width:980px;margin:0 auto;padding:12px 14px 40px}
+.notice{background:var(--warnbg);border:1px solid var(--warn);border-radius:12px;padding:10px 12px;font-size:.92rem;margin:4px 0 12px}
+.notice strong{color:var(--warn)}
+h1{font-size:1.35rem;line-height:1.25;margin:.4em 0 .2em}
+h2{font-size:1.1rem;margin:1.3em 0 .5em}
+h3{font-size:1rem;margin:1em 0 .4em}
+p{margin:.35em 0 .8em}
+a{color:var(--accent)}
+.muted{color:var(--muted);font-size:.9rem}
+.small{font-size:.82rem}
+.grid{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px}
+.kpi .v{font-size:1.55rem;font-weight:700;line-height:1.15;margin:.15em 0}
+.kpi .l{font-size:.8rem;color:var(--muted)}
+.seatline{display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}
+.seatline b{font-size:1.55rem}
+.D{color:var(--d)}.R{color:var(--r)}.I{color:var(--i)}
+.tiles{display:grid;grid-template-columns:repeat(5,1fr);gap:6px}
+.tile{border-radius:10px;padding:8px 4px;text-align:center;cursor:pointer;border:1px solid var(--line);background:var(--card);font-size:.8rem;line-height:1.2;color:var(--ink);text-decoration:none}
+.tile b{display:block;font-size:1rem}
+.tile.d{background:var(--dbg)}.tile.r{background:var(--rbg)}.tile.i{background:var(--ibg)}
+.race{display:block;text-decoration:none;color:inherit;margin-bottom:10px}
+.race .hd{display:flex;justify-content:space-between;gap:8px;align-items:baseline}
+.race .nm{font-weight:650}
+.race .mg{font-weight:700;font-size:1.05rem;white-space:nowrap}
+.chips{display:flex;flex-wrap:wrap;gap:5px;margin-top:6px}
+.chip{background:var(--chip);border-radius:999px;padding:2px 8px;font-size:.76rem;color:var(--muted);white-space:nowrap}
+.chip.warn{background:var(--warnbg);color:var(--warn)}
+.chip.d{background:var(--dbg);color:var(--d)}.chip.r{background:var(--rbg);color:var(--r)}.chip.i{background:var(--ibg);color:var(--i)}
+svg{display:block;width:100%;height:auto}
+svg text{fill:var(--muted);font-size:10px}
+.ctl{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:8px 0}
+select,input[type=search]{font:inherit;font-size:.95rem;padding:8px 10px;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--ink);min-height:40px}
+input[type=search]{flex:1 1 180px}
+input[type=range]{width:100%;accent-color:var(--accent);height:36px}
+button{font:inherit;font-size:.9rem;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--ink);padding:8px 12px;min-height:40px;cursor:pointer}
+button.pri{background:var(--accent);color:#fff;border-color:var(--accent)}
+.pills{display:flex;gap:6px;overflow-x:auto;padding-bottom:4px}
+.pills button{white-space:nowrap;font-size:.82rem;padding:6px 10px;min-height:34px}
+.pills button.on{background:var(--accent);color:#fff;border-color:var(--accent)}
+.poll{margin-bottom:8px}
+.poll .hd{display:flex;justify-content:space-between;gap:8px}
+.poll .pl{font-weight:600}
+.rowtbl{width:100%;border-collapse:collapse;font-size:.88rem}
+.rowtbl td,.rowtbl th{padding:7px 6px;border-bottom:1px solid var(--line);text-align:right}
+.rowtbl td:first-child,.rowtbl th:first-child{text-align:left}
+.rowtbl th{color:var(--muted);font-weight:600;font-size:.78rem}
+.wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.big3{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;text-align:center}
+.big3 .n{font-size:2rem;font-weight:750;line-height:1}
+.ctrl-line{display:flex;justify-content:space-between;font-size:.78rem;color:var(--muted)}
+details{margin:.6em 0}
+summary{cursor:pointer;color:var(--accent);min-height:32px}
+code{font-size:.8em;word-break:break-all}
+.hidden{display:none !important}
+footer{max-width:980px;margin:0 auto;padding:12px 14px 30px;color:var(--muted);font-size:.8rem;border-top:1px solid var(--line)}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="brand"><span aria-hidden="true">▥</span> Polling Lab 2026 <span class="ver">Senate explorer · v20 post-freeze</span></div>
+  <nav class="tabs" aria-label="Sections"><a href="#overview" data-tab="overview">Overview</a><a href="#races" data-tab="races">Races</a><a href="#whatif" data-tab="whatif">What if</a><a href="#polls" data-tab="polls">Polls</a><a href="#methods" data-tab="methods">Methods</a></nav>
+</header>
+<main>
+  <div class="notice" id="notice"></div>
+
+  <section id="v-overview" class="view">
+    <h1>Where the 2026 Senate polls stand</h1>
+    <p class="muted" id="ovIntro"></p>
+    <div class="grid" id="kpis"></div>
+    <h2>All 15 races, Republican to Democratic/independent</h2>
+    <div class="tiles" id="tiles"></div>
+    <p class="muted small">Tiles show the v20 average (challenger minus Republican). Tap one for detail. Lighter shading means a closer race.</p>
+    <h2>Closest races</h2>
+    <div id="closest"></div>
+  </section>
+
+  <section id="v-races" class="view hidden">
+    <h1>Races</h1>
+    <div class="ctl"><select id="raceSort" aria-label="Sort races"><option value="close">Closest first</option><option value="az">State A–Z</option><option value="d">Largest challenger lead</option><option value="r">Largest Republican lead</option></select></div>
+    <p class="muted small">Bar: v20 average. Thin line: experimental 80% range. Hollow marker: frozen v19 value.</p>
+    <div id="raceList"></div>
+  </section>
+
+  <section id="v-race" class="view hidden"><div id="raceDetail"></div></section>
+
+  <section id="v-whatif" class="view hidden">
+    <h1>What if the polls are off?</h1>
+    <p class="muted">Move every race by the same amount. Markers show how far polls actually missed in documented past elections, in both directions. A what-if, not a forecast.</p>
+    <div class="card">
+      <div class="ctl"><label for="wiModel" class="muted small">Start from</label><select id="wiModel" aria-label="Baseline averages"></select></div>
+      <p class="muted small" id="wiMode" style="text-align:center;margin:.1em 0 .5em"></p>
+      <div class="big3"><div><div class="n D" id="wiD">–</div><div class="muted small">Democrats</div></div><div><div class="n R" id="wiR">–</div><div class="muted small">Republicans</div></div><div><div class="n I" id="wiI">–</div><div class="muted small">Independent (Osborn)</div></div></div>
+      <p style="text-align:center;margin:.6em 0 .2em"><strong id="wiCtl"></strong></p>
+      <p class="small" id="wiRange" style="text-align:center;margin:.2em 0 .6em"></p>
+      <input type="range" id="wiSlider" min="-8" max="8" step="0.01" value="0" aria-label="Uniform polling error, points">
+      <div class="ctrl-line"><span>Polls too Democratic ← (Republicans gain)</span><span>(challengers gain) → Polls too Republican</span></div>
+      <svg id="wiTicks" viewBox="0 0 320 34" aria-hidden="true"></svg>
+      <p style="text-align:center" class="muted" id="wiShift"></p>
+      <div class="ctl" style="justify-content:center"><button id="wiReset">Reset to no error</button></div>
+    </div>
+    <h2>Documented past misses</h2>
+    <p class="muted small">Tap one to apply it. Signed error = polls minus result; positive means polls overstated Democrats, so applying it moves margins toward Republicans.</p>
+    <div class="pills" id="wiScen"></div>
+    <h2>Races that change hands</h2>
+    <div id="wiFlips" class="muted"></div>
+    <h2>Scenario-sensitive races (within ±0.5 points after the shift)</h2>
+    <div id="wiSens" class="muted"></div>
+    <p class="muted small">The seat range shows what would happen if each race within ±0.5 points after the shift went either way. It is not a calibrated probability, a margin of error or a confidence interval. It only shows how much a scenario’s count depends on races that are essentially tied under that one assumption. Official v20 totals are unchanged.</p>
+    <h2>Documented misses: official v20 results and their sensitivity</h2>
+    <div class="wrap"><table class="rowtbl" id="wiScenTable"></table></div>
+    <details><summary>Every race under this shift</summary><div class="wrap"><table class="rowtbl" id="wiTable"></table></div></details>
+  </section>
+
+  <section id="v-polls" class="view hidden">
+    <h1>Every poll</h1>
+    <div class="ctl"><select id="pState" aria-label="State"></select><select id="pScope" aria-label="Which polls"><option value="avg">Counted in current averages</option><option value="inc" selected>All included polls</option><option value="all">Everything, including excluded</option></select></div>
+    <div class="ctl"><select id="pCohort" aria-label="Cohort"><option value="any">Frozen inputs and post-freeze additions</option><option value="v19">Frozen v19 inputs only</option><option value="v20">Added after the freeze only</option></select><select id="pEvid" aria-label="Evidence"><option value="any">Any evidence level</option><option value="primary">Read from the original release</option><option value="agg">Aggregator listing with pollster link</option></select></div>
+    <div class="ctl"><select id="pSponsor" aria-label="Sponsors"><option value="any">Any sponsor</option><option value="flag">Partisan or campaign sponsor only</option><option value="noflag">No partisan sponsor flag</option></select><input type="search" id="pSearch" placeholder="Search pollster or sponsor" aria-label="Search"></div>
+    <p class="muted small" id="pCount"></p>
+    <div id="pList"></div>
+    <div class="ctl" style="justify-content:center"><button id="pMore">Show 30 more</button></div>
+  </section>
+
+  <section id="v-methods" class="view hidden"><div id="methods"></div></section>
+</main>
+<footer id="foot"></footer>
+<script type="application/json" id="data">__DATA__</script>
+<script>
+(function () {
+  var D = JSON.parse(document.getElementById('data').textContent);
+  var W = typeof window !== 'undefined' ? window : {};
+  function $(id) { return document.getElementById(id); }
+  function esc(s) { return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+  function cls(x, opp) { return x == null ? '' : x > 0 ? opp : x < 0 ? 'R' : ''; }
+  function lab(x, opp) { if (x == null || isNaN(x)) return '–'; var v = Math.round(x * 10) / 10; return (v > 0 ? opp + '+' : v < 0 ? 'R+' : 'Even ') + Math.abs(v).toFixed(1); }
+  function mg(x, opp) { return '<span class="' + cls(x, opp) + '">' + lab(x, opp) + '</span>'; }
+  function pct(p) { return p == null ? '–' : Math.round(p * 100) + '%'; }
+  var COMP = D.comp; var BYS = {}; COMP.forEach(function (c) { BYS[c.state] = c; });
+  var MODELS = D.model_list;
+
+  // ---------- pure logic (exposed for tests) ----------
+  // Stable arithmetic: margins and shifts are compared in integer hundredths of a point, so
+  // floating-point noise (e.g. -7.3 + 7.35 = 0.0499999...) can never move a race across the tie rule.
+  var TIE_H = 5;   // v19/v20 tie rule: |margin| < 0.05 point -> the incumbent keeps the seat
+  var SENS_H = 50; // scenario-sensitive band: |margin| <= 0.5 point after the shift
+  function toH(x) { return Math.round(Number(x) * 100); }
+  function ctl(dem, rep) { return dem >= 51 ? 'Democrats control (51+)' : rep >= 50 ? 'Republicans control (50 + vice president)' : 'No majority without the independent'; }
+  function seats(margins, shift) {
+    var sh = toH(shift); var d = 0, r = 0, i = 0, flips = [], sens = [];
+    COMP.forEach(function (c) {
+      var v = margins[c.state]; var w = c.inc;
+      if (v != null) {
+        var tt = toH(v) + sh;
+        if (Math.abs(tt) >= TIE_H) w = tt > 0 ? c.opp : 'R';
+        if (Math.abs(tt) <= SENS_H) sens.push({ state: c.state, t: tt, opp: c.opp, winner: w, tie: Math.abs(tt) < TIE_H });
+      }
+      if (w === 'D') d += 1; else if (w === 'I') i += 1; else r += 1;
+      if (w !== c.inc) flips.push(c.state);
+    });
+    var dem = D.base.base_d + d, rep = D.base.base_r + r;
+    return { dem: dem, rep: rep, ind: i, control: ctl(dem, rep), flips: flips, sensitive: sens };
+  }
+  // Seat range if every scenario-sensitive race could go to its challenger or to the Republican.
+  // Not a probability, margin of error or confidence interval.
+  function seatRange(res) {
+    var wD = 0, wI = 0, wR = 0, kD = 0, kI = 0;
+    res.sensitive.forEach(function (s) { if (s.winner === 'D') wD += 1; else if (s.winner === 'I') wI += 1; else wR += 1; if (s.opp === 'D') kD += 1; else kI += 1; });
+    var dem0 = res.dem - wD, ind0 = res.ind - wI, rep0 = res.rep - wR;
+    var ctls = []; if (dem0 + kD >= 51) ctls.push('Democrats'); if (rep0 + kD + kI >= 50) ctls.push('Republicans'); if (dem0 + kD < 51 || rep0 + kD + kI < 50) { if (!(dem0 >= 51) && !(rep0 >= 50)) ctls.push('no majority without the independent'); }
+    return { dem: [dem0, dem0 + kD], rep: [rep0, rep0 + kD + kI], ind: [ind0, ind0 + kI], races: res.sensitive.length, controls: ctls.filter(function (x, j, a) { return a.indexOf(x) === j; }) };
+  }
+  // Official v20 totals are shown, never recomputed, when the baseline is the v20 average and the
+  // shift equals a documented miss.
+  function officialAt(modelKey, shift) {
+    if (modelKey !== 'simple') return null; var sh = toH(shift);
+    for (var j = 0; j < D.scenarios.length; j += 1) if (toH(D.scenarios[j].applied_shift) === sh) return D.scenarios[j];
+    return null;
+  }
+  function officialWinners(sc) {
+    var f = {}; String(sc.flips || '').split(',').forEach(function (s) { s = s.trim(); if (s) f[s] = true; });
+    var w = {}; COMP.forEach(function (c) { w[c.state] = f[c.state] ? (c.inc === 'R' ? c.opp : 'R') : c.inc; }); return w;
+  }
+  function marginsFor(key) { var m = {}; COMP.forEach(function (c) { m[c.state] = D.models[c.state][key]; }); return m; }
+  W.PL = { seats: seats, seatRange: seatRange, officialAt: officialAt, officialWinners: officialWinners, toH: toH, TIE_H: TIE_H, SENS_H: SENS_H, marginsFor: marginsFor, data: D };
+
+  if (!document.querySelectorAll) return; // test harness without a DOM
+
+  // ---------- notice, footer ----------
+  $('notice').innerHTML = '<strong>Built after the official freeze.</strong> These are the v20 election-eve averages (' + D.meta.included + ' included polls, ' + D.meta.post_freeze + ' of them found after the freeze). The frozen v19 snapshot (' + D.meta.v19_included + ' polls, SHA-256 <code>' + esc(D.meta.v19_hash.slice(0, 12)) + '…</code>) is shown beside them. Polling averages and scenarios, not forecasts or results.';
+  $('foot').innerHTML = 'Polling Lab 2026 · Senate explorer 1.0.2 · data as of ' + esc(D.meta.as_of) + ' · built ' + esc(D.meta.built) + ' UTC · v20 engine <code>' + esc(D.meta.v20_engine.slice(0, 12)) + '…</code> · poll file <code>' + esc(D.meta.polls_hash.slice(0, 12)) + '…</code> · <a href="' + esc(D.links.repo) + '">source</a>. Poll lists partly adapted from Wikipedia via PollCheck (CC BY-SA 4.0).';
+
+  // ---------- overview ----------
+  var base = seats(marginsFor('simple'), 0); var frozenSeats = seats(marginsFor('v19_frozen'), 0);
+  var scen = D.scenarios.map(function (s) { return s.dem_seats; });
+  var scenRg = D.scenarios.map(function (s) { return seatRange(seats(marginsFor('simple'), s.applied_shift)).dem; });
+  var scenLo = Math.min.apply(null, scenRg.map(function (a) { return a[0]; })), scenHi = Math.max.apply(null, scenRg.map(function (a) { return a[1]; }));
+  $('ovIntro').innerHTML = 'Averages of ' + D.meta.included + ' polls through ' + esc(D.meta.newest) + '. Generic congressional ballot: ' + mg(D.generic.v20, 'D') + ' (frozen v19: ' + mg(D.generic.v19, 'D') + ').';
+  $('kpis').innerHTML = [
+    ['If the averages are exactly right', '<div class="seatline"><b class="D">' + base.dem + '</b><span>D</span><b class="R">' + base.rep + '</b><span>R</span><b class="I">' + base.ind + '</b><span>I</span></div>', 'Frozen v19: ' + frozenSeats.dem + ' D · ' + frozenSeats.rep + ' R · ' + frozenSeats.ind + ' I'],
+    ['If polls miss like past elections', '<span class="v">' + Math.min.apply(null, scen) + '–' + Math.max.apply(null, scen) + '</span>', 'Official v20 Democratic seats across ' + D.scenarios.filter(function (s) { return s.key !== 'none'; }).length + ' documented past misses, both directions; ' + scenLo + '–' + scenHi + ' if races within ±0.5 went either way'],
+    ['Experimental simulation', '<span class="v">' + pct(D.mc.central) + '</span>', 'Democratic control; ' + pct(D.mc.lo) + '–' + pct(D.mc.hi) + ' across settings. Not validated: see Methods'],
+    ['Closest race', '<span class="v">' + esc(D.closest.name) + '</span>', mg(D.closest.margin, D.closest.opp) + ' · experimental chance ' + pct(D.closest.p_opp)]
+  ].map(function (k) { return '<div class="card kpi"><div class="l">' + k[0] + '</div><div class="v">' + k[1] + '</div><div class="l">' + k[2] + '</div></div>'; }).join('');
+  var sorted = COMP.slice().sort(function (a, b) { return (D.models[a.state].simple || 0) - (D.models[b.state].simple || 0); });
+  $('tiles').innerHTML = sorted.map(function (c) { var m = D.models[c.state].simple; var k = m > 0 ? (c.opp === 'I' ? 'i' : 'd') : 'r'; var op = Math.min(1, 0.35 + Math.abs(m || 0) / 12); return '<a class="tile ' + k + '" style="opacity:' + op.toFixed(2) + '" href="#race-' + c.state + '"><b>' + c.state + '</b>' + lab(m, c.opp) + '</a>'; }).join('');
+  $('closest').innerHTML = COMP.filter(function (c) { return Math.abs(D.models[c.state].simple) < 4; }).sort(function (a, b) { return Math.abs(D.models[a.state].simple) - Math.abs(D.models[b.state].simple); }).map(raceCard).join('');
+
+  // ---------- races ----------
+  function bar(c) {
+    var m = D.models[c.state]; var sc = function (x) { return 160 + Math.max(-15, Math.min(15, x)) * 10; };
+    var col = m.simple > 0 ? (c.opp === 'I' ? 'var(--i)' : 'var(--d)') : 'var(--r)';
+    var s = '<svg viewBox="0 0 320 26" role="img" aria-label="' + esc(c.name + ' average ' + lab(m.simple, c.opp)) + '"><line x1="160" y1="2" x2="160" y2="24" stroke="var(--line)" stroke-width="2"/>';
+    if (m.p10 != null) s += '<line x1="' + sc(m.p10) + '" y1="13" x2="' + sc(m.p90) + '" y2="13" stroke="var(--muted)" stroke-width="1.5" opacity=".6"/>';
+    s += '<rect x="' + Math.min(160, sc(m.simple)) + '" y="7" width="' + Math.abs(sc(m.simple) - 160) + '" height="12" rx="3" fill="' + col + '"/>';
+    if (m.v19_frozen != null) s += '<circle cx="' + sc(m.v19_frozen) + '" cy="13" r="4.5" fill="none" stroke="var(--ink)" stroke-width="1.5"/>';
+    return s + '<text x="2" y="24">R+15</text><text x="290" y="24">' + c.opp + '+15</text></svg>';
+  }
+  function raceCard(c) {
+    var m = D.models[c.state];
+    var chips = ['<span class="chip">frozen v19 ' + lab(m.v19_frozen, c.opp) + '</span>', '<span class="chip">' + m.polls + ' polls in average</span>'];
+    if (m.post_freeze) chips.push('<span class="chip warn">' + m.post_freeze + ' added after freeze</span>');
+    chips.push('<span class="chip">experimental ' + pct(m.p_opp) + '</span>');
+    return '<a class="card race" href="#race-' + c.state + '"><div class="hd"><span class="nm">' + esc(c.name) + '</span><span class="mg">' + mg(m.simple, c.opp) + '</span></div><div class="muted small">' + esc(c.challenger) + ' vs ' + esc(c.republican) + '</div>' + bar(c) + '<div class="chips">' + chips.join('') + '</div></a>';
+  }
+  function renderRaces() {
+    var k = $('raceSort').value; var l = COMP.slice();
+    var v = function (c) { return D.models[c.state].simple || 0; };
+    if (k === 'close') l.sort(function (a, b) { return Math.abs(v(a)) - Math.abs(v(b)); });
+    if (k === 'az') l.sort(function (a, b) { return a.name < b.name ? -1 : 1; });
+    if (k === 'd') l.sort(function (a, b) { return v(b) - v(a); });
+    if (k === 'r') l.sort(function (a, b) { return v(a) - v(b); });
+    $('raceList').innerHTML = l.map(raceCard).join('');
+  }
+  $('raceSort').addEventListener('change', renderRaces);
+
+  function renderRace(st) {
+    var c = BYS[st]; if (!c) { $('raceDetail').innerHTML = '<p>Unknown race.</p>'; return; }
+    var m = D.models[st];
+    var rows = MODELS.map(function (k) { return '<tr><td>' + esc(k.label) + (k.note ? '<div class="muted small">' + esc(k.note) + '</div>' : '') + '</td><td>' + mg(m[k.key], c.opp) + '</td></tr>'; }).join('');
+    var polls = D.polls.filter(function (p) { return p.s === st && p.w; }).sort(function (a, b) { return (b.fe || b.dt) < (a.fe || a.dt) ? -1 : 1; });
+    $('raceDetail').innerHTML = '<p><a href="#races">← All races</a></p><h1>' + esc(c.name) + '</h1><p class="muted">' + esc(c.challenger) + ' vs ' + esc(c.republican) + ' · seat now held by ' + (c.inc === 'R' ? 'Republicans' : 'Democrats') + '</p>' +
+      '<div class="card"><div class="hd" style="display:flex;justify-content:space-between"><strong>v20 average</strong><strong>' + mg(m.simple, c.opp) + '</strong></div>' + bar(c) + '<p class="small muted">Experimental: challenger leads in ' + pct(m.p_opp) + ' of simulations (range ' + pct(m.p_lo) + '–' + pct(m.p_hi) + ' across all four v20 settings); 80% range ' + lab(m.p10, c.opp) + ' to ' + lab(m.p90, c.opp) + '. Not validated.</p></div>' +
+      (D.notes[st] ? '<div class="notice" style="margin-top:10px">' + esc(D.notes[st]) + '</div>' : '') +
+      '<h2>Every method</h2><div class="card wrap"><table class="rowtbl"><thead><tr><th>Method</th><th>Margin</th></tr></thead><tbody>' + rows + '</tbody></table></div>' +
+      '<h2>Polls in the current average (' + polls.length + ')</h2>' + polls.map(pollCard).join('') +
+      '<p><a href="#polls" id="allPollsLink" data-state="' + st + '">See every ' + esc(c.name) + ' poll →</a></p>';
+    var a = $('allPollsLink'); if (a) a.addEventListener('click', function () { $('pState').value = st; $('pScope').value = 'all'; resetPolls(); });
+  }
+
+  // ---------- what if ----------
+  $('wiModel').innerHTML = MODELS.filter(function (k) { return k.swing; }).map(function (k) { return '<option value="' + k.key + '">' + esc(k.label) + '</option>'; }).join('');
+  $('wiScen').innerHTML = D.scenarios.filter(function (s) { return s.key !== 'none'; }).map(function (s) { return '<button data-shift="' + s.applied_shift + '" title="' + esc(s.label) + '">' + esc(s.short) + ' (' + (s.signed_error > 0 ? '+' : '') + s.signed_error + ')</button>'; }).join('');
+  $('wiScenTable').innerHTML = '<thead><tr><th>Miss</th><th>Error</th><th>Official D · R · I</th><th>Sensitive range D · R · I</th><th>Races within ±0.5</th></tr></thead><tbody>' + D.scenarios.slice().sort(function (a, b) { return a.signed_error - b.signed_error; }).map(function (sc) { var r = seats(marginsFor('simple'), sc.applied_shift); var rg = seatRange(r); return '<tr><td>' + esc(sc.short) + '</td><td>' + (sc.signed_error > 0 ? '+' : '') + sc.signed_error + '</td><td><span class="D">' + sc.dem_seats + '</span> · <span class="R">' + sc.rep_seats + '</span> · <span class="I">' + sc.ind_seats + '</span></td><td><span class="D">' + rangeTxt(rg.dem) + '</span> · <span class="R">' + rangeTxt(rg.rep) + '</span> · <span class="I">' + rangeTxt(rg.ind) + '</span></td><td>' + (r.sensitive.map(function (s) { return esc(s.state) + ' ' + mgH(s.t, s.opp); }).join(', ') || '–') + '</td></tr>'; }).join('') + '</tbody>';
+  (function ticks() {
+    var x = function (v) { return 10 + (v + 8) / 16 * 300; }; var s = '<line x1="10" y1="10" x2="310" y2="10" stroke="var(--line)" stroke-width="2"/>';
+    D.scenarios.forEach(function (sc) { if (sc.key === 'none') return; var v = Math.max(-8, Math.min(8, sc.applied_shift)); s += '<line x1="' + x(v) + '" y1="3" x2="' + x(v) + '" y2="17" stroke="var(--muted)" stroke-width="1.5"><title>' + esc(sc.label) + '</title></line>'; });
+    [-8, -4, 0, 4, 8].forEach(function (v) { s += '<text x="' + x(v) + '" y="31" text-anchor="middle">' + (v > 0 ? '+' : '') + v + '</text>'; });
+    $('wiTicks').innerHTML = s;
+  })();
+  function rangeTxt(a) { return a[0] === a[1] ? String(a[0]) : a[0] + '–' + a[1]; }
+  function mgH(tt, opp) { var v = tt / 100; return '<span class="' + (tt > 0 ? opp : tt < 0 ? 'R' : '') + '">' + (tt > 0 ? opp + '+' : tt < 0 ? 'R+' : 'Even ') + Math.abs(v).toFixed(2) + '</span>'; }
+  function who(w) { return w === 'D' ? 'the Democrat' : w === 'I' ? 'the independent' : 'the Republican'; }
+  function rangeLine(rg) { return rg.races ? 'If the ' + rg.races + ' scenario-sensitive race' + (rg.races > 1 ? 's' : '') + ' went either way: <span class="D">D ' + rangeTxt(rg.dem) + '</span> · <span class="R">R ' + rangeTxt(rg.rep) + '</span> · <span class="I">I ' + rangeTxt(rg.ind) + '</span>' + (rg.controls.length > 1 ? ' — control could be: ' + rg.controls.join(' or ') : '') + '. Not a probability or margin of error.' : 'No race within ±0.5 points after this shift, so the count does not depend on near-ties.'; }
+  function renderWhatIf() {
+    var key = $('wiModel').value; var sh = Number($('wiSlider').value); var mm = marginsFor(key);
+    var r = seats(mm, sh); var rg = seatRange(r); var off = officialAt(key, sh);
+    var show = off ? { dem: off.dem_seats, rep: off.rep_seats, ind: off.ind_seats } : r;
+    $('wiMode').textContent = off ? (off.key === 'none' ? 'Official v20 result with no polling error' : 'Official v20 result for this documented miss: ' + off.label) : 'Computed with the v20 tie rule (races within 0.05 points stay with the incumbent)';
+    $('wiD').textContent = show.dem; $('wiR').textContent = show.rep; $('wiI').textContent = show.ind; $('wiCtl').textContent = ctl(show.dem, show.rep);
+    $('wiRange').innerHTML = rangeLine(rg);
+    $('wiShift').textContent = toH(sh) === 0 ? 'No shift applied' : 'Every margin moved ' + Math.abs(sh).toFixed(2) + ' points toward ' + (sh > 0 ? 'challengers' : 'Republicans');
+    var changed = COMP.filter(function (c) { var a = mm[c.state]; if (a == null) return false; var a0 = toH(a), z = a0 + toH(sh); return Math.abs(a0) >= TIE_H && Math.abs(z) >= TIE_H && (a0 > 0) !== (z > 0); });
+    $('wiFlips').innerHTML = changed.length ? changed.map(function (c) { var z = toH(mm[c.state]) + toH(sh); return '<span class="chip ' + (z > 0 ? (c.opp === 'I' ? 'i' : 'd') : 'r') + '">' + esc(c.name) + ' → ' + lab(z / 100, c.opp) + '</span>'; }).join(' ') : 'None versus the starting averages.';
+    var offW = off ? officialWinners(off) : null;
+    $('wiSens').innerHTML = r.sensitive.length ? r.sensitive.map(function (s) { var c = BYS[s.state]; var note = s.tie ? 'a tie under the v20 rule, so the incumbent keeps it' : 'counted for ' + who(s.winner) + ' under the v20 rule'; if (offW && offW[s.state] !== s.winner) note += '; the official v20 total counts it for ' + who(offW[s.state]) + ' because the published calculation hit a floating-point edge (the official total is kept)'; return '<div class="card" style="margin-bottom:6px"><strong>' + esc(c.name) + '</strong> ' + mgH(s.t, c.opp) + '<div class="muted small">' + esc(note) + '</div></div>'; }).join('') : 'None.';
+    $('wiTable').innerHTML = '<thead><tr><th>Race</th><th>Start</th><th>Shifted</th></tr></thead><tbody>' + COMP.slice().sort(function (a, b) { return (mm[a.state] || 0) - (mm[b.state] || 0); }).map(function (c) { var z = mm[c.state] == null ? null : (toH(mm[c.state]) + toH(sh)) / 100; return '<tr><td>' + esc(c.name) + '</td><td>' + mg(mm[c.state], c.opp) + '</td><td>' + mg(z, c.opp) + '</td></tr>'; }).join('') + '</tbody>';
+    var bs = $('wiScen').querySelectorAll('button'); for (var i = 0; i < bs.length; i += 1) bs[i].classList.toggle('on', toH(bs[i].getAttribute('data-shift')) === toH(sh));
+  }
+  $('wiSlider').addEventListener('input', renderWhatIf); $('wiModel').addEventListener('change', renderWhatIf);
+  $('wiReset').addEventListener('click', function () { $('wiSlider').value = 0; renderWhatIf(); });
+  $('wiScen').addEventListener('click', function (e) { var t = e.target.closest ? e.target.closest('button') : null; if (!t) return; $('wiSlider').value = t.getAttribute('data-shift'); renderWhatIf(); });
+
+  // ---------- polls ----------
+  $('pState').innerHTML = '<option value="all">All states</option>' + COMP.slice().sort(function (a, b) { return a.name < b.name ? -1 : 1; }).map(function (c) { return '<option value="' + c.state + '">' + esc(c.name) + '</option>'; }).join('');
+  var shown = 30;
+  function pollCard(p) {
+    var c = BYS[p.s]; var opp = c ? c.opp : 'D'; var m = p.d != null && p.r != null ? p.d - p.r : null;
+    var b = [];
+    if (p.coh === 'v20') b.push('<span class="chip warn">added after freeze</span>');
+    b.push(p.ev === 'primary' ? '<span class="chip">read from original release</span>' : p.ev === 'agg' ? '<span class="chip">aggregator listing + pollster link</span>' : '<span class="chip">secondary source</span>');
+    if (p.neff) b.push('<span class="chip">effective n ' + p.neff + '</span>');
+    if (p.fl) b.push('<span class="chip ' + (p.fl === 'R' ? 'r' : p.fl === 'D' ? 'd' : 'i') + '">sponsor: ' + esc(p.fl === 'D' ? 'Democratic-aligned' : p.fl === 'R' ? 'Republican-aligned' : p.fl) + '</span>');
+    if (p.wave) b.push('<span class="chip">' + esc(p.wave) + '</span>');
+    if (p.inc !== 'yes') b.push('<span class="chip warn">excluded: ' + esc(p.why) + '</span>');
+    else if (p.w) b.push('<span class="chip">counts in current average</span>');
+    var dates = p.fe ? (p.fs ? esc(p.fs) + ' to ' : '') + esc(p.fe) : 'listed ' + esc(p.dt) + ' (fieldwork dates not verified)';
+    return '<div class="card poll"><div class="hd"><span class="pl">' + esc(p.pl) + (p.sp ? ' <span class="muted small">for ' + esc(p.sp) + '</span>' : '') + '</span><strong>' + mg(m, opp) + '</strong></div><div class="muted small">' + esc(c ? c.name : p.s) + ' · ' + dates + ' · ' + (p.n ? p.n.toLocaleString() + ' ' : '') + esc(p.pop) + ' · ' + opp + ' ' + p.d + ' – R ' + p.r + '</div><div class="chips">' + b.join('') + (p.url ? ' <a class="chip" href="' + esc(p.url) + '" rel="noopener" target="_blank">source ↗</a>' : '') + '</div></div>';
+  }
+  function filtered() {
+    var st = $('pState').value, sc = $('pScope').value, co = $('pCohort').value, ev = $('pEvid').value, spn = $('pSponsor').value, q = $('pSearch').value.trim().toLowerCase();
+    return D.polls.filter(function (p) {
+      if (st !== 'all' && p.s !== st) return false;
+      if (sc === 'avg' && !p.w) return false; if (sc === 'inc' && p.inc !== 'yes') return false;
+      if (co !== 'any' && p.coh !== co) return false;
+      if (ev !== 'any' && p.ev !== ev) return false;
+      if (spn === 'flag' && !p.fl) return false; if (spn === 'noflag' && p.fl) return false;
+      if (q && (p.pl + ' ' + (p.sp || '')).toLowerCase().indexOf(q) < 0) return false;
+      return true;
+    }).sort(function (a, b) { return (b.fe || b.dt) < (a.fe || a.dt) ? -1 : (b.fe || b.dt) > (a.fe || a.dt) ? 1 : 0; });
+  }
+  function renderPolls() { var f = filtered(); $('pCount').textContent = f.length + ' polls match. Newest fieldwork first; polls without verified fieldwork dates sort by listing date.'; $('pList').innerHTML = f.slice(0, shown).map(pollCard).join('') || '<p class="muted">No polls match those filters.</p>'; $('pMore').classList.toggle('hidden', f.length <= shown); }
+  function resetPolls() { shown = 30; renderPolls(); }
+  ['pState', 'pScope', 'pCohort', 'pEvid', 'pSponsor'].forEach(function (id) { $(id).addEventListener('change', resetPolls); });
+  $('pSearch').addEventListener('input', resetPolls);
+  $('pMore').addEventListener('click', function () { shown += 30; renderPolls(); });
+
+  // ---------- methods ----------
+  $('methods').innerHTML = '<h1>Methods, versions and limits</h1>' +
+    '<h2>Three versions, kept separate</h2><div class="card"><p><strong>v19 — official snapshot.</strong> Frozen Nov 2, 2026, 08:08 ET; ' + D.meta.v19_included + ' included polls. SHA-256 <code>' + esc(D.meta.v19_hash) + '</code>. Never edited.</p><p><strong>v20 — election-eve analysis.</strong> Same methods on ' + D.meta.included + ' polls, adding ' + D.meta.post_freeze + ' verified late releases (NYT/Siena ×7, AtlasIntel, Trafalgar, Research Co. ×3, GrayHouse). This explorer shows v20.</p><p><strong>v20.1 — methodology review.</strong> Kimi’s audit checked against the code; labels and metadata corrected; no published number changed.</p></div>' +
+    '<h2>The methods in the race pages</h2><div class="card">' + MODELS.map(function (k) { return '<p><strong>' + esc(k.label) + '.</strong> ' + esc(k.desc) + '</p>'; }).join('') + '</div>' +
+    '<h2>Uncertainty</h2><div class="card"><p>The primary statement of uncertainty is the range of seats under documented past misses: ' + Math.min.apply(null, scen) + '–' + Math.max.apply(null, scen) + ' Democratic seats.</p><p>The simulation (one error shared by all states, heavy-tailed and centered on zero, plus state and sampling errors) gives Democratic control in ' + pct(D.mc.central) + ' of runs (' + pct(D.mc.lo) + '–' + pct(D.mc.hi) + ' across settings). ' + esc(D.mc.validation) + '. Treat these as experimental.</p><p class="muted small">Regional correlation check (v20.1): ' + D.corr.map(function (r) { return esc(r.label) + ' ' + pct(r.p); }).join(' · ') + '.</p></div>' +
+    '<h2>Scenario-sensitive races and seat ranges</h2><div class="card"><p>After a uniform shift, a race within ±0.5 points is marked scenario-sensitive. The seat range lets each such race go either way, with Democratic, Republican and independent seats kept separate. It is not a calibrated probability, a margin of error or a confidence interval.</p><p>The official v20 scenario totals are shown unchanged. The explorer compares margins in whole hundredths of a point, so computer rounding cannot move a race across the v20 tie rule (races within 0.05 points stay with the incumbent). One published total sits on that edge: under the 2025 off-year miss (+7.35), Mississippi lands at exactly D+0.05 on its rounded average (D+0.02 unrounded). The published calculation treated it as a tie (56 D), while exact arithmetic on the rounded average would not (57 D). The official 56 is kept, and the race is flagged with a range of 56–57.</p></div>' +
+    '<h2>The turnout-weighting question</h2><div class="card">' + D.mike.map(function (r) { return '<p><strong>' + esc(r.value) + '</strong> — ' + esc(r.evidence) + '</p>'; }).join('') + '<p class="muted small">These compare polls with each other, not with results. Four tests registered before results (SHA-256 <code>' + esc(D.meta.prereg_hash) + '</code>) will check which methods were right after certification.</p></div>' +
+    '<h2>State notes</h2><div class="card">' + Object.keys(D.notes).map(function (s) { return '<p><strong>' + esc(BYS[s] ? BYS[s].name : s) + ':</strong> ' + esc(D.notes[s]) + '</p>'; }).join('') + '</div>' +
+    '<h2>Links</h2><div class="card"><p>' + D.links.list.map(function (l) { return '<a href="' + esc(l.url) + '" rel="noopener">' + esc(l.label) + '</a>'; }).join(' · ') + '</p></div>';
+
+  // ---------- routing ----------
+  var tabs = document.querySelectorAll('.tabs a');
+  function route() {
+    var h = (W.location && W.location.hash || '').replace('#', '') || 'overview';
+    var view = h.indexOf('race-') === 0 ? 'race' : h;
+    if (['overview', 'races', 'race', 'whatif', 'polls', 'methods'].indexOf(view) < 0) view = 'overview';
+    ['overview', 'races', 'race', 'whatif', 'polls', 'methods'].forEach(function (v) { $('v-' + v).classList.toggle('hidden', v !== view); });
+    for (var i = 0; i < tabs.length; i += 1) tabs[i].classList.toggle('on', tabs[i].getAttribute('data-tab') === (view === 'race' ? 'races' : view));
+    if (view === 'race') renderRace(h.slice(5));
+    if (view === 'races') renderRaces();
+    if (view === 'whatif') renderWhatIf();
+    if (view === 'polls') renderPolls();
+    if (W.scrollTo) W.scrollTo(0, 0);
+  }
+  if (W.addEventListener) W.addEventListener('hashchange', route);
+  route();
+})();
+</script>
+</body>
+</html>
