@@ -50,3 +50,10 @@ Siena's [November 1 original release](https://sri.siena.edu/2026/11/01/nytimes-s
 - [Machine-readable source register](POST_FREEZE_LATE_POLL_REGISTER_2026-11-02.csv): seven distinct observations across six Senate polls and one national generic-ballot release, with sample populations, evidence and limitations.
 
 **These are independent post-freeze notes only.** No changes have been made to the frozen Nov 2 snapshot, its original checksum manifest or official seat arithmetic. Some candidate toplines and exact release timing still require direct source verification.
+
+## Experimental methodology scenario explorer (November 2)
+
+- [Scenario explorer source and standalone HTML](scenario-explorer.html) — a self-contained mobile-friendly tool with 15 frozen state polling margins, six baseline comparison methods (including sponsor-exclusion), independently labeled historical polling-error presets, a 7-state post-freeze Siena sensitivity toggle, and a separate RedBox Florida early-vote arithmetic exercise.
+- [Scope and sources](SCENARIO_EXPLORER_NOTES.md).
+
+**This tool was created after the official freeze and does not update the frozen 242-row snapshot.** Its shifts are hypothetical sensitivity assumptions, not empirically calibrated 2026 election-win probabilities or a claim that a particular political party is being underestimated. The HTML can be downloaded and opened offline, but public web hosting via GitHub Pages has not been configured.
