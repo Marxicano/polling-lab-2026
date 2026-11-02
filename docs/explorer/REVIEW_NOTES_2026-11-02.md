@@ -11,3 +11,13 @@ This is an **alternate self-contained presentation** at [docs/explorer/index.htm
 **Limits:** Claude's accompanying `polling_lab_explorer_1_0.zip` was not accessible in the connected Google Drive search. Therefore the 14 tests Claude reported in that ZIP **were not independently run** here. Instead, checks above are independent and limited to the retrieved HTML, original v20 release and browser controls. This validation is not calibrated probability validation or certification of completeness of the underlying polling dataset.
 
 Original v19 freeze, original v20 dashboard, v20.1 review, and the existing interactive `/app/` files were not modified.
+
+## Update after original Explorer 1.0 ZIP was supplied (November 2)
+
+The complete original archive `polling_lab_explorer_1_0.zip` was subsequently uploaded directly and independently tested. Its SHA-256 is `09ed82fc976c4a2d6554a750d1bc031bf8faf2812156ca864e74a76865ac2323`; ZIP integrity test passed, and all 7 original explorer manifest entries matched their original hashes.
+
+**Independently executed:** `node explorer/run_all_explorer.js` — **all 14 regression suites passed** (9 v19, 2 v20, 2 v20.1, 1 explorer). Separately compared all 78 original frozen v19 files, all 137 corresponding v20 files, and all 163 corresponding v20.1 files in this archive with the earlier original ZIPs: all matched byte for byte.
+
+The test runner's original checks, however, did not catch the browser slider quantization bug; the original template used `step="0.1"` although `+7.35` must be representable. The deployed HTML had already been corrected to `step="0.01"`. The published source template now matches that corrected HTML; `explorer/test_explorer.js` now asserts slider precision and checks that all scenario values fit its step. The amended source and additional check **still pass all 14 suites**. The original uploaded ZIP and its manifest were preserved unchanged. `SHA256SUMS_EXPLORER_1_0_1.txt` documents the amended source files and published corrected app.
+
+Source: [builder](../../explorer/build_explorer.js), [template](../../explorer/explorer_template.html), [tests](../../explorer/test_explorer.js), [14-suite runner](../../explorer/run_all_explorer.js), [Explorer source notes](../../README_EXPLORER.md), [v1.0.1 checksum manifest](../../SHA256SUMS_EXPLORER_1_0_1.txt).
