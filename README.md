@@ -36,3 +36,10 @@ The project is designed to evaluate whether likely-voter screening, recalled-202
 After election results are certified, the frozen estimates can be scored against the results while preserving the original inputs, assumptions, and timestamped publication history.
 
 **Status:** Research data publication. The full interactive dashboard/source ZIP and live election-night results are not yet hosted on this repository.
+
+### November 2 post-freeze sensitivity (not part of the frozen model)
+
+- [Claude's independent addendum](POST_FREEZE_ADDENDUM_CLAUDE_2026-11-02.md) — documents the seven NYT/Siena surveys published before the freeze but missed by the intake, along with source and process limitations.
+- [Siena sensitivity comparison CSV](POST_FREEZE_SIENA_SENSITIVITY_2026-11-02.csv) — separately recomputed simple averages with those seven surveys. **This is not a new official freeze and must not overwrite the snapshot.**
+
+Siena's [November 1 original release](https://sri.siena.edu/2026/11/01/nytimes-siena-poll-of-likely-voters-alaska-iowa-kansas-maine-michigan-ohio-and-texas/) and [reporting on Haley Stevens' November 1 Michigan endorsement](https://apnews.com/article/d7053bbd0ed2fd70756896c6e4b66a27) provide additional source context. The impact of the endorsement on voting is not measured by the Siena poll and should not be inferred as a causal effect.
