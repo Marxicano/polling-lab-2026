@@ -43,3 +43,10 @@ After election results are certified, the frozen estimates can be scored against
 - [Siena sensitivity comparison CSV](POST_FREEZE_SIENA_SENSITIVITY_2026-11-02.csv) — separately recomputed simple averages with those seven surveys. **This is not a new official freeze and must not overwrite the snapshot.**
 
 Siena's [November 1 original release](https://sri.siena.edu/2026/11/01/nytimes-siena-poll-of-likely-voters-alaska-iowa-kansas-maine-michigan-ohio-and-texas/) and [reporting on Haley Stevens' November 1 Michigan endorsement](https://apnews.com/article/d7053bbd0ed2fd70756896c6e4b66a27) provide additional source context. The impact of the endorsement on voting is not measured by the Siena poll and should not be inferred as a causal effect.
+
+### Final-week poll coverage audit — Nov 2 (additional post-freeze research)
+
+- [Additional late-release source audit](POST_FREEZE_LATE_RELEASES_AUDIT_2026-11-02.md): documents AtlasIntel, Trafalgar, Research Co. and GrayHouse releases absent from v19.
+- [Machine-readable source register](POST_FREEZE_LATE_POLL_REGISTER_2026-11-02.csv): seven distinct observations across six Senate polls and one national generic-ballot release, with sample populations, evidence and limitations.
+
+**These are independent post-freeze notes only.** No changes have been made to the frozen Nov 2 snapshot, its original checksum manifest or official seat arithmetic. Some candidate toplines and exact release timing still require direct source verification.
