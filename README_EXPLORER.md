@@ -19,3 +19,16 @@ node explorer/run_all_explorer.js      # 14 suites: 9 v19, 2 v20, 2 v20.1, 1 exp
 ```
 
 Explorer 1.0.1 (reviewed 2026-11-02): The historical scenario slider uses 0.01-point steps; 1.0 used 0.1-point steps and could round the documented +7.35 shift, altering the visible seat result. The template and regression tests now guard against this. The frozen input hashes and published model values remain untouched.
+
+Explorer 1.0.2 (2026-11-02, built from ChatGPT's 1.0.1 source): adds a ±0.5-point scenario-sensitive category and seat ranges.
+- Official v20 scenario totals are shown unchanged whenever the baseline is the v20 average and the slider sits on a documented miss; elsewhere the count is labeled "computed with the v20 tie rule."
+- Each race within ±0.5 points after the shift is listed; the range lets each one go either way, with Democratic, Republican and independent seats kept separate. The range is not a calibrated probability, a margin of error or a confidence interval.
+- All comparisons use whole hundredths of a point (integers), so floating-point rounding cannot move a race across the tie rule (|margin| < 0.05 stays with the incumbent).
+- Documented edge: under the 2025 off-year miss (+7.35) Mississippi lands at exactly D+0.05 on its rounded average (D+0.02 unrounded). The published v20 total treated it as a tie (56 D / 43 R / 1 I) because of floating-point arithmetic; exact arithmetic on the rounded average gives 57 D / 42 R / 1 I. The official 56 is kept and the race is flagged, range D 56-57.
+- `explorer/history/1.0.1/` keeps ChatGPT's 1.0.1 files byte-for-byte with their checksum file.
+
+## Post-review 1.0.2.1 mobile-only hotfix
+
+The 1.0.2 source from Claude is archived without modification in `explorer/history/1.0.2/`. The published `docs/explorer/index.html` and `explorer/explorer_template.html` received one `select{max-width:100%;min-width:0}` CSS rule to prevent a long filter label widening 320px phone screens. The version stamp is 1.0.2.1. The `explorer/test_explorer.js` adds a safeguard for this CSS rule. This changes **zero** embedded poll data/model values, scenarios, seat accounting, or historical records.
+
+Full public verification notes: `docs/explorer/REVIEW_NOTES_2026-11-02.md`. Updated source SHA256s: `SHA256SUMS_EXPLORER_1_0_2_1.txt`.
