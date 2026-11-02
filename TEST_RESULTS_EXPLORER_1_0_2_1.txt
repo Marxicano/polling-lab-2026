@@ -1,0 +1,18 @@
+Explorer 1.0.2.1 (CSS-only hotfix and regression assertion)
+
+OK   v19_frozen/test_engine.js  PASS: closest-race windows fully dated, no duplicates, date ordering, Alaska ranked-choice final rou
+OK   v19_frozen/test_reconciliation.js  PASS: v13 merge survey uniqueness, RedBox, Marist shares, source metadata, freeze scripts, ActiVote 
+OK   v19_frozen/test_scoring.js  PASS: scoring raw vs. normalized two-party, generic, and optional chamber counts
+OK   v19_frozen/test_v16_1_audit.js  PASS: v16.1 coverage, fieldwork integrity, source/version guards, sponsorship flags, zero duplicates
+OK   v19_frozen/test_v17.js  PASS: every October Senate entry dated, generic intake, ActiVote wave rule, no duplicates, method se
+OK   v19_frozen/test_v17_1.js  PASS: Nov 1 Senate/GBC intake, source IDs, one-release dedupe, recency and separate Nebraska indepen
+OK   v19_frozen/test_v18.js  PASS: Nov 1 late polls present once, no duplicates, ActiVote boundary-day rule, method set unchanged
+OK   v19_frozen/test_v18_1.js  PASS: independent Nov1 missing-poll intake, distinct RedBox waves, Alaska RCV, Emerson generic dedup
+OK   v19_frozen/test_v19.js  PASS: Nov 2 intake present once, disputed Florida poll pending, no duplicates, October polls dated, 
+OK   v20/tests/test_v20.js  PASS: 18 v20 checks (separation, data, models, uncertainty, scoring).
+OK   v20/tests/test_v20_site.js  PASS: site builds with freshness, experimental labels, sources, separation banner, mobile/dark suppo
+OK   v20_1/tests/test_v201.js  PASS: 13 v20.1 checks (separation, pre-registration, Kimi evidence, RedBox, Florida, backtest, diagn
+OK   v20_1/tests/test_v201_site.js  PASS: v20.1 page builds separately, shows unchanged v20 figures and hashes, links back to v20, no ex
+ALL 13 SUITES PASSED
+OK   explorer/test_explorer.js  PASS: 11 explorer checks.
+ALL 14 SUITES PASSED
