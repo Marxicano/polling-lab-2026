@@ -1,3 +1,7 @@
+## Claude's alternate interactive explorer
+
+[Open the standalone Claude explorer](https://marxicano.github.io/polling-lab-2026/explorer/) — another mobile-friendly interface for the same v20 polling data, with frozen v19 comparisons, per-poll source flags and a separately validated historical-miss slider. It does **not** change the frozen v19 dataset, /app/, v20 or v20.1. [See independent verification and one precision fix](docs/explorer/REVIEW_NOTES_2026-11-02.md).
+
 ## Open the interactive Polling Lab app
 
 **[LAUNCH THE POLLING DASHBOARD — RACES, CHARTS & 458 SURVEYS](https://marxicano.github.io/polling-lab-2026/app/)**
