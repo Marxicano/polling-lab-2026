@@ -59,7 +59,7 @@ function build(opts) {
       { key: 'trimmed', label: 'Symmetric trim', note: 'Sensitivity only', desc: 'Drops the three most Republican-leaning and three most Democratic-leaning pollsters.', swing: true },
       { key: 'without_recall', label: 'Without recalled-vote weighting', note: 'Sensitivity only', desc: 'Drops pollsters documented to weight on recalled 2024 vote; pollsters with unknown methods stay in.', swing: true },
     ],
-    scenarios: pub20.scenarios.map((s) => ({ key: s.key, short: SHORT[s.key] || s.key, label: s.label, signed_error: s.signed_error, applied_shift: s.applied_shift, dem_seats: s.dem_seats, rep_seats: s.rep_seats, ind_seats: s.ind_seats })),
+    scenarios: pub20.scenarios.map((s) => ({ key: s.key, short: SHORT[s.key] || s.key, label: s.label, signed_error: s.signed_error, applied_shift: s.applied_shift, dem_seats: s.dem_seats, rep_seats: s.rep_seats, ind_seats: s.ind_seats, flips: s.flips || '' })),
     mc: { central: usable.find((v) => v.key === 'central').p_dem_control, lo: Math.min.apply(null, usable.map((v) => v.p_dem_control)), hi: Math.max.apply(null, usable.map((v) => v.p_dem_control)), validation: (pub20.validation.find((r) => r.key === 'summary') || {}).caveat },
     corr: pub201.correlation.map((r) => ({ label: r.rho === 0 ? 'v20 structure' : 'regional share ' + r.rho, p: r.p_dem_control })),
     mike: out.v20_mike_panel.filter((r) => ['lv all', 'lv october', 'lv october excl marist', 'ledger tags', 'ledger tagsgb', 'target grayhouse_ia', 'split'].indexOf(r.key) >= 0).map((r) => ({ key: r.key, value: r.value, evidence: r.evidence })),
