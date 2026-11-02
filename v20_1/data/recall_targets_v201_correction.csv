@@ -1,0 +1,3 @@
+file,field,v20_text,v201_reading
+v20/data/recall_targets.csv,redbox_fl_oct.note,the Nov wave set a Harris 44% two-party target after fieldwork,"the Oct 30-31 wave (released Nov 1) set a Harris 44.0% two-party recalled-vote target after fieldwork (ChatGPT v18.1); the Oct 20-23 wave was weighted to the certified 2024 result (Claude read, Oct 29)"
+v20/DATA_SOURCES_V20.md,recall_targets bullet,November wave target set after fieldwork,Oct 30-31 wave (released Nov 1)
