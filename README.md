@@ -71,3 +71,16 @@ Siena's [November 1 original release](https://sri.siena.edu/2026/11/01/nytimes-s
 - [Original reconciled Grok CSV](POST_FREEZE_GROK_RECONCILED_2026-11-02.csv) — preserved byte-for-byte as uploaded, including its original Grok columns and revised-audit columns. For coverage classification use `v19_verified_status`, not `v19_Status`.
 
 This is **post-freeze source documentation**, not a revised prediction. All original frozen data remain unchanged.
+
+## v20 election-eve analysis — post-freeze research
+
+**v19 remains the immutable official November 2, 8:08 ET snapshot.** The separate v20 source ZIP was independently checked against all 78 v19 files, and all 11 regression-test suites passed. v20 introduces unvalidated experimental simulation and scenario ranges; do not treat its model probabilities as calibrated forecasts.
+
+- [v20 mobile dashboard source (`docs/index.html`)](docs/index.html) — self-contained HTML, also works offline; becomes a normal website after enabling GitHub Pages from `main /docs`.
+- [Dashboard data JSON](docs/data/site_v20.json) — original file, Git blob verified.
+- [Pre-registration SHA-256 public record](V20_PREREGISTRATION_SHA256_2026-11-02.md) and [exact registered JSON](v20/preregistration_mike.json) — four tests H1–H4; retain original fingerprint.
+- [Claude's v20 methods](v20/METHODS_V20.md) and [source coverage](v20/DATA_SOURCES_V20.md).
+- [Independent November 2 v20 review](V20_INDEPENDENT_REVIEW_2026-11-02.md) — important warnings about the empirical calibration, an incorrect midterm-input-count description and missing/mismatched historical-validation source links.
+- [GitHub Pages setup](v20/GITHUB_PAGES.md).
+
+The main dashboard and public files are **not** a live-updating election feed, and the full v20 engine, tests and poll database are still only in the separately supplied ZIP. v20 documentation may need further, separately versioned revisions after review; do not revise the official v19 freeze or the registered v20 hypothesis rules.
