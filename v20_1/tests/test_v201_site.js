@@ -1,0 +1,13 @@
+process.env.V20_SIMS = process.env.V20_SIMS || '4000';
+const assert = require('assert'); const fs = require('fs'); const os = require('os'); const path = require('path');
+const { build } = require('../build_site_v201.js');
+const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'v201site-'));
+const { site, html } = build({ docsDir: tmp, builtAt: '2026-11-02T22:00:00Z' });
+assert(fs.existsSync(path.join(tmp, 'index.html')) && fs.existsSync(path.join(tmp, 'data', 'site_v201.json')));
+assert.strictEqual(site.meta.v20_prereg_sha256, '15da8d6c9d3c37cb4b3f1ba79b7a9372e9e2b81eae9ef40c6e16e551a3cdd1af');
+assert.strictEqual(site.meta.v20_central_p_dem_control_published, 0.804);
+assert(/Nothing published is replaced/.test(html) && /href="\.\.\/index\.html"/.test(html));
+assert(site.assessment.length === 15 && site.not_validatable.length >= 5 && site.registry.analyses.length === 3);
+assert(!/<script[^>]+src=/.test(html));
+new Function(html.match(/<script>([\s\S]*?)<\/script>/)[1]);
+console.log('PASS: v20.1 page builds separately, shows unchanged v20 figures and hashes, links back to v20, no external scripts.');
