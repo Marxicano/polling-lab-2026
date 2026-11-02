@@ -1,3 +1,11 @@
+## Open the interactive Polling Lab app
+
+**[LAUNCH THE POLLING DASHBOARD — RACES, CHARTS & 458 SURVEYS](https://marxicano.github.io/polling-lab-2026/app/)**
+
+The interactive app lets you select any of 15 Senate races, compare polling-average methods, search individual survey results and original sources, and try illustrative margin scenarios. **This is the actual public app.** The older v20 research tables and methodology files remain below as a separate, unchanged historical record. Data frozen as of November 2, 2026; not live election results. No new forecasts or calibrations were added.
+
+---
+
 # Polling Lab 2026
 
 An independent, reproducible research project tracking **2026 U.S. Senate polls and the national generic ballot**. It compares published polling averages, voter-screen assumptions, and illustrative error scenarios. This repository preserves the pre-election measurements for later evaluation.
