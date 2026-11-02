@@ -92,3 +92,7 @@ The main dashboard and public files are **not** a live-updating election feed, a
 - [Independent integration/reconciliation notes](reviews/kimi/KIMI_INTEGRATION_NOTES_2026-11-02.md) — scope of verification, two distinct RedBox waves, historical source cautions and prospective statistical tests.
 
 These are independent third-party post-freeze analyses. They **do not replace** the immutable v19 snapshot or change v20's pre-registered H1–H4 rules. The companion Kimi workbook was reviewed separately; its original `.xlsx` bytes are not hosted in this repository. Kimi's archived MHTML chat was deliberately not published because it includes unrelated chat-interface information.
+
+## NYT/Siena 2026 weighting-method sensitivity (separate research)
+
+- [November 2 old-versus-new NYT/Siena weighting note](POST_FREEZE_NYT_SIENA_WEIGHTING_2026-11-02.md) — same-sample, seven-state methodological counterfactual from Nate Cohn's election-eve article. The older weights yielded Democratic margins averaging 3.43 points higher, but **that is not an observed error and does not establish any direction of bias**. These observations were not added as distinct polls and the frozen v19 baseline remains unchanged.
