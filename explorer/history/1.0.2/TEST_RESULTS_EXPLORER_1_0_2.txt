@@ -1,0 +1,48 @@
+Polling Lab 2026 — Explorer 1.0.2 test results
+Run: node explorer/run_all_explorer.js   (Node v22.22.2, 2026-11-02 15:13 EST)
+
+OK   v19_frozen/test_engine.js  PASS: closest-race windows fully dated, no duplicates, date ordering, Alaska ranked-choice final rou
+OK   v19_frozen/test_reconciliation.js  PASS: v13 merge survey uniqueness, RedBox, Marist shares, source metadata, freeze scripts, ActiVote 
+OK   v19_frozen/test_scoring.js  PASS: scoring raw vs. normalized two-party, generic, and optional chamber counts
+OK   v19_frozen/test_v16_1_audit.js  PASS: v16.1 coverage, fieldwork integrity, source/version guards, sponsorship flags, zero duplicates
+OK   v19_frozen/test_v17.js  PASS: every October Senate entry dated, generic intake, ActiVote wave rule, no duplicates, method se
+OK   v19_frozen/test_v17_1.js  PASS: Nov 1 Senate/GBC intake, source IDs, one-release dedupe, recency and separate Nebraska indepen
+OK   v19_frozen/test_v18.js  PASS: Nov 1 late polls present once, no duplicates, ActiVote boundary-day rule, method set unchanged
+OK   v19_frozen/test_v18_1.js  PASS: independent Nov1 missing-poll intake, distinct RedBox waves, Alaska RCV, Emerson generic dedup
+OK   v19_frozen/test_v19.js  PASS: Nov 2 intake present once, disputed Florida poll pending, no duplicates, October polls dated, 
+OK   v20/tests/test_v20.js  PASS: 18 v20 checks (separation, data, models, uncertainty, scoring).
+OK   v20/tests/test_v20_site.js  PASS: site builds with freshness, experimental labels, sources, separation banner, mobile/dark suppo
+OK   v20_1/tests/test_v201.js  PASS: 13 v20.1 checks (separation, pre-registration, Kimi evidence, RedBox, Florida, backtest, diagn
+OK   v20_1/tests/test_v201_site.js  PASS: v20.1 page builds separately, shows unchanged v20 figures and hashes, links back to v20, no ex
+ALL 13 SUITES PASSED
+OK   explorer/test_explorer.js  PASS: 11 explorer checks.
+ALL 14 SUITES PASSED
+
+Explorer checks in detail:
+  ok  frozen v19, published v20 and v20.1 files are unchanged
+  ok  official v20 scenario totals preserved (D/R/I, Osborn separate); stable recomputation matches all but the documented Mississippi edge
+  ok  every margin, poll count and probability shown is the published v20 value; frozen values come from the snapshot
+  ok  poll explorer has all 461 rows; window membership matches each average; post-freeze rows and RedBox waves flagged
+  ok  symmetric slider, honest labels, no external scripts, mobile viewport and dark mode
+  ok  every view renders; the what-if at the 2024 miss (-2.7) shows 51 D / 49 R, as v20 does
+  ok  margins and shifts compared in whole hundredths; 7.35, 7.3 + 0.05 and "7.35" all map to 735
+  ok  Mississippi at +7.35: exactly D+0.05, scenario-sensitive, official 56 D / 43 R / 1 I kept, range D 56-57 / R 42-43 / I 1, unchanged by float noise
+  ok  zero-margin cases (AK Senate 2024, OH 2024, SC Senate 2022, TX 2016): exactly 0, incumbent kept, official totals kept, ranges include one more Democratic seat
+  ok  every official total lies in its range; ranges keep D/R/I separate and sum to 100; all 1,601 slider positions deterministic; official overlay only at documented shifts on the v20 average
+  ok  what-if shows the official 56 / 43 / 1 at +7.35 with range 56-57 and the Mississippi note; 51 / 49 at -2.7 with Ohio flagged as a tie; computed label elsewhere; scenario table lists official totals and ranges
+PASS: 11 explorer checks.
+
+Official v20 totals and scenario-sensitive ranges (v20 average baseline):
+  2025 off-year  error -7.35  official D/R/I 56/43/1   range D 56-57, R 42-43, I 1-1   within 0.5: MS +0.05
+  Senate 2022    error -1.2   official D/R/I 54/45/1   range D 54-55, R 44-46, I 0-1   within 0.5: NE +0.30, SC 0.00
+  2022           error -0.6   official D/R/I 54/46/0   range D 53-54, R 45-47, I 0-1   within 0.5: IA +0.30, NE -0.30
+  2018 (Silver)  error -0.5   official D/R/I 54/46/0   range D 53-54, R 45-47, I 0-1   within 0.5: IA +0.20, NE -0.40
+  No error       error 0      official D/R/I 53/47/0   range D 53-54, R 46-47, I 0-0   within 0.5: IA -0.30
+  2018           error +0.1   official D/R/I 53/47/0   range D 53-54, R 46-47, I 0-0   within 0.5: IA -0.40
+  2022 (Silver)  error +0.8   official D/R/I 53/47/0   range D 53-53, R 47-47, I 0-0   within 0.5: none
+  Senate 2024    error +2.4   official D/R/I 52/48/0   range D 50-53, R 47-50, I 0-0   within 0.5: AK 0.00, KS +0.50, OH +0.30
+  2024           error +2.7   official D/R/I 51/49/0   range D 49-53, R 47-51, I 0-0   within 0.5: AK -0.30, KS +0.20, OH 0.00, TX +0.40
+  2016           error +3.1   official D/R/I 49/51/0   range D 48-52, R 48-52, I 0-0   within 0.5: KS -0.20, ME +0.20, OH -0.40, TX 0.00
+  Generic 2024   error +3.5   official D/R/I 48/52/0   range D 47-50, R 50-53, I 0-0   within 0.5: ME -0.20, MI +0.40, TX -0.40
+  2020           error +4.6   official D/R/I 47/53/0   range D 47-47, R 53-53, I 0-0   within 0.5: none
+  NJ 2021        error +5     official D/R/I 47/53/0   range D 46-47, R 53-54, I 0-0   within 0.5: MN +0.20
