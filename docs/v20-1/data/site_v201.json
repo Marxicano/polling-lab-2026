@@ -1,0 +1,1111 @@
+{
+ "meta": {
+  "version": "v20.1 methodology review (post-freeze)",
+  "built_at_utc": "2026-11-02 17:53",
+  "v19_snapshot_sha256": "7cd5e1f9581a0edaaca6c69148c8dbd97cdb1c34ff7e2542d691535fb270c461",
+  "v20_prereg_sha256": "15da8d6c9d3c37cb4b3f1ba79b7a9372e9e2b81eae9ef40c6e16e551a3cdd1af",
+  "v20_engine_sha256": "18b400f305c13dc6aa59a3c9fc9fbaba24f7a2a863c24df2888f5d7bdae50704",
+  "v201_engine_sha256": "b590503e87948f56b76b8f3f24437e4822f9f57928322d89eeba887dc8865093",
+  "exploratory_registry_sha256": "f0e7978b1fc5c79d4d1e4948a269aae21c57900b01a5edb7957d587c6a767677",
+  "kimi_report_sha256": "e2eb8376d2c55513fa58263ced591ac184248538131daaa836f045f1a9269f3d",
+  "v20_central_p_dem_control_published": 0.804
+ },
+ "assessment": [
+  {
+   "id": "K1",
+   "recommendation": "No universal or fixed partisan correction; zero-mean baseline",
+   "kimi_section": "Exec 1-2; 9.2 rule 5",
+   "v20_status": "Already implemented",
+   "v20_evidence": "engine_v20.js v20_mc: shared error mean zero (tested); Model 4 scenarios use only documented misses in both directions (tested)",
+   "v201_action": "None; v20.1 re-asserts in tests",
+   "validation_status": "Rule, not a statistical claim"
+  },
+  {
+   "id": "K2",
+   "recommendation": "Directional changes only as labeled sensitivity scenarios",
+   "kimi_section": "7.3; 9.3",
+   "v20_status": "Already implemented for historical misses",
+   "v20_evidence": "v20_error_scenarios, v20_recall_split, v20_no_partisan are labeled and never feed Model 1 (tested)",
+   "v201_action": "Adds a recall-stratified scenario, gated on documented recall use (v201_recall_scenarios)",
+   "validation_status": "Hypothetical; magnitudes not validated"
+  },
+  {
+   "id": "K3",
+   "recommendation": "Do not pool AAPOR and Silver; do not append 2025 to the AAPOR series",
+   "kimi_section": "2.2; 9.2 rule 4",
+   "v20_status": "Needs correction",
+   "v20_evidence": "v20 sigma_sys_high appends the RCP 2025 governor mean (-7.35) to the AAPOR series; v20 midterm-only variant mixes Senate-only 2022 with all-office values",
+   "v201_action": "Relabels both as cross-source stress settings; adds Silver 2025 (-6.1) as a separate stress scenario; numbers of the v20 run unchanged",
+   "validation_status": "Labels only"
+  },
+  {
+   "id": "K4",
+   "recommendation": "Rolling-origin backtests without leakage; proper scores",
+   "kimi_section": "8.2; 9.2 rule 17-18",
+   "v20_status": "Partly wrong in v20",
+   "v20_evidence": "v20_validation leave-one-cycle-out estimates sigma from later cycles too (leakage) and reports coverage only",
+   "v201_action": "Relabels it a cross-validation diagnostic; adds a true rolling-origin cycle backtest with log score and CRPS (v201_rolling_origin)",
+   "validation_status": "Feasible only at cycle level (4 test cycles); contest-level backtest needs data not in the repo"
+  },
+  {
+   "id": "K5",
+   "recommendation": "Hierarchical correlated errors (national, regional, office, state, contest, late)",
+   "kimi_section": "7.2; 9.2 rule 16; 9.4",
+   "v20_status": "Partly implemented",
+   "v20_evidence": "v20_mc draws one national t error plus independent state and sampling errors; no regional, office or late-movement terms",
+   "v201_action": "Adds a correlation diagnostic that keeps each states total variance fixed and varies a regional share (v201_correlation_sensitivity); displayed probabilities unchanged",
+   "validation_status": "Regional, office and late components cannot be calibrated with available data"
+  },
+  {
+   "id": "K6",
+   "recommendation": "Effective n: never silently set n_eff = raw n; mark missing",
+   "kimi_section": "6.3; 9.1; 9.2 rule 6",
+   "v20_status": "Needs correction",
+   "v20_evidence": "The frozen v19 engine (reused by v20) sets n_eff = raw n, or 600 when n is missing, without a flag",
+   "v201_action": "Adds neff_status per poll and a sensitivity of n-dependent outputs (v201_poll_metadata, v201_neff_sensitivity); v19 code not edited",
+   "validation_status": "Design effects are unknown for most polls"
+  },
+  {
+   "id": "K7",
+   "recommendation": "Distinguish RedBox Oct 20-23 (n 4,823) from Oct 30-31 (n 2,898)",
+   "kimi_section": "Integration notes",
+   "v20_status": "Poll rows correct; metadata needs correction",
+   "v20_evidence": "FL-020 and FL-NOV01-REDBOX2 carry distinct n, effective n, design effect and margins; but recall_targets.csv calls the second wave the \"Nov wave\" and fl_redbox_full_electorate_targets.csv has no wave id or retrieval time",
+   "v201_action": "Adds v201_redbox_waves with wave ids, retrieval times and evidence objects; corrects labels in v20.1 docs (v20 files unchanged)",
+   "validation_status": "Wave-1 methodology cannot be re-verified from the live URL, which now documents wave 2"
+  },
+  {
+   "id": "K8",
+   "recommendation": "Data contract: release_group_id, retrieval timestamp, source version, raw/effective n, weighting recipe, recall use, evidence status",
+   "kimi_section": "9.1",
+   "v20_status": "Partly implemented",
+   "v20_evidence": "v20 rows have sponsor, partisan flag, dates, effective n where published, provenance text, release cohort",
+   "v201_action": "Adds these fields for every row with explicit nulls and reason codes (v201_poll_metadata)",
+   "validation_status": "Retrieval times were not recorded before v20; marked unknown"
+  },
+  {
+   "id": "K9",
+   "recommendation": "Sponsorship as metadata/covariate, not automatic exclusion",
+   "kimi_section": "6.2; 9.2 rule 9",
+   "v20_status": "Implemented as sensitivity",
+   "v20_evidence": "Model 2 drops sponsored polls only as a labeled sensitivity; Model 1 keeps them",
+   "v201_action": "None",
+   "validation_status": "Sponsor effect on error testable only after results"
+  },
+  {
+   "id": "K10",
+   "recommendation": "House effects distinct from election bias",
+   "kimi_section": "6.1; 9.2 rule 8",
+   "v20_status": "Already implemented",
+   "v20_evidence": "v20_house_table is labeled relative to other pollsters, not accuracy; H2 scores bias after certification",
+   "v201_action": "None",
+   "validation_status": "After certification"
+  },
+  {
+   "id": "K11",
+   "recommendation": "Recall mechanism: gate on documented recall_use; private cells not verifiable",
+   "kimi_section": "3; 7.3; 9.2 rules 11-12",
+   "v20_status": "Partly implemented",
+   "v20_evidence": "v20_recall_split uses verified tags only; no mechanical adjustment anywhere",
+   "v201_action": "Adds gated recall scenario with kappa and b labeled not independently verifiable",
+   "validation_status": "1-2 point horse-race effect not validated"
+  },
+  {
+   "id": "K12",
+   "recommendation": "Approval never translated into votes",
+   "kimi_section": "7.4; 9.2 rule 13",
+   "v20_status": "Already implemented",
+   "v20_evidence": "context_variables.csv use = context only (tested on the site)",
+   "v201_action": "None",
+   "validation_status": "n/a"
+  },
+  {
+   "id": "K13",
+   "recommendation": "Florida registration ballots are not candidate votes; never blend timestamps",
+   "kimi_section": "5.1; 9.2 rules 14-15",
+   "v20_status": "Already implemented",
+   "v20_evidence": "Context rows labeled registration, not candidate votes",
+   "v201_action": "Adds Kimis Nov 2 08:09 ET official snapshot as a separate timestamped context table with arithmetic checks",
+   "validation_status": "Administrative fact at one timestamp"
+  },
+  {
+   "id": "K14",
+   "recommendation": "Log retrieval time, code version, input hashes, configuration, seed",
+   "kimi_section": "9.2 rule 20",
+   "v20_status": "Mostly implemented",
+   "v20_evidence": "SHA256SUMS_V20.txt, fixed seeds, engine hash on the site; retrieval times missing",
+   "v201_action": "Adds retrieval-time fields where known",
+   "validation_status": "Partial"
+  },
+  {
+   "id": "K15",
+   "recommendation": "Preserve the v19 freeze and the published H1-H4 pre-registration exactly",
+   "kimi_section": "Integration notes 6",
+   "v20_status": "Required",
+   "v20_evidence": "preregistration_mike.json SHA-256 15da8d6c...d1af; score_v20.js",
+   "v201_action": "v20.1 tests assert both are byte-identical; any new analysis gets new identifiers (E1-E3, exploratory)",
+   "validation_status": "n/a"
+  }
+ ],
+ "redbox": [
+  {
+   "kind": "wave",
+   "data_row_n": "4823",
+   "data_row_effective_n": "1520",
+   "data_row_margin": -6.800000000000004,
+   "wave_id": "redbox_fl_w1",
+   "poll_id_in_v19_v20": "FL-020",
+   "field": "2026-10-20 to 2026-10-23",
+   "released": "2026-10-25",
+   "raw_n": "4823",
+   "effective_n": "1520",
+   "design_effect": "3.17",
+   "moody": "49.6 (49.605 unrounded)",
+   "nixon": "42.8 (42.797 unrounded)",
+   "moody_margin": "+6.8 (6.808)",
+   "gap_moe": "4.8",
+   "weighting_targets": "Party registration R 50.0 / D 28.9 / NPA 18.4; recalled 2024 vote Trump 52.3 / Harris 40.1 / other or did not vote 7.7 (Harris 43.4% of two-party); weighted to party registration, demographics, district and the certified 2024 result via recalled vote; turnout weight = voter-file score x stated likelihood",
+   "targets_evidence": "Claude read the methodology page on 2026-10-29 (v12 method_evidence row); Kimi transcription sheets time-stamped 2026-10-29 09:17-09:24; subgroup crosstabs (crosstabs.pdf) read by ChatGPT",
+   "retrieval": "2026-10-29",
+   "caveat": "The live methodology URL now documents wave 2; wave-1 targets cannot be re-verified there. Kimis Nov 2 report describes the same party targets as \"final\" - possibly a carry-over; unresolved"
+  },
+  {
+   "kind": "wave",
+   "data_row_n": "2898",
+   "data_row_effective_n": "2120",
+   "data_row_margin": -3,
+   "wave_id": "redbox_fl_w2",
+   "poll_id_in_v19_v20": "FL-NOV01-REDBOX2",
+   "field": "2026-10-30 to 2026-10-31",
+   "released": "2026-11-01",
+   "raw_n": "2898",
+   "effective_n": "2120",
+   "design_effect": "1.37",
+   "moody": "48",
+   "nixon": "45",
+   "moody_margin": "+3 (another reported version +2)",
+   "gap_moe": "4.1",
+   "weighting_targets": "Harris 44.0% of two-party recalled 2024 vote, set Nov 1 after fieldwork; party-registration target revised Oct 31 after earlier results were observed",
+   "targets_evidence": "ChatGPT v18.1 audit of the primary release (2026-11-01); live methodology page",
+   "retrieval": "2026-11-01",
+   "caveat": "Post-fieldwork target choice is a model-selection risk; no overlapping respondents with wave 1 per the pollster"
+  },
+  {
+   "kind": "check",
+   "wave_id": "redbox_fl_w1",
+   "check": "mixture of already-voted and not-yet-voted margins at s = 0.41657",
+   "value": 6.808,
+   "expected": 6.808,
+   "ok": true
+  },
+  {
+   "kind": "check",
+   "wave_id": "redbox_fl_w1",
+   "check": "already-voted break-even share (algebraic sensitivity, not a forecast)",
+   "value": 0.59425,
+   "expected": 0.59424,
+   "ok": true
+  },
+  {
+   "kind": "check",
+   "wave_id": "both",
+   "check": "waves share no sample size, effective n, design effect or margin",
+   "value": true,
+   "expected": true,
+   "ok": true
+  }
+ ],
+ "calibration": [
+  {
+   "kind": "input",
+   "key": "aapor_2016",
+   "group": "AAPOR updated archive, all offices, final 14 days",
+   "cycle": "2016",
+   "signed_error": 3.1,
+   "used_in_v20_as": "sigma_sys_central; scenario",
+   "v201_label": "calibration input (same estimator series)"
+  },
+  {
+   "kind": "input",
+   "key": "aapor_2018",
+   "group": "AAPOR updated archive, all offices, final 14 days",
+   "cycle": "2018",
+   "signed_error": 0.1,
+   "used_in_v20_as": "sigma_sys_central; sigma_sys_midterm; scenario",
+   "v201_label": "calibration input (same estimator series)"
+  },
+  {
+   "kind": "input",
+   "key": "aapor_2020",
+   "group": "AAPOR updated archive, all offices, final 14 days",
+   "cycle": "2020",
+   "signed_error": 4.6,
+   "used_in_v20_as": "sigma_sys_central; scenario",
+   "v201_label": "calibration input (same estimator series)"
+  },
+  {
+   "kind": "input",
+   "key": "aapor_2022",
+   "group": "AAPOR updated archive, all offices, final 14 days",
+   "cycle": "2022",
+   "signed_error": -0.6,
+   "used_in_v20_as": "sigma_sys_central; sigma_sys_midterm; scenario",
+   "v201_label": "calibration input (same estimator series)"
+  },
+  {
+   "kind": "input",
+   "key": "aapor_2024",
+   "group": "AAPOR updated archive, all offices, final 14 days",
+   "cycle": "2024",
+   "signed_error": 2.7,
+   "used_in_v20_as": "sigma_sys_central; scenario",
+   "v201_label": "calibration input (same estimator series)"
+  },
+  {
+   "kind": "input",
+   "key": "aapor_senate_2022",
+   "group": "AAPOR updated archive, Senate only",
+   "cycle": "2022",
+   "signed_error": -1.2,
+   "used_in_v20_as": "sigma_state; sigma_sys_midterm; scenario",
+   "v201_label": "office-specific; in v20 pooled with all-office values for the midterm-only variant (correction: separate)"
+  },
+  {
+   "kind": "input",
+   "key": "aapor_senate_2024",
+   "group": "AAPOR updated archive, Senate only",
+   "cycle": "2024",
+   "signed_error": 2.4,
+   "used_in_v20_as": "sigma_state; scenario",
+   "v201_label": "office-specific"
+  },
+  {
+   "kind": "input",
+   "key": "silver_2018",
+   "group": "Silver Bulletin database, final 21 days",
+   "cycle": "2018",
+   "signed_error": -0.5,
+   "used_in_v20_as": "scenario",
+   "v201_label": "different estimator; never pooled with AAPOR"
+  },
+  {
+   "kind": "input",
+   "key": "silver_2022",
+   "group": "Silver Bulletin database, final 21 days",
+   "cycle": "2022",
+   "signed_error": 0.8,
+   "used_in_v20_as": "scenario",
+   "v201_label": "different estimator; never pooled with AAPOR"
+  },
+  {
+   "kind": "input",
+   "key": "silver_2025",
+   "group": "Silver Bulletin database, final 21 days",
+   "cycle": "2025",
+   "signed_error": -6.1,
+   "used_in_v20_as": "not used in v20",
+   "v201_label": "added in v20.1 as a separately labeled stress scenario only"
+  },
+  {
+   "kind": "input",
+   "key": "offyear_2025",
+   "group": "RealClearPolitics final averages, two governor races",
+   "cycle": "2025",
+   "signed_error": -7.35,
+   "used_in_v20_as": "sigma_sys_high; scenario",
+   "v201_label": "different estimator appended to the AAPOR series in v20 (correction: label the high setting a cross-source stress test, not a calibrated scale)"
+  },
+  {
+   "kind": "setting",
+   "key": "sigma_sys_central",
+   "group": "AAPOR all-office only",
+   "value": 2.772,
+   "v201_label": "Single estimator series; retained as the central scale"
+  },
+  {
+   "kind": "setting",
+   "key": "sigma_sys_high",
+   "group": "AAPOR all-office + RealClearPolitics 2025 governor mean",
+   "value": 3.925,
+   "v201_label": "Mixes estimators: relabeled a cross-source stress setting, not a calibrated scale"
+  },
+  {
+   "kind": "setting",
+   "key": "sigma_sys_midterm",
+   "group": "AAPOR all-office 2018, 2022 + AAPOR Senate-only 2022",
+   "value": 0.43,
+   "v201_label": "Mixes all-office and Senate-only values from two cycles: relabeled a diagnostic, not a calibrated scale"
+  }
+ ],
+ "rolling": [
+  {
+   "kind": "fold",
+   "rule": "zero_mean",
+   "test_cycle": 2018,
+   "test_type": "Midterm",
+   "train_cycles": "2016",
+   "max_train_cycle": 2016,
+   "mean_used": 0,
+   "sigma": 3.1,
+   "error": 0.1,
+   "residual": 0.1,
+   "inside80": true,
+   "inside95": true,
+   "log_score_t4": -1.767,
+   "log_score_normal": -2.051,
+   "crps_normal": 0.726
+  },
+  {
+   "kind": "fold",
+   "rule": "running_mean",
+   "test_cycle": 2018,
+   "test_type": "Midterm",
+   "train_cycles": "2016",
+   "max_train_cycle": 2016,
+   "mean_used": 3.1,
+   "sigma": 3.1,
+   "error": 0.1,
+   "residual": -3,
+   "inside80": true,
+   "inside95": true,
+   "log_score_t4": -2.726,
+   "log_score_normal": -2.519,
+   "crps_normal": 1.8
+  },
+  {
+   "kind": "fold",
+   "rule": "shrunk_mean_half",
+   "test_cycle": 2018,
+   "test_type": "Midterm",
+   "train_cycles": "2016",
+   "max_train_cycle": 2016,
+   "mean_used": 1.55,
+   "sigma": 3.1,
+   "error": 0.1,
+   "residual": -1.45,
+   "inside80": true,
+   "inside95": true,
+   "log_score_t4": -2.025,
+   "log_score_normal": -2.16,
+   "crps_normal": 0.99
+  },
+  {
+   "kind": "fold",
+   "rule": "previous_presidential",
+   "test_cycle": 2018,
+   "test_type": "Midterm",
+   "train_cycles": "2016",
+   "max_train_cycle": 2016,
+   "mean_used": 3.1,
+   "sigma": 3.1,
+   "error": 0.1,
+   "residual": -3,
+   "inside80": true,
+   "inside95": true,
+   "log_score_t4": -2.726,
+   "log_score_normal": -2.519,
+   "crps_normal": 1.8
+  },
+  {
+   "kind": "fold",
+   "rule": "zero_mean",
+   "test_cycle": 2020,
+   "test_type": "Presidential",
+   "train_cycles": "2016 2018",
+   "max_train_cycle": 2018,
+   "mean_used": 0,
+   "sigma": 2.193,
+   "error": 4.6,
+   "residual": 4.6,
+   "inside80": false,
+   "inside95": false,
+   "log_score_t4": -4.327,
+   "log_score_normal": -3.904,
+   "crps_normal": 3.391
+  },
+  {
+   "kind": "fold",
+   "rule": "running_mean",
+   "test_cycle": 2020,
+   "test_type": "Presidential",
+   "train_cycles": "2016 2018",
+   "max_train_cycle": 2018,
+   "mean_used": 1.6,
+   "sigma": 2.193,
+   "error": 4.6,
+   "residual": 3,
+   "inside80": false,
+   "inside95": true,
+   "log_score_t4": -3.071,
+   "log_score_normal": -2.64,
+   "crps_normal": 1.935
+  },
+  {
+   "kind": "fold",
+   "rule": "shrunk_mean_half",
+   "test_cycle": 2020,
+   "test_type": "Presidential",
+   "train_cycles": "2016 2018",
+   "max_train_cycle": 2018,
+   "mean_used": 0.8,
+   "sigma": 2.193,
+   "error": 4.6,
+   "residual": 3.8,
+   "inside80": false,
+   "inside95": true,
+   "log_score_t4": -3.711,
+   "log_score_normal": -3.205,
+   "crps_normal": 2.637
+  },
+  {
+   "kind": "fold",
+   "rule": "previous_presidential",
+   "test_cycle": 2020,
+   "test_type": "Presidential",
+   "train_cycles": "2016 2018",
+   "max_train_cycle": 2018,
+   "mean_used": 3.1,
+   "sigma": 2.193,
+   "error": 4.6,
+   "residual": 1.5,
+   "inside80": true,
+   "inside95": true,
+   "log_score_t4": -1.945,
+   "log_score_normal": -1.938,
+   "crps_normal": 0.907
+  },
+  {
+   "kind": "fold",
+   "rule": "zero_mean",
+   "test_cycle": 2022,
+   "test_type": "Midterm",
+   "train_cycles": "2016 2018 2020",
+   "max_train_cycle": 2020,
+   "mean_used": 0,
+   "sigma": 3.203,
+   "error": -0.6,
+   "residual": -0.6,
+   "inside80": true,
+   "inside95": true,
+   "log_score_t4": -1.842,
+   "log_score_normal": -2.101,
+   "crps_normal": 0.793
+  },
+  {
+   "kind": "fold",
+   "rule": "running_mean",
+   "test_cycle": 2022,
+   "test_type": "Midterm",
+   "train_cycles": "2016 2018 2020",
+   "max_train_cycle": 2020,
+   "mean_used": 2.6,
+   "sigma": 3.203,
+   "error": -0.6,
+   "residual": -3.2,
+   "inside80": true,
+   "inside95": true,
+   "log_score_t4": -2.81,
+   "log_score_normal": -2.582,
+   "crps_normal": 1.928
+  },
+  {
+   "kind": "fold",
+   "rule": "shrunk_mean_half",
+   "test_cycle": 2022,
+   "test_type": "Midterm",
+   "train_cycles": "2016 2018 2020",
+   "max_train_cycle": 2020,
+   "mean_used": 1.3,
+   "sigma": 3.203,
+   "error": -0.6,
+   "residual": -1.9,
+   "inside80": true,
+   "inside95": true,
+   "log_score_t4": -2.204,
+   "log_score_normal": -2.259,
+   "crps_normal": 1.185
+  },
+  {
+   "kind": "fold",
+   "rule": "previous_presidential",
+   "test_cycle": 2022,
+   "test_type": "Midterm",
+   "train_cycles": "2016 2018 2020",
+   "max_train_cycle": 2020,
+   "mean_used": 4.6,
+   "sigma": 3.203,
+   "error": -0.6,
+   "residual": -5.2,
+   "inside80": false,
+   "inside95": true,
+   "log_score_t4": -3.9,
+   "log_score_normal": -3.401,
+   "crps_normal": 3.534
+  },
+  {
+   "kind": "fold",
+   "rule": "zero_mean",
+   "test_cycle": 2024,
+   "test_type": "Presidential",
+   "train_cycles": "2016 2018 2020 2022",
+   "max_train_cycle": 2022,
+   "mean_used": 0,
+   "sigma": 2.79,
+   "error": 2.7,
+   "residual": 2.7,
+   "inside80": true,
+   "inside95": true,
+   "log_score_t4": -2.62,
+   "log_score_normal": -2.413,
+   "crps_normal": 1.62
+  },
+  {
+   "kind": "fold",
+   "rule": "running_mean",
+   "test_cycle": 2024,
+   "test_type": "Presidential",
+   "train_cycles": "2016 2018 2020 2022",
+   "max_train_cycle": 2022,
+   "mean_used": 1.8,
+   "sigma": 2.79,
+   "error": 2.7,
+   "residual": 0.9,
+   "inside80": true,
+   "inside95": true,
+   "log_score_t4": -1.787,
+   "log_score_normal": -1.997,
+   "crps_normal": 0.767
+  },
+  {
+   "kind": "fold",
+   "rule": "shrunk_mean_half",
+   "test_cycle": 2024,
+   "test_type": "Presidential",
+   "train_cycles": "2016 2018 2020 2022",
+   "max_train_cycle": 2022,
+   "mean_used": 0.9,
+   "sigma": 2.79,
+   "error": 2.7,
+   "residual": 1.8,
+   "inside80": true,
+   "inside95": true,
+   "log_score_t4": -2.133,
+   "log_score_normal": -2.153,
+   "crps_normal": 1.1
+  },
+  {
+   "kind": "fold",
+   "rule": "previous_presidential",
+   "test_cycle": 2024,
+   "test_type": "Presidential",
+   "train_cycles": "2016 2018 2020 2022",
+   "max_train_cycle": 2022,
+   "mean_used": 4.6,
+   "sigma": 2.79,
+   "error": 2.7,
+   "residual": -1.9,
+   "inside80": true,
+   "inside95": true,
+   "log_score_t4": -2.182,
+   "log_score_normal": -2.177,
+   "crps_normal": 1.149
+  },
+  {
+   "kind": "summary_midterm_folds",
+   "rule": "zero_mean",
+   "folds": 2,
+   "mae": 0.35,
+   "rmse": 0.43,
+   "mean_log_score_t4": -1.804,
+   "mean_crps_normal": 0.76
+  },
+  {
+   "kind": "summary_midterm_folds",
+   "rule": "running_mean",
+   "folds": 2,
+   "mae": 3.1,
+   "rmse": 3.102,
+   "mean_log_score_t4": -2.768,
+   "mean_crps_normal": 1.864
+  },
+  {
+   "kind": "summary_midterm_folds",
+   "rule": "shrunk_mean_half",
+   "folds": 2,
+   "mae": 1.675,
+   "rmse": 1.69,
+   "mean_log_score_t4": -2.114,
+   "mean_crps_normal": 1.088
+  },
+  {
+   "kind": "summary_midterm_folds",
+   "rule": "previous_presidential",
+   "folds": 2,
+   "mae": 4.1,
+   "rmse": 4.245,
+   "mean_log_score_t4": -3.313,
+   "mean_crps_normal": 2.667
+  },
+  {
+   "kind": "summary",
+   "rule": "zero_mean",
+   "folds": 4,
+   "mae": 2,
+   "rmse": 2.684,
+   "coverage80": 0.75,
+   "coverage95": 0.75,
+   "mean_log_score_t4": -2.639,
+   "mean_crps_normal": 1.633
+  },
+  {
+   "kind": "summary",
+   "rule": "running_mean",
+   "folds": 4,
+   "mae": 2.525,
+   "rmse": 2.695,
+   "coverage80": 0.75,
+   "coverage95": 1,
+   "mean_log_score_t4": -2.599,
+   "mean_crps_normal": 1.608
+  },
+  {
+   "kind": "summary",
+   "rule": "shrunk_mean_half",
+   "folds": 4,
+   "mae": 2.238,
+   "rmse": 2.418,
+   "coverage80": 0.75,
+   "coverage95": 1,
+   "mean_log_score_t4": -2.518,
+   "mean_crps_normal": 1.478
+  },
+  {
+   "kind": "summary",
+   "rule": "previous_presidential",
+   "folds": 4,
+   "mae": 2.9,
+   "rmse": 3.237,
+   "coverage80": 0.75,
+   "coverage95": 1,
+   "mean_log_score_t4": -2.688,
+   "mean_crps_normal": 1.848
+  },
+  {
+   "kind": "kimi_check",
+   "rule": "zero_mean (in-sample, five cycles)",
+   "mae": 2.22,
+   "rmse": 2.772,
+   "expected_mae": 2.22,
+   "expected_rmse": 2.772
+  },
+  {
+   "kind": "kimi_check",
+   "rule": "previous presidential transported (2018-2024)",
+   "mae": 2.9,
+   "rmse": 3.237,
+   "expected_mae": 2.9,
+   "expected_rmse": 3.237
+  }
+ ],
+ "correlation": [
+  {
+   "rho": 0,
+   "label": "v20 structure (national + independent state errors)",
+   "p_dem_control": 0.802,
+   "p_rep_control": 0.18,
+   "p_no_majority": 0.018,
+   "dem_seats_p05": 48,
+   "dem_seats_p50": 53,
+   "dem_seats_p95": 56,
+   "sims": 20000,
+   "status": "uncalibrated diagnostic; not used for displayed probabilities"
+  },
+  {
+   "rho": 0.25,
+   "label": "Regional share 0.25 (assumed)",
+   "p_dem_control": 0.8,
+   "p_rep_control": 0.185,
+   "p_no_majority": 0.014,
+   "dem_seats_p05": 48,
+   "dem_seats_p50": 53,
+   "dem_seats_p95": 56,
+   "sims": 20000,
+   "status": "uncalibrated diagnostic; not used for displayed probabilities"
+  },
+  {
+   "rho": 0.5,
+   "label": "Regional share 0.5 (assumed)",
+   "p_dem_control": 0.785,
+   "p_rep_control": 0.205,
+   "p_no_majority": 0.01,
+   "dem_seats_p05": 48,
+   "dem_seats_p50": 53,
+   "dem_seats_p95": 56,
+   "sims": 20000,
+   "status": "uncalibrated diagnostic; not used for displayed probabilities"
+  }
+ ],
+ "recall": [
+  {
+   "key": "k0",
+   "label": "No adjustment (equals Model 1 simple)",
+   "kappa": 0,
+   "b": 0,
+   "shift_points": 0,
+   "window_polls_shifted": 32,
+   "window_polls_total": 187,
+   "mean_state_change": 0,
+   "max_state_change": 0,
+   "dem_seats": 53,
+   "rep_seats": 47,
+   "ind_seats": 0,
+   "control": "Democrats",
+   "status": "baseline"
+  },
+  {
+   "key": "k05_low",
+   "label": "kappa 0.5 x b 1 = 0.50 points toward the challenger, recall-weighting polls only",
+   "kappa": 0.5,
+   "b": 1,
+   "shift_points": 0.5,
+   "window_polls_shifted": 32,
+   "window_polls_total": 187,
+   "mean_state_change": 0.087,
+   "max_state_change": 0.2,
+   "dem_seats": 53,
+   "rep_seats": 47,
+   "ind_seats": 0,
+   "control": "Democrats",
+   "status": "hypothetical scenario; not validated"
+  },
+  {
+   "key": "k1_low",
+   "label": "kappa 1 x b 1 = 1.00 points toward the challenger, recall-weighting polls only",
+   "kappa": 1,
+   "b": 1,
+   "shift_points": 1,
+   "window_polls_shifted": 32,
+   "window_polls_total": 187,
+   "mean_state_change": 0.153,
+   "max_state_change": 0.3,
+   "dem_seats": 53,
+   "rep_seats": 47,
+   "ind_seats": 0,
+   "control": "Democrats",
+   "status": "hypothetical scenario; not validated"
+  },
+  {
+   "key": "k05_high",
+   "label": "kappa 0.5 x b 2.2 = 1.10 points toward the challenger, recall-weighting polls only",
+   "kappa": 0.5,
+   "b": 2.2,
+   "shift_points": 1.1,
+   "window_polls_shifted": 32,
+   "window_polls_total": 187,
+   "mean_state_change": 0.153,
+   "max_state_change": 0.3,
+   "dem_seats": 53,
+   "rep_seats": 47,
+   "ind_seats": 0,
+   "control": "Democrats",
+   "status": "hypothetical scenario; not validated"
+  },
+  {
+   "key": "k1_high",
+   "label": "kappa 1 x b 2.2 = 2.20 points toward the challenger, recall-weighting polls only",
+   "kappa": 1,
+   "b": 2.2,
+   "shift_points": 2.2,
+   "window_polls_shifted": 32,
+   "window_polls_total": 187,
+   "mean_state_change": 0.327,
+   "max_state_change": 0.7,
+   "dem_seats": 54,
+   "rep_seats": 46,
+   "ind_seats": 0,
+   "control": "Democrats",
+   "status": "hypothetical scenario; not validated"
+  }
+ ],
+ "metadata": [
+  {
+   "key": "included",
+   "label": "Included Senate polls",
+   "n": 458
+  },
+  {
+   "key": "neff_published",
+   "label": "Effective n published by the pollster",
+   "n": 11
+  },
+  {
+   "key": "neff_assumed",
+   "label": "Effective n not published (raw n used as an assumption)",
+   "n": 446
+  },
+  {
+   "key": "neff_600",
+   "label": "Sample size not reported (600 assumed)",
+   "n": 1
+  },
+  {
+   "key": "recall_yes",
+   "label": "Recalled-vote weighting documented: yes",
+   "n": 42
+  },
+  {
+   "key": "recall_no",
+   "label": "Recalled-vote weighting documented: no",
+   "n": 66
+  },
+  {
+   "key": "recall_unknown",
+   "label": "Recalled-vote use unknown",
+   "n": 350
+  },
+  {
+   "key": "primary",
+   "label": "Primary source read",
+   "n": 45
+  },
+  {
+   "key": "aggregator",
+   "label": "Aggregator listing with pollster link",
+   "n": 407
+  },
+  {
+   "key": "retrieval_known",
+   "label": "Retrieval time recorded",
+   "n": 15
+  }
+ ],
+ "neff": [
+  {
+   "state": "AK",
+   "polls_window": 7,
+   "published_neff_in_window": 1,
+   "mean_moe_v19_assumption": 6.6,
+   "mean_moe_deff_1_5": 7.8,
+   "weighted_v20": 2.3,
+   "weighted_deff_1_5": 2.3,
+   "weighted_change": 0
+  },
+  {
+   "state": "FL",
+   "polls_window": 19,
+   "published_neff_in_window": 2,
+   "mean_moe_v19_assumption": 6.3,
+   "mean_moe_deff_1_5": 7.7,
+   "weighted_v20": -5.5,
+   "weighted_deff_1_5": -5.4,
+   "weighted_change": 0
+  },
+  {
+   "state": "GA",
+   "polls_window": 5,
+   "published_neff_in_window": 0,
+   "mean_moe_v19_assumption": 7.3,
+   "mean_moe_deff_1_5": 9,
+   "weighted_v20": 9.6,
+   "weighted_deff_1_5": 9.6,
+   "weighted_change": 0
+  },
+  {
+   "state": "IA",
+   "polls_window": 15,
+   "published_neff_in_window": 1,
+   "mean_moe_v19_assumption": 6.7,
+   "mean_moe_deff_1_5": 8,
+   "weighted_v20": -0.4,
+   "weighted_deff_1_5": -0.4,
+   "weighted_change": 0
+  },
+  {
+   "state": "KS",
+   "polls_window": 10,
+   "published_neff_in_window": 1,
+   "mean_moe_v19_assumption": 6,
+   "mean_moe_deff_1_5": 7.2,
+   "weighted_v20": 2.8,
+   "weighted_deff_1_5": 2.8,
+   "weighted_change": 0.1
+  },
+  {
+   "state": "ME",
+   "polls_window": 13,
+   "published_neff_in_window": 1,
+   "mean_moe_v19_assumption": 6.8,
+   "mean_moe_deff_1_5": 8.2,
+   "weighted_v20": 3.4,
+   "weighted_deff_1_5": 3.5,
+   "weighted_change": 0.1
+  },
+  {
+   "state": "MI",
+   "polls_window": 19,
+   "published_neff_in_window": 1,
+   "mean_moe_v19_assumption": 6.4,
+   "mean_moe_deff_1_5": 7.8,
+   "weighted_v20": 4.6,
+   "weighted_deff_1_5": 4.7,
+   "weighted_change": 0.1
+  },
+  {
+   "state": "MN",
+   "polls_window": 11,
+   "published_neff_in_window": 0,
+   "mean_moe_v19_assumption": 6.5,
+   "mean_moe_deff_1_5": 8,
+   "weighted_v20": 5.6,
+   "weighted_deff_1_5": 5.6,
+   "weighted_change": 0
+  },
+  {
+   "state": "MS",
+   "polls_window": 3,
+   "published_neff_in_window": 0,
+   "mean_moe_v19_assumption": 7.2,
+   "mean_moe_deff_1_5": 8.9,
+   "weighted_v20": -6,
+   "weighted_deff_1_5": -6,
+   "weighted_change": 0
+  },
+  {
+   "state": "NC",
+   "polls_window": 11,
+   "published_neff_in_window": 2,
+   "mean_moe_v19_assumption": 7.2,
+   "mean_moe_deff_1_5": 8.4,
+   "weighted_v20": 10.3,
+   "weighted_deff_1_5": 10.3,
+   "weighted_change": 0
+  },
+  {
+   "state": "NE",
+   "polls_window": 10,
+   "published_neff_in_window": 0,
+   "mean_moe_v19_assumption": 6.8,
+   "mean_moe_deff_1_5": 8.4,
+   "weighted_v20": -1.2,
+   "weighted_deff_1_5": -1.2,
+   "weighted_change": 0
+  },
+  {
+   "state": "NH",
+   "polls_window": 7,
+   "published_neff_in_window": 0,
+   "mean_moe_v19_assumption": 5.9,
+   "mean_moe_deff_1_5": 7.2,
+   "weighted_v20": 8.5,
+   "weighted_deff_1_5": 8.5,
+   "weighted_change": 0
+  },
+  {
+   "state": "OH",
+   "polls_window": 17,
+   "published_neff_in_window": 1,
+   "mean_moe_v19_assumption": 6.8,
+   "mean_moe_deff_1_5": 8.3,
+   "weighted_v20": 2.7,
+   "weighted_deff_1_5": 2.7,
+   "weighted_change": 0
+  },
+  {
+   "state": "SC",
+   "polls_window": 8,
+   "published_neff_in_window": 0,
+   "mean_moe_v19_assumption": 6.6,
+   "mean_moe_deff_1_5": 8.1,
+   "weighted_v20": -1.1,
+   "weighted_deff_1_5": -1.1,
+   "weighted_change": 0
+  },
+  {
+   "state": "TX",
+   "polls_window": 32,
+   "published_neff_in_window": 1,
+   "mean_moe_v19_assumption": 6.3,
+   "mean_moe_deff_1_5": 7.7,
+   "weighted_v20": 3.2,
+   "weighted_deff_1_5": 3.2,
+   "weighted_change": 0.1
+  }
+ ],
+ "florida": [
+  {
+   "category": "Voted vote-by-mail",
+   "republican": 678709,
+   "democratic": 832610,
+   "npa": 382282,
+   "other": 47774,
+   "total": 1941375,
+   "rep_share": 34.96,
+   "dem_share": 42.888,
+   "npa_share": 19.691,
+   "other_share": 2.461,
+   "timestamp_et": "2026-11-02 08:09",
+   "use": "administrative registration counts; not candidate votes; not the final electorate"
+  },
+  {
+   "category": "Voted early in person",
+   "republican": 1495880,
+   "democratic": 1206968,
+   "npa": 667172,
+   "other": 90834,
+   "total": 3460854,
+   "rep_share": 43.223,
+   "dem_share": 34.875,
+   "npa_share": 19.278,
+   "other_share": 2.625,
+   "timestamp_et": "2026-11-02 08:09",
+   "use": "administrative registration counts; not candidate votes; not the final electorate"
+  },
+  {
+   "category": "Combined cast/returned",
+   "republican": 2174589,
+   "democratic": 2039578,
+   "npa": 1049454,
+   "other": 138608,
+   "total": 5402229,
+   "rep_share": 40.254,
+   "dem_share": 37.754,
+   "npa_share": 19.426,
+   "other_share": 2.566,
+   "timestamp_et": "2026-11-02 08:09",
+   "use": "administrative registration counts; not candidate votes; not the final electorate"
+  }
+ ],
+ "registry": {
+  "title": "Polling Lab v20.1 exploratory analyses (not part of the H1-H4 pre-registration)",
+  "registered_at_et": "2026-11-02, before any 2026 results exist",
+  "relationship_to_preregistration": "The published v20 pre-registration (preregistration_mike.json, SHA-256 15da8d6c9d3c37cb4b3f1ba79b7a9372e9e2b81eae9ef40c6e16e551a3cdd1af) is unchanged and remains the only confirmatory test set. E1-E3 are exploratory and must be reported as such.",
+  "analyses": [
+   {
+    "id": "E1_rolling_origin_cycles",
+    "what": "Rolling-origin backtest of mean rules on AAPOR all-office cycle errors 2016-2024 (train on earlier cycles only), scored by residual, t(4) coverage, log score and normal CRPS",
+    "status": "computed pre-election (v201_rolling_origin); descriptive; four folds",
+    "decision_use": "None: the zero-mean baseline is retained by rule; the analysis only documents how alternatives would have scored"
+   },
+   {
+    "id": "E2_recall_stratified_scenario",
+    "what": "Polls from pollsters documented to weight on recalled 2024 vote moved toward the challenger by kappa x b (kappa 0.5 or 1; b 1.0 or 2.2), others unchanged",
+    "status": "computed pre-election (v201_recall_scenarios); hypothetical",
+    "decision_use": "None before results. After certification, report whether the scenario averages were closer to results than the unadjusted averages, as an exploratory comparison only"
+   },
+   {
+    "id": "E3_proper_scores",
+    "what": "After certification: Brier score of the v20 central simulation's per-state probabilities and normal-approximation CRPS of state margins (predictive SD = sqrt(sigma_sys^2 + sigma_state^2 + se^2)), plus the same for the regional-correlation diagnostic",
+    "status": "code in score_v201.js; runs only on certified results",
+    "decision_use": "Calibration evidence for future cycles; does not alter v20 or H1-H4"
+   }
+  ]
+ },
+ "not_validatable": [
+  "Hierarchical regional, office, state, contest and late-movement error scales: need a contest-level historical dataset of election-eve averages and certified results with information freezes (not in the repository).",
+  "Calibrated control probabilities: the cycle-level series has five points; proper-score calibration of chamber probabilities needs many contests across cycles.",
+  "A 1-2 point national horse-race effect of recalled-vote weighting: requires respondent microdata and State Navigate’s private cells.",
+  "RedBox’s turnout model and wave-1 methodology from the live URL: the page now documents wave 2; only time-stamped earlier reads exist.",
+  "Likely-voter screen backtests S0-S4: need respondent-level data and validated turnout.",
+  "Design effects for 446 polls that publish no effective n."
+ ]
+}
