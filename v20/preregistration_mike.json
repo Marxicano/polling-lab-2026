@@ -1,0 +1,58 @@
+{
+  "title": "Pre-registered tests: are some 2026 likely-voter screens and recalled-2024-vote weighting methods too Republican?",
+  "registered_by": "Claude (Polling Lab v20), for independent review by ChatGPT and Kimi",
+  "registered_at_et": "2026-11-02 (before any 2026 results exist; publish this file's SHA-256 before polls close)",
+  "hypothesis_source": "Mike from PA, Oct 28 2026: pollsters apply likely-voter screens and recalled-2024-vote weighting that make results too Republican",
+  "sign_convention": "signed error = poll (or average) margin minus certified result margin, challenger (D or I) minus Republican, in points; negative means the poll was too Republican",
+  "results_required": "certified results for the competitive Senate races in data/results_2026.csv (state,dem_pct,rep_pct,ind_pct,source_url)",
+  "bootstrap": { "replicates": 10000, "seed": 20261103, "interval": 0.90, "resampling_unit": "pollster (cluster) for H1 and H2; state for H3 and H4" },
+  "tests": [
+    {
+      "id": "H1_lv_screen",
+      "question": "Among Senate surveys that published both likely-voter (LV) and registered-voter (RV) results, was the LV version less accurate and more Republican than the RV version?",
+      "data": "senate_lv_rv_pairs.csv rows whose state has a certified result",
+      "primary_metric": "mean over pairs of |error_LV| - |error_RV|",
+      "secondary_metric": "mean over pairs of error_LV - error_RV",
+      "supports_hypothesis_if": "primary > 0 with the 90% interval above 0, and secondary < 0",
+      "contradicts_hypothesis_if": "primary < 0 with the 90% interval below 0",
+      "otherwise": "inconclusive",
+      "minimum_data": "at least 10 pairs from at least 4 states"
+    },
+    {
+      "id": "H2_recalled_vote",
+      "question": "Were Senate polls from pollsters verified to weight on recalled 2024 vote more Republican-skewed than polls from pollsters verified not to?",
+      "data": "included Senate polls with fieldwork ending on or after 2026-10-01, pollster tags from pollster_methods.csv (verified 'yes' vs verified 'no' only)",
+      "primary_metric": "pollster-level mean signed error, recall group minus non-recall group (each pollster weighted equally)",
+      "secondary_metric": "same comparison of mean absolute error",
+      "supports_hypothesis_if": "primary < 0 with the 90% interval below 0, and the recall group's mean absolute error is larger",
+      "contradicts_hypothesis_if": "primary > 0 with the 90% interval above 0",
+      "otherwise": "inconclusive",
+      "minimum_data": "at least 3 pollsters in each group"
+    },
+    {
+      "id": "H3_average_without_recall",
+      "question": "Would the simple 30-day average have been more accurate without pollsters verified to weight on recalled 2024 vote?",
+      "data": "v20 simple averages with and without verified recall-weighting pollsters, competitive states with results",
+      "primary_metric": "mean absolute error (without) minus mean absolute error (full)",
+      "supports_hypothesis_if": "primary <= -0.5 points and the full average's mean signed error < 0",
+      "contradicts_hypothesis_if": "primary >= +0.5 points",
+      "otherwise": "inconclusive",
+      "minimum_data": "at least 8 states"
+    },
+    {
+      "id": "H4_direction",
+      "question": "Across competitive states, were the frozen v19 simple averages too Republican overall?",
+      "data": "v19 frozen snapshot, raw simple averages",
+      "primary_metric": "mean signed error across states; count of states with negative error",
+      "supports_hypothesis_if": "mean signed error < 0 with the 90% state-bootstrap interval below 0",
+      "contradicts_hypothesis_if": "mean signed error > 0 with the interval above 0",
+      "otherwise": "inconclusive",
+      "caveat": "Direction alone cannot identify the mechanism; H1-H3 address mechanism"
+    }
+  ],
+  "not_tested_here": [
+    "Causation: a pattern by method tag is observational; pollster methods differ in many ways at once",
+    "Respondent-level reweighting experiments (need microdata)",
+    "Late events after fieldwork, such as the Nov 1 Michigan endorsement"
+  ]
+}
