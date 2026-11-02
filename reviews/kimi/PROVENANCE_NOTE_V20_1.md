@@ -1,0 +1,3 @@
+# Provenance note (v20.1)
+The four files in `v19_frozen/data/original_kimi_exports/` (and the identical copies used by v20) are CSV transcriptions of tables shown in an earlier Kimi chat, exported on 2026-10-29 (sheet timestamps 09:17-09:24). Per Kimi's audit (section 11), they are not original exports from a Kimi data pipeline. The folder keeps its original name because the v19 and v20 files are frozen; read the name as "transcriptions of Kimi audit tables."
+The files in this `reviews/kimi/` folder are Kimi's Nov 2 audit, reproduction script and workbook, plus ChatGPT's integration notes, with SHA-256 values listed in `SHA256SUMS_V20_1.txt`. The workbook is binary and was shared separately from the text-only GitHub connector.
