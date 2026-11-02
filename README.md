@@ -96,3 +96,14 @@ These are independent third-party post-freeze analyses. They **do not replace** 
 ## NYT/Siena 2026 weighting-method sensitivity (separate research)
 
 - [November 2 old-versus-new NYT/Siena weighting note](POST_FREEZE_NYT_SIENA_WEIGHTING_2026-11-02.md) — same-sample, seven-state methodological counterfactual from Nate Cohn's election-eve article. The older weights yielded Democratic margins averaging 3.43 points higher, but **that is not an observed error and does not establish any direction of bias**. These observations were not added as distinct polls and the frozen v19 baseline remains unchanged.
+
+## v20.1 methodology review
+
+- [v20.1 review dashboard](docs/v20-1/index.html)
+- [Review data](docs/v20-1/data/site_v201.json)
+- [Kimi assessment](v20-1-source/KIMI_ASSESSMENT_V20_1.md)
+- [v20.1 changelog](v20-1-source/CHANGELOG_V20_1.md)
+- [Original E1–E3 registry](v20_1/exploratory_registry_v201.json)
+- [E1–E3 registration SHA-256](V20_1_EXPLORATORY_E1_E3_REGISTRATION_2026-11-02.md)
+
+This post-freeze analysis is separate from the original v19 snapshot and v20 dashboard. Its experimental simulations are not calibrated forecasts.
