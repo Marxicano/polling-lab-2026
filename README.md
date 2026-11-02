@@ -57,3 +57,10 @@ Siena's [November 1 original release](https://sri.siena.edu/2026/11/01/nytimes-s
 - [Scope and sources](SCENARIO_EXPLORER_NOTES.md).
 
 **This tool was created after the official freeze and does not update the frozen 242-row snapshot.** Its shifts are hypothetical sensitivity assumptions, not empirically calibrated 2026 election-win probabilities or a claim that a particular political party is being underestimated. The HTML can be downloaded and opened offline, but public web hosting via GitHub Pages has not been configured.
+
+### Grok intake reconciliation (November 2, post-freeze)
+
+- [Independent Grok intake audit](POST_FREEZE_GROK_AUDIT_2026-11-02.md) — corrects RedBox Florida's publication date and result, identifies poll omissions, and separates source-verified observations from pending claims.
+- [Annotated 23-row Grok source register](POST_FREEZE_GROK_RECONCILED_2026-11-02.csv) — 20 original rows plus three Research Co. surveys mentioned in prose but missing from the CSV.
+
+**Do not import this CSV wholesale into the frozen model.** It includes already-counted polls, an excluded Florida poll, and unfinished source verification. The original snapshot, its manifest and the November 2 freeze record are unchanged.
