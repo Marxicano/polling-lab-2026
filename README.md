@@ -84,3 +84,11 @@ This is **post-freeze source documentation**, not a revised prediction. All orig
 - [GitHub Pages setup](v20/GITHUB_PAGES.md).
 
 The main dashboard and public files are **not** a live-updating election feed, and the full v20 engine, tests and poll database are still only in the separately supplied ZIP. v20 documentation may need further, separately versioned revisions after review; do not revise the official v19 freeze or the registered v20 hypothesis rules.
+
+## Kimi independent scientific audit — November 2 (post-freeze)
+
+- [Original Kimi methodology audit](reviews/kimi/INDEPENDENT_METHODOLOGY_AUDIT_2026-11-02.md) — full report, unchanged.
+- [Kimi's reproducible calculation script](reviews/kimi/REPRODUCE_AUDIT_2026-11-02.py) — original source text, runnable with NumPy and pandas.
+- [Independent integration/reconciliation notes](reviews/kimi/KIMI_INTEGRATION_NOTES_2026-11-02.md) — scope of verification, two distinct RedBox waves, historical source cautions and prospective statistical tests.
+
+These are independent third-party post-freeze analyses. They **do not replace** the immutable v19 snapshot or change v20's pre-registered H1–H4 rules. The companion Kimi workbook was reviewed separately; its original `.xlsx` bytes are not hosted in this repository. Kimi's archived MHTML chat was deliberately not published because it includes unrelated chat-interface information.
