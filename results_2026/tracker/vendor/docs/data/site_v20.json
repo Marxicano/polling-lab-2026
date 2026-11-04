@@ -1,0 +1,2061 @@
+{
+ "meta": {
+  "version": "v20 (post-freeze, election eve)",
+  "as_of": "2026-11-02",
+  "built_at_utc": "2026-11-02 15:58",
+  "v19_snapshot_sha256": "7cd5e1f9581a0edaaca6c69148c8dbd97cdb1c34ff7e2542d691535fb270c461",
+  "prereg_sha256": "15da8d6c9d3c37cb4b3f1ba79b7a9372e9e2b81eae9ef40c6e16e551a3cdd1af",
+  "engine_sha256": "18b400f305c13dc6aa59a3c9fc9fbaba24f7a2a863c24df2888f5d7bdae50704",
+  "polls_included": 458,
+  "post_freeze_added": 13,
+  "newest_poll_date": "2026-11-01",
+  "probabilities_experimental": true
+ },
+ "races": [
+  {
+   "state": "IA",
+   "name": "Iowa",
+   "opp": "D",
+   "challenger": "Josh Turek",
+   "republican": "Ashley Hinson",
+   "v19_frozen": -0.2,
+   "simple": -0.3,
+   "lv_only": -0.3,
+   "house_adj": -0.1,
+   "weighted": -0.4,
+   "per_pollster": -0.2,
+   "no_partisan": -0.3,
+   "trimmed": 0.1,
+   "without_recall_yes": -0.5,
+   "p_opp": 0.471,
+   "p_opp_min": 0.463,
+   "p_opp_max": 0.478,
+   "p10": -6,
+   "p90": 5.3,
+   "polls": 15,
+   "newest": "2026-11-01",
+   "post_freeze_added": 2
+  },
+  {
+   "state": "NE",
+   "name": "Nebraska",
+   "opp": "I",
+   "challenger": "Dan Osborn (I)",
+   "republican": "Pete Ricketts",
+   "v19_frozen": -0.9,
+   "simple": -0.9,
+   "lv_only": -0.9,
+   "house_adj": -1.7,
+   "weighted": -1.2,
+   "per_pollster": -0.6,
+   "no_partisan": -2.1,
+   "trimmed": -1.7,
+   "without_recall_yes": -1.2,
+   "p_opp": 0.423,
+   "p_opp_min": 0.409,
+   "p_opp_max": 0.429,
+   "p10": -6.6,
+   "p90": 4.8,
+   "polls": 10,
+   "newest": "2026-10-29",
+   "post_freeze_added": 0
+  },
+  {
+   "state": "SC",
+   "name": "South Carolina",
+   "opp": "D",
+   "challenger": "Annie Andrews",
+   "republican": "Darline Graham",
+   "v19_frozen": -1.2,
+   "simple": -1.2,
+   "lv_only": -1.2,
+   "house_adj": -1.6,
+   "weighted": -1.1,
+   "per_pollster": -1.2,
+   "no_partisan": -2.7,
+   "trimmed": -1.6,
+   "without_recall_yes": -1.2,
+   "p_opp": 0.391,
+   "p_opp_min": 0.377,
+   "p_opp_max": 0.405,
+   "p10": -7,
+   "p90": 4.6,
+   "polls": 8,
+   "newest": "2026-10-29",
+   "post_freeze_added": 0
+  },
+  {
+   "state": "AK",
+   "name": "Alaska",
+   "opp": "D",
+   "challenger": "Mary Peltola",
+   "republican": "Dan Sullivan",
+   "v19_frozen": 2.5,
+   "simple": 2.4,
+   "lv_only": 2.7,
+   "house_adj": 2.4,
+   "weighted": 2.3,
+   "per_pollster": 2.5,
+   "no_partisan": 2.4,
+   "trimmed": 2.4,
+   "without_recall_yes": 2.4,
+   "p_opp": 0.711,
+   "p_opp_min": 0.69,
+   "p_opp_max": 0.749,
+   "p10": -3.1,
+   "p90": 8,
+   "polls": 7,
+   "newest": "2026-11-01",
+   "post_freeze_added": 1
+  },
+  {
+   "state": "OH",
+   "name": "Ohio",
+   "opp": "D",
+   "challenger": "Sherrod Brown",
+   "republican": "Jon Husted",
+   "v19_frozen": 2.6,
+   "simple": 2.7,
+   "lv_only": 2.7,
+   "house_adj": 2.8,
+   "weighted": 2.7,
+   "per_pollster": 2.8,
+   "no_partisan": 2.7,
+   "trimmed": 2.9,
+   "without_recall_yes": 2.3,
+   "p_opp": 0.734,
+   "p_opp_min": 0.713,
+   "p_opp_max": 0.775,
+   "p10": -2.9,
+   "p90": 8.2,
+   "polls": 17,
+   "newest": "2026-11-01",
+   "post_freeze_added": 2
+  },
+  {
+   "state": "KS",
+   "name": "Kansas",
+   "opp": "D",
+   "challenger": "Adam Hamilton",
+   "republican": "Roger Marshall",
+   "v19_frozen": 2.7,
+   "simple": 2.9,
+   "lv_only": 2.9,
+   "house_adj": 2.7,
+   "weighted": 2.8,
+   "per_pollster": 3.1,
+   "no_partisan": 3.1,
+   "trimmed": 2.9,
+   "without_recall_yes": 3.7,
+   "p_opp": 0.745,
+   "p_opp_min": 0.724,
+   "p_opp_max": 0.781,
+   "p10": -2.9,
+   "p90": 8.6,
+   "polls": 10,
+   "newest": "2026-11-01",
+   "post_freeze_added": 1
+  },
+  {
+   "state": "TX",
+   "name": "Texas",
+   "opp": "D",
+   "challenger": "James Talarico",
+   "republican": "Ken Paxton",
+   "v19_frozen": 3,
+   "simple": 3.1,
+   "lv_only": 2.7,
+   "house_adj": 3.1,
+   "weighted": 3.2,
+   "per_pollster": 3.1,
+   "no_partisan": 2.9,
+   "trimmed": 3.3,
+   "without_recall_yes": 2.9,
+   "p_opp": 0.761,
+   "p_opp_min": 0.741,
+   "p_opp_max": 0.81,
+   "p10": -2.5,
+   "p90": 8.7,
+   "polls": 32,
+   "newest": "2026-11-01",
+   "post_freeze_added": 3
+  },
+  {
+   "state": "ME",
+   "name": "Maine",
+   "opp": "D",
+   "challenger": "Troy Jackson",
+   "republican": "Susan Collins",
+   "v19_frozen": 3.1,
+   "simple": 3.3,
+   "lv_only": 3.3,
+   "house_adj": 2.8,
+   "weighted": 3.4,
+   "per_pollster": 3.3,
+   "no_partisan": 3.3,
+   "trimmed": 3.3,
+   "without_recall_yes": 3.2,
+   "p_opp": 0.775,
+   "p_opp_min": 0.755,
+   "p_opp_max": 0.821,
+   "p10": -2.3,
+   "p90": 9,
+   "polls": 13,
+   "newest": "2026-11-01",
+   "post_freeze_added": 1
+  },
+  {
+   "state": "MI",
+   "name": "Michigan",
+   "opp": "D",
+   "challenger": "Abdul El-Sayed",
+   "republican": "Mike Rogers",
+   "v19_frozen": 3.5,
+   "simple": 3.9,
+   "lv_only": 3.9,
+   "house_adj": 4.5,
+   "weighted": 4.6,
+   "per_pollster": 4.5,
+   "no_partisan": 3.8,
+   "trimmed": 4.1,
+   "without_recall_yes": 4,
+   "p_opp": 0.813,
+   "p_opp_min": 0.787,
+   "p_opp_max": 0.863,
+   "p10": -1.8,
+   "p90": 9.5,
+   "polls": 19,
+   "newest": "2026-11-01",
+   "post_freeze_added": 2
+  },
+  {
+   "state": "MN",
+   "name": "Minnesota",
+   "opp": "D",
+   "challenger": "Peggy Flanagan",
+   "republican": "Michele Tafoya",
+   "v19_frozen": 5.2,
+   "simple": 5.2,
+   "lv_only": 5.3,
+   "house_adj": 5.8,
+   "weighted": 5.6,
+   "per_pollster": 5.7,
+   "no_partisan": 5.1,
+   "trimmed": 5.2,
+   "without_recall_yes": 5.2,
+   "p_opp": 0.88,
+   "p_opp_min": 0.849,
+   "p_opp_max": 0.923,
+   "p10": -0.5,
+   "p90": 10.8,
+   "polls": 11,
+   "newest": "2026-11-01",
+   "post_freeze_added": 1
+  },
+  {
+   "state": "FL",
+   "name": "Florida",
+   "opp": "D",
+   "challenger": "Angie Nixon",
+   "republican": "Ashley Moody",
+   "v19_frozen": -6,
+   "simple": -6,
+   "lv_only": -5.5,
+   "house_adj": -6.1,
+   "weighted": -5.5,
+   "per_pollster": -6.2,
+   "no_partisan": -6.4,
+   "trimmed": -5.9,
+   "without_recall_yes": -6,
+   "p_opp": 0.088,
+   "p_opp_min": 0.048,
+   "p_opp_max": 0.114,
+   "p10": -11.6,
+   "p90": -0.3,
+   "polls": 19,
+   "newest": "2026-10-31",
+   "post_freeze_added": 0
+  },
+  {
+   "state": "MS",
+   "name": "Mississippi",
+   "opp": "D",
+   "challenger": "Scott Colom",
+   "republican": "Cindy Hyde-Smith",
+   "v19_frozen": -7.3,
+   "simple": -7.3,
+   "lv_only": -4.5,
+   "house_adj": -6.4,
+   "weighted": -6,
+   "per_pollster": -4.5,
+   "no_partisan": null,
+   "trimmed": -6,
+   "without_recall_yes": -7.3,
+   "p_opp": 0.084,
+   "p_opp_min": 0.057,
+   "p_opp_max": 0.104,
+   "p10": -14.2,
+   "p90": -0.5,
+   "polls": 3,
+   "newest": "2026-08-15",
+   "post_freeze_added": 0
+  },
+  {
+   "state": "NH",
+   "name": "New Hampshire",
+   "opp": "D",
+   "challenger": "Chris Pappas",
+   "republican": "John Sununu",
+   "v19_frozen": 7.4,
+   "simple": 7.4,
+   "lv_only": 7.4,
+   "house_adj": 7.7,
+   "weighted": 8.5,
+   "per_pollster": 7.8,
+   "no_partisan": 7.4,
+   "trimmed": 7.4,
+   "without_recall_yes": 7.4,
+   "p_opp": 0.952,
+   "p_opp_min": 0.926,
+   "p_opp_max": 0.98,
+   "p10": 1.8,
+   "p90": 13,
+   "polls": 7,
+   "newest": "2026-10-31",
+   "post_freeze_added": 0
+  },
+  {
+   "state": "GA",
+   "name": "Georgia",
+   "opp": "D",
+   "challenger": "Jon Ossoff",
+   "republican": "Mike Collins",
+   "v19_frozen": 9.4,
+   "simple": 9.4,
+   "lv_only": 9.4,
+   "house_adj": 10,
+   "weighted": 9.6,
+   "per_pollster": 9.4,
+   "no_partisan": 9.4,
+   "trimmed": 9.8,
+   "without_recall_yes": 9.4,
+   "p_opp": 0.977,
+   "p_opp_min": 0.959,
+   "p_opp_max": 0.993,
+   "p10": 3.5,
+   "p90": 15.4,
+   "polls": 5,
+   "newest": "2026-10-23",
+   "post_freeze_added": 0
+  },
+  {
+   "state": "NC",
+   "name": "North Carolina",
+   "opp": "D",
+   "challenger": "Roy Cooper",
+   "republican": "Michael Whatley",
+   "v19_frozen": 10.4,
+   "simple": 10.4,
+   "lv_only": 10.4,
+   "house_adj": 10.5,
+   "weighted": 10.3,
+   "per_pollster": 10.4,
+   "no_partisan": 10.8,
+   "trimmed": 10.5,
+   "without_recall_yes": 10.8,
+   "p_opp": 0.988,
+   "p_opp_min": 0.974,
+   "p_opp_max": 0.998,
+   "p10": 4.8,
+   "p90": 16.1,
+   "polls": 11,
+   "newest": "2026-10-29",
+   "post_freeze_added": 0
+  }
+ ],
+ "seats": {
+  "variants": [
+   {
+    "key": "central",
+    "label": "Central: all general-election cycles 2016-2024, heavy tails",
+    "sigma_sys": 2.772,
+    "sigma_state": 3.506,
+    "tail_df": 4,
+    "sims": 20000,
+    "p_dem_control": 0.804,
+    "p_rep_control": 0.178,
+    "p_no_majority": 0.018,
+    "dem_seats_p05": 48,
+    "dem_seats_p50": 53,
+    "dem_seats_p95": 56,
+    "seat_hist": {
+     "43": 51,
+     "44": 70,
+     "45": 97,
+     "46": 175,
+     "47": 340,
+     "48": 554,
+     "49": 951,
+     "50": 1674,
+     "51": 2331,
+     "52": 3200,
+     "53": 3706,
+     "54": 3459,
+     "55": 2296,
+     "56": 849,
+     "57": 247
+    }
+   },
+   {
+    "key": "high",
+    "label": "High: adds the 2025 off-year miss",
+    "sigma_sys": 3.925,
+    "sigma_state": 3.506,
+    "tail_df": 4,
+    "sims": 20000,
+    "p_dem_control": 0.754,
+    "p_rep_control": 0.231,
+    "p_no_majority": 0.016,
+    "dem_seats_p05": 47,
+    "dem_seats_p50": 53,
+    "dem_seats_p95": 56,
+    "seat_hist": {
+     "43": 162,
+     "44": 153,
+     "45": 249,
+     "46": 360,
+     "47": 548,
+     "48": 804,
+     "49": 1127,
+     "50": 1524,
+     "51": 1998,
+     "52": 2565,
+     "53": 3042,
+     "54": 3087,
+     "55": 2551,
+     "56": 1273,
+     "57": 557
+    }
+   },
+   {
+    "key": "midterm_only",
+    "label": "Midterm-only history (likely overconfident)",
+    "sigma_sys": 0.43,
+    "sigma_state": 3.506,
+    "tail_df": 4,
+    "sims": 20000,
+    "p_dem_control": 0.939,
+    "p_rep_control": 0.043,
+    "p_no_majority": 0.018,
+    "dem_seats_p05": 50,
+    "dem_seats_p50": 53,
+    "dem_seats_p95": 55,
+    "seat_hist": {
+     "45": 1,
+     "47": 3,
+     "48": 29,
+     "49": 226,
+     "50": 955,
+     "51": 2677,
+     "52": 5070,
+     "53": 5931,
+     "54": 3819,
+     "55": 1166,
+     "56": 118,
+     "57": 5
+    }
+   },
+   {
+    "key": "central_normal",
+    "label": "Central, normal tails",
+    "sigma_sys": 2.772,
+    "sigma_state": 3.506,
+    "tail_df": "normal",
+    "sims": 20000,
+    "p_dem_control": 0.779,
+    "p_rep_control": 0.205,
+    "p_no_majority": 0.017,
+    "dem_seats_p05": 48,
+    "dem_seats_p50": 53,
+    "dem_seats_p95": 56,
+    "seat_hist": {
+     "43": 6,
+     "44": 22,
+     "45": 92,
+     "46": 259,
+     "47": 471,
+     "48": 734,
+     "49": 1196,
+     "50": 1648,
+     "51": 2285,
+     "52": 2778,
+     "53": 3167,
+     "54": 3426,
+     "55": 2643,
+     "56": 1066,
+     "57": 207
+    }
+   }
+  ]
+ },
+ "scenarios": [
+  {
+   "key": "offyear_2025",
+   "label": "Mean of NJ (-9.7) and VA (-5.0) final RCP averages vs results — 2025 Off-year",
+   "signed_error": -7.35,
+   "applied_shift": 7.35,
+   "dem_seats": 56,
+   "rep_seats": 43,
+   "ind_seats": 1,
+   "control": "Democrats",
+   "flips": "AK, FL, IA, KS, ME, NC, NE, OH, SC, TX"
+  },
+  {
+   "key": "aapor_senate_2022",
+   "label": "AAPOR full report Appendix I.3 p.72 (via Kimi, checked by ChatGPT) — 2022 Midterm",
+   "signed_error": -1.2,
+   "applied_shift": 1.2,
+   "dem_seats": 54,
+   "rep_seats": 45,
+   "ind_seats": 1,
+   "control": "Democrats",
+   "flips": "AK, IA, KS, ME, NC, NE, OH, TX"
+  },
+  {
+   "key": "aapor_2022",
+   "label": "AAPOR 2024 task force — 2022 Midterm",
+   "signed_error": -0.6,
+   "applied_shift": 0.6,
+   "dem_seats": 54,
+   "rep_seats": 46,
+   "ind_seats": 0,
+   "control": "Democrats",
+   "flips": "AK, IA, KS, ME, NC, OH, TX"
+  },
+  {
+   "key": "silver_2018",
+   "label": "Silver Bulletin (final three weeks) — 2018 Midterm",
+   "signed_error": -0.5,
+   "applied_shift": 0.5,
+   "dem_seats": 54,
+   "rep_seats": 46,
+   "ind_seats": 0,
+   "control": "Democrats",
+   "flips": "AK, IA, KS, ME, NC, OH, TX"
+  },
+  {
+   "key": "none",
+   "label": "Polls exactly right",
+   "signed_error": 0,
+   "applied_shift": 0,
+   "dem_seats": 53,
+   "rep_seats": 47,
+   "ind_seats": 0,
+   "control": "Democrats",
+   "flips": "AK, KS, ME, NC, OH, TX"
+  },
+  {
+   "key": "aapor_2018",
+   "label": "AAPOR 2024 task force — 2018 Midterm",
+   "signed_error": 0.1,
+   "applied_shift": -0.1,
+   "dem_seats": 53,
+   "rep_seats": 47,
+   "ind_seats": 0,
+   "control": "Democrats",
+   "flips": "AK, KS, ME, NC, OH, TX"
+  },
+  {
+   "key": "silver_2022",
+   "label": "Silver Bulletin (final three weeks) — 2022 Midterm",
+   "signed_error": 0.8,
+   "applied_shift": -0.8,
+   "dem_seats": 53,
+   "rep_seats": 47,
+   "ind_seats": 0,
+   "control": "Democrats",
+   "flips": "AK, KS, ME, NC, OH, TX"
+  },
+  {
+   "key": "aapor_senate_2024",
+   "label": "AAPOR full report Appendix I.3 p.72 (via Kimi, checked by ChatGPT) — 2024 Presidential",
+   "signed_error": 2.4,
+   "applied_shift": -2.4,
+   "dem_seats": 52,
+   "rep_seats": 48,
+   "ind_seats": 0,
+   "control": "Democrats",
+   "flips": "KS, ME, NC, OH, TX"
+  },
+  {
+   "key": "aapor_2024",
+   "label": "AAPOR 2024 task force — 2024 Presidential",
+   "signed_error": 2.7,
+   "applied_shift": -2.7,
+   "dem_seats": 51,
+   "rep_seats": 49,
+   "ind_seats": 0,
+   "control": "Democrats",
+   "flips": "KS, ME, NC, TX"
+  },
+  {
+   "key": "aapor_2016",
+   "label": "AAPOR 2024 task force (all offices, final two weeks) — 2016 Presidential",
+   "signed_error": 3.1,
+   "applied_shift": -3.1,
+   "dem_seats": 49,
+   "rep_seats": 51,
+   "ind_seats": 0,
+   "control": "Republicans",
+   "flips": "ME, NC"
+  },
+  {
+   "key": "generic_2024",
+   "label": "Lab backtest: final-week 2024 generic-ballot polls vs House popular vote (gb_backtest) — 2024 Presidential",
+   "signed_error": 3.5,
+   "applied_shift": -3.5,
+   "dem_seats": 48,
+   "rep_seats": 52,
+   "ind_seats": 0,
+   "control": "Republicans",
+   "flips": "NC"
+  },
+  {
+   "key": "aapor_2020",
+   "label": "AAPOR 2024 task force — 2020 Presidential",
+   "signed_error": 4.6,
+   "applied_shift": -4.6,
+   "dem_seats": 47,
+   "rep_seats": 53,
+   "ind_seats": 0,
+   "control": "Republicans",
+   "flips": "MI, NC"
+  },
+  {
+   "key": "race_nj_2021",
+   "label": "RCP final average vs result — 2021 Off-year",
+   "signed_error": 5,
+   "applied_shift": -5,
+   "dem_seats": 47,
+   "rep_seats": 53,
+   "ind_seats": 0,
+   "control": "Republicans",
+   "flips": "MI, NC"
+  }
+ ],
+ "calibration": [
+  {
+   "key": "sigma_sys_central",
+   "value": 2.772,
+   "n": 5,
+   "derivation": "RMS of AAPOR all-office signed errors 2016-2024 (zero mean)",
+   "inputs": "3.1, 0.1, 4.6, -0.6, 2.7"
+  },
+  {
+   "key": "sigma_sys_midterm",
+   "value": 0.43,
+   "n": 2,
+   "derivation": "RMS of midterm-only errors (AAPOR 2018, 2022, Senate 2022); few cycles, likely overconfident",
+   "inputs": "0.1, -0.6"
+  },
+  {
+   "key": "sigma_sys_high",
+   "value": 3.925,
+   "n": 6,
+   "derivation": "Central set plus the 2025 off-year mean miss (-7.35)",
+   "inputs": "3.1, 0.1, 4.6, -0.6, 2.7, -7.35"
+  },
+  {
+   "key": "sigma_state",
+   "value": 3.506,
+   "n": 2,
+   "derivation": "sqrt(mean over AAPOR Senate cycles of max(0, RMSE^2 - mean^2 - sampling^2)), RMSE = MAE x sqrt(pi/2)",
+   "inputs": "2022: RMSE 6.02, residual variance 23.99; 2024: RMSE 4.14, residual variance 0.59"
+  },
+  {
+   "key": "typical_poll_sampling_sd",
+   "value": 3.28,
+   "n": 313,
+   "derivation": "Median per-poll sampling SD of the candidate gap, polls since Sep 1, 2026",
+   "inputs": ""
+  },
+  {
+   "key": "tail_df",
+   "value": 4,
+   "n": null,
+   "derivation": "Student-t degrees of freedom for the shared error (heavy tails; fixed by assumption)",
+   "inputs": ""
+  }
+ ],
+ "validation": [
+  {
+   "key": "race_nj_2025",
+   "kind": "coverage",
+   "label": "RCP final average vs reported result (2025)",
+   "error": -9.7,
+   "inside80": false,
+   "inside95": false,
+   "caveat": ""
+  },
+  {
+   "key": "race_va_2025",
+   "kind": "coverage",
+   "label": "RCP final average vs reported result (2025)",
+   "error": -5,
+   "inside80": true,
+   "inside95": true,
+   "caveat": ""
+  },
+  {
+   "key": "race_nj_2021",
+   "kind": "coverage",
+   "label": "RCP final average vs result (2021)",
+   "error": 5,
+   "inside80": true,
+   "inside95": true,
+   "caveat": ""
+  },
+  {
+   "key": "race_me_2020",
+   "kind": "coverage",
+   "label": "270toWin final average vs certified result (2020)",
+   "error": 12.4,
+   "inside80": false,
+   "inside95": false,
+   "caveat": "Selected because it was a notable miss"
+  },
+  {
+   "key": "race_ia_2024",
+   "kind": "coverage",
+   "label": "270toWin final average vs certified result (presidential race) (2024)",
+   "error": 8.5,
+   "inside80": false,
+   "inside95": true,
+   "caveat": "Selected because it was a notable miss"
+  },
+  {
+   "key": "race_oh_2024",
+   "kind": "coverage",
+   "label": "270toWin final average vs certified result (presidential race) (2024)",
+   "error": 3.5,
+   "inside80": true,
+   "inside95": true,
+   "caveat": ""
+  },
+  {
+   "key": "generic_2024",
+   "kind": "coverage",
+   "label": "Lab backtest: final-week 2024 generic-ballot polls vs House popular vote (gb_backtest) (2024)",
+   "error": 3.5,
+   "inside80": true,
+   "inside95": true,
+   "caveat": ""
+  },
+  {
+   "key": "loo_aapor_2016",
+   "kind": "leave_one_cycle_out",
+   "label": "Hold out 2016 (sigma_sys from the others = 2.68)",
+   "error": 3.1,
+   "inside80": false,
+   "inside95": true,
+   "caveat": ""
+  },
+  {
+   "key": "loo_aapor_2018",
+   "kind": "leave_one_cycle_out",
+   "label": "Hold out 2018 (sigma_sys from the others = 3.10)",
+   "error": 0.1,
+   "inside80": true,
+   "inside95": true,
+   "caveat": ""
+  },
+  {
+   "key": "loo_aapor_2020",
+   "kind": "leave_one_cycle_out",
+   "label": "Hold out 2020 (sigma_sys from the others = 2.08)",
+   "error": 4.6,
+   "inside80": false,
+   "inside95": false,
+   "caveat": ""
+  },
+  {
+   "key": "loo_aapor_2022",
+   "kind": "leave_one_cycle_out",
+   "label": "Hold out 2022 (sigma_sys from the others = 3.09)",
+   "error": -0.6,
+   "inside80": true,
+   "inside95": true,
+   "caveat": ""
+  },
+  {
+   "key": "loo_aapor_2024",
+   "kind": "leave_one_cycle_out",
+   "label": "Hold out 2024 (sigma_sys from the others = 2.79)",
+   "error": 2.7,
+   "inside80": true,
+   "inside95": true,
+   "caveat": ""
+  },
+  {
+   "key": "summary",
+   "kind": "summary",
+   "label": "Coverage 57% (80% nominal) and 71% (95% nominal) on 7 documented misses; leave-one-out 60% / 80% on 5 cycles",
+   "error": null,
+   "inside80": null,
+   "inside95": null,
+   "caveat": "NOT adequately calibrated or validated: probabilities are EXPERIMENTAL; use the scenario ranges",
+   "interval80": [
+    -5.6,
+    5.6
+   ],
+   "interval95": [
+    -8.9,
+    8.9
+   ],
+   "experimental": true
+  }
+ ],
+ "turnout": [
+  {
+   "key": "lvonly AK",
+   "state": "AK",
+   "scenario": "Likely-voter polls only (Model 1 variant)",
+   "value": 2.7,
+   "delta_vs_main": 0.3,
+   "n": null,
+   "basis": "30-day window"
+  },
+  {
+   "key": "lvonly FL",
+   "state": "FL",
+   "scenario": "Likely-voter polls only (Model 1 variant)",
+   "value": -5.5,
+   "delta_vs_main": 0.5,
+   "n": null,
+   "basis": "30-day window"
+  },
+  {
+   "key": "lvonly GA",
+   "state": "GA",
+   "scenario": "Likely-voter polls only (Model 1 variant)",
+   "value": 9.4,
+   "delta_vs_main": 0,
+   "n": null,
+   "basis": "30-day window"
+  },
+  {
+   "key": "lvonly IA",
+   "state": "IA",
+   "scenario": "Likely-voter polls only (Model 1 variant)",
+   "value": -0.3,
+   "delta_vs_main": 0,
+   "n": null,
+   "basis": "30-day window"
+  },
+  {
+   "key": "lvonly KS",
+   "state": "KS",
+   "scenario": "Likely-voter polls only (Model 1 variant)",
+   "value": 2.9,
+   "delta_vs_main": 0,
+   "n": null,
+   "basis": "30-day window"
+  },
+  {
+   "key": "lvonly ME",
+   "state": "ME",
+   "scenario": "Likely-voter polls only (Model 1 variant)",
+   "value": 3.3,
+   "delta_vs_main": 0,
+   "n": null,
+   "basis": "30-day window"
+  },
+  {
+   "key": "lvonly MI",
+   "state": "MI",
+   "scenario": "Likely-voter polls only (Model 1 variant)",
+   "value": 3.9,
+   "delta_vs_main": 0,
+   "n": null,
+   "basis": "30-day window"
+  },
+  {
+   "key": "lvonly MN",
+   "state": "MN",
+   "scenario": "Likely-voter polls only (Model 1 variant)",
+   "value": 5.3,
+   "delta_vs_main": 0.1,
+   "n": null,
+   "basis": "30-day window"
+  },
+  {
+   "key": "lvonly MS",
+   "state": "MS",
+   "scenario": "Likely-voter polls only (Model 1 variant)",
+   "value": -4.5,
+   "delta_vs_main": 2.8,
+   "n": null,
+   "basis": "30-day window"
+  },
+  {
+   "key": "lvonly NC",
+   "state": "NC",
+   "scenario": "Likely-voter polls only (Model 1 variant)",
+   "value": 10.4,
+   "delta_vs_main": 0,
+   "n": null,
+   "basis": "30-day window"
+  },
+  {
+   "key": "lvonly NE",
+   "state": "NE",
+   "scenario": "Likely-voter polls only (Model 1 variant)",
+   "value": -0.9,
+   "delta_vs_main": 0,
+   "n": null,
+   "basis": "30-day window"
+  },
+  {
+   "key": "lvonly NH",
+   "state": "NH",
+   "scenario": "Likely-voter polls only (Model 1 variant)",
+   "value": 7.4,
+   "delta_vs_main": 0,
+   "n": null,
+   "basis": "30-day window"
+  },
+  {
+   "key": "lvonly OH",
+   "state": "OH",
+   "scenario": "Likely-voter polls only (Model 1 variant)",
+   "value": 2.7,
+   "delta_vs_main": 0,
+   "n": null,
+   "basis": "30-day window"
+  },
+  {
+   "key": "lvonly SC",
+   "state": "SC",
+   "scenario": "Likely-voter polls only (Model 1 variant)",
+   "value": -1.2,
+   "delta_vs_main": 0,
+   "n": null,
+   "basis": "30-day window"
+  },
+  {
+   "key": "lvonly TX",
+   "state": "TX",
+   "scenario": "Likely-voter polls only (Model 1 variant)",
+   "value": 2.7,
+   "delta_vs_main": -0.4,
+   "n": null,
+   "basis": "30-day window"
+  },
+  {
+   "key": "FL rv",
+   "state": "FL",
+   "scenario": "Registered-voter versions of paired surveys",
+   "value": -12,
+   "delta_vs_main": -6,
+   "n": 1,
+   "basis": "Same-survey pairs, any date"
+  },
+  {
+   "key": "FL rv_h1",
+   "state": "FL",
+   "scenario": "RV versions minus 1 point (historical midterm screen, Enten)",
+   "value": -13,
+   "delta_vs_main": -7,
+   "n": 1,
+   "basis": "Enten: party-ID gain from all to validated voters, these states in 2018"
+  },
+  {
+   "key": "FL screen_removed",
+   "state": "FL",
+   "scenario": "Main average with the observed screen shift added back",
+   "value": -8,
+   "delta_vs_main": -2,
+   "n": 1,
+   "basis": "Main average plus the mean RV-minus-LV shift in this state"
+  },
+  {
+   "key": "GA rv",
+   "state": "GA",
+   "scenario": "Registered-voter versions of paired surveys",
+   "value": 10.5,
+   "delta_vs_main": 1.1,
+   "n": 2,
+   "basis": "Same-survey pairs, any date"
+  },
+  {
+   "key": "GA rv_h1",
+   "state": "GA",
+   "scenario": "RV versions minus 1 point (historical midterm screen, Enten)",
+   "value": 9.5,
+   "delta_vs_main": 0.1,
+   "n": 2,
+   "basis": "Enten: party-ID gain from all to validated voters, these states in 2018"
+  },
+  {
+   "key": "GA screen_removed",
+   "state": "GA",
+   "scenario": "Main average with the observed screen shift added back",
+   "value": 9.4,
+   "delta_vs_main": 0,
+   "n": 2,
+   "basis": "Main average plus the mean RV-minus-LV shift in this state"
+  },
+  {
+   "key": "IA rv",
+   "state": "IA",
+   "scenario": "Registered-voter versions of paired surveys",
+   "value": 4.5,
+   "delta_vs_main": 4.8,
+   "n": 4,
+   "basis": "Same-survey pairs, any date"
+  },
+  {
+   "key": "IA rv_h1",
+   "state": "IA",
+   "scenario": "RV versions minus 1 point (historical midterm screen, Enten)",
+   "value": 3.5,
+   "delta_vs_main": 3.8,
+   "n": 4,
+   "basis": "Enten: party-ID gain from all to validated voters, these states in 2018"
+  },
+  {
+   "key": "IA screen_removed",
+   "state": "IA",
+   "scenario": "Main average with the observed screen shift added back",
+   "value": -0.3,
+   "delta_vs_main": 0,
+   "n": 4,
+   "basis": "Main average plus the mean RV-minus-LV shift in this state"
+  },
+  {
+   "key": "ME rv",
+   "state": "ME",
+   "scenario": "Registered-voter versions of paired surveys",
+   "value": 3,
+   "delta_vs_main": -0.3,
+   "n": 4,
+   "basis": "Same-survey pairs, any date"
+  },
+  {
+   "key": "ME rv_h1",
+   "state": "ME",
+   "scenario": "RV versions minus 1 point (historical midterm screen, Enten)",
+   "value": 2,
+   "delta_vs_main": -1.3,
+   "n": 4,
+   "basis": "Enten: party-ID gain from all to validated voters, these states in 2018"
+  },
+  {
+   "key": "ME screen_removed",
+   "state": "ME",
+   "scenario": "Main average with the observed screen shift added back",
+   "value": 2.6,
+   "delta_vs_main": -0.7,
+   "n": 4,
+   "basis": "Main average plus the mean RV-minus-LV shift in this state"
+  },
+  {
+   "key": "MI rv",
+   "state": "MI",
+   "scenario": "Registered-voter versions of paired surveys",
+   "value": 5,
+   "delta_vs_main": 1.1,
+   "n": 6,
+   "basis": "Same-survey pairs, any date"
+  },
+  {
+   "key": "MI rv_h1",
+   "state": "MI",
+   "scenario": "RV versions minus 1 point (historical midterm screen, Enten)",
+   "value": 4,
+   "delta_vs_main": 0.1,
+   "n": 6,
+   "basis": "Enten: party-ID gain from all to validated voters, these states in 2018"
+  },
+  {
+   "key": "MI screen_removed",
+   "state": "MI",
+   "scenario": "Main average with the observed screen shift added back",
+   "value": 5.6,
+   "delta_vs_main": 1.7,
+   "n": 6,
+   "basis": "Main average plus the mean RV-minus-LV shift in this state"
+  },
+  {
+   "key": "NC rv",
+   "state": "NC",
+   "scenario": "Registered-voter versions of paired surveys",
+   "value": 11,
+   "delta_vs_main": 0.6,
+   "n": 7,
+   "basis": "Same-survey pairs, any date"
+  },
+  {
+   "key": "NC rv_h1",
+   "state": "NC",
+   "scenario": "RV versions minus 1 point (historical midterm screen, Enten)",
+   "value": 10,
+   "delta_vs_main": -0.4,
+   "n": 7,
+   "basis": "Enten: party-ID gain from all to validated voters, these states in 2018"
+  },
+  {
+   "key": "NC screen_removed",
+   "state": "NC",
+   "scenario": "Main average with the observed screen shift added back",
+   "value": 11.1,
+   "delta_vs_main": 0.7,
+   "n": 7,
+   "basis": "Main average plus the mean RV-minus-LV shift in this state"
+  },
+  {
+   "key": "OH rv",
+   "state": "OH",
+   "scenario": "Registered-voter versions of paired surveys",
+   "value": 7.5,
+   "delta_vs_main": 4.8,
+   "n": 4,
+   "basis": "Same-survey pairs, any date"
+  },
+  {
+   "key": "OH rv_h1",
+   "state": "OH",
+   "scenario": "RV versions minus 1 point (historical midterm screen, Enten)",
+   "value": 6.5,
+   "delta_vs_main": 3.8,
+   "n": 4,
+   "basis": "Enten: party-ID gain from all to validated voters, these states in 2018"
+  },
+  {
+   "key": "OH screen_removed",
+   "state": "OH",
+   "scenario": "Main average with the observed screen shift added back",
+   "value": 5.7,
+   "delta_vs_main": 3,
+   "n": 4,
+   "basis": "Main average plus the mean RV-minus-LV shift in this state"
+  },
+  {
+   "key": "TX rv",
+   "state": "TX",
+   "scenario": "Registered-voter versions of paired surveys",
+   "value": 4,
+   "delta_vs_main": 0.9,
+   "n": 5,
+   "basis": "Same-survey pairs, any date"
+  },
+  {
+   "key": "TX rv_h1",
+   "state": "TX",
+   "scenario": "RV versions minus 1 point (historical midterm screen, Enten)",
+   "value": 3,
+   "delta_vs_main": -0.1,
+   "n": 5,
+   "basis": "Enten: party-ID gain from all to validated voters, these states in 2018"
+  },
+  {
+   "key": "TX screen_removed",
+   "state": "TX",
+   "scenario": "Main average with the observed screen shift added back",
+   "value": 5.3,
+   "delta_vs_main": 2.2,
+   "n": 5,
+   "basis": "Main average plus the mean RV-minus-LV shift in this state"
+  },
+  {
+   "key": "screen all",
+   "state": "All",
+   "scenario": "Screen shift, All Senate pairs (Aug-Oct) (RV minus LV; positive = LV more Republican)",
+   "value": 1,
+   "delta_vs_main": null,
+   "n": 33,
+   "basis": "same-survey pairs"
+  },
+  {
+   "key": "screen october",
+   "state": "All",
+   "scenario": "Screen shift, October pairs only (RV minus LV; positive = LV more Republican)",
+   "value": 2.3,
+   "delta_vs_main": null,
+   "n": 11,
+   "basis": "same-survey pairs"
+  },
+  {
+   "key": "screen excl marist",
+   "state": "All",
+   "scenario": "Screen shift, All pairs except Marist (RV minus LV; positive = LV more Republican)",
+   "value": 0.4,
+   "delta_vs_main": null,
+   "n": 28,
+   "basis": "same-survey pairs"
+  },
+  {
+   "key": "gb screen 0",
+   "state": "US",
+   "scenario": "National generic-ballot screen shift (matched releases)",
+   "delta_vs_main": null,
+   "n": 11,
+   "basis": "same-release pairs"
+  }
+ ],
+ "mike": [
+  {
+   "key": "lv all",
+   "section": "Descriptive",
+   "evidence": "Likely- vs registered-voter results of the same surveys: All Senate pairs (Aug-Oct)",
+   "value": "R+1.0",
+   "n": 33,
+   "reading": "Measures what the screen does, not whether it is right"
+  },
+  {
+   "key": "lv october",
+   "section": "Descriptive",
+   "evidence": "Likely- vs registered-voter results of the same surveys: October pairs only",
+   "value": "R+2.3",
+   "n": 11,
+   "reading": "Measures what the screen does, not whether it is right"
+  },
+  {
+   "key": "lv october excl marist",
+   "section": "Descriptive",
+   "evidence": "Likely- vs registered-voter results of the same surveys: October excluding Marist",
+   "value": "R+0.3",
+   "n": 6,
+   "reading": "Measures what the screen does, not whether it is right"
+  },
+  {
+   "key": "lv excl marist",
+   "section": "Descriptive",
+   "evidence": "Likely- vs registered-voter results of the same surveys: All pairs except Marist",
+   "value": "R+0.4",
+   "n": 28,
+   "reading": "Measures what the screen does, not whether it is right"
+  },
+  {
+   "key": "ledger politicalw",
+   "section": "Descriptive",
+   "evidence": "Senate house effect: any political weighting (11) minus demographic-only weighting (2)",
+   "value": "+0.8",
+   "n": 13,
+   "reading": "Politically weighted pollsters lean Democratic relative to demographic-only. Descriptive only: fewer than 3 verified demographic-only pollsters"
+  },
+  {
+   "key": "ledger tags",
+   "section": "Descriptive",
+   "evidence": "Senate house effect: pollsters verified to weight on recalled vote (6) minus those verified not to (5)",
+   "value": "+0.3",
+   "n": 11,
+   "reading": "Recalled-vote pollsters lean Democratic relative to the others. Relative lean only; says nothing about which group is right. 5 of 11 tags come from the specific survey release; the rest are pollster-level."
+  },
+  {
+   "key": "ledger tagsgb",
+   "section": "Descriptive",
+   "evidence": "Generic-ballot house effect: recalled-vote pollsters (4) minus pollsters verified not to weight on it (2)",
+   "value": "+0.2",
+   "n": 6,
+   "reading": "Recalled-vote pollsters lean Democratic relative to the others. Descriptive only: fewer than 3 verified pollsters in a group"
+  },
+  {
+   "key": "ledger tags25",
+   "section": "Descriptive",
+   "evidence": "2025 error: recalled-vote pollsters (2 polls) minus pollsters verified not to weight on it (5 polls)",
+   "value": "+5.7",
+   "n": 7,
+   "reading": "Recalled-vote polls missed less toward Republicans. Descriptive only: two pollsters in total"
+  },
+  {
+   "key": "target grayhouse_ia",
+   "section": "Descriptive",
+   "evidence": "GrayHouse IA recalled-vote target (Oct 28-31, 2026)",
+   "value": "target R+11.0 vs 2024 result R+13.2",
+   "n": 1,
+   "reading": "Target margin R+11 vs actual R+13.2: target is 2.2 points less Republican than the 2024 result"
+  },
+  {
+   "key": "target redbox_fl_oct",
+   "section": "Descriptive",
+   "evidence": "RedBox Research FL recalled-vote target (Oct 20-23, 2026)",
+   "value": "see note",
+   "n": 1,
+   "reading": "Weighted to the certified 2024 result via recalled vote (gap 0 by construction); the Nov wave set a Harris 44% two-party target after fieldwork"
+  },
+  {
+   "key": "split",
+   "section": "Descriptive",
+   "evidence": "Average change across states when verified recalled-vote-weighting pollsters are set aside",
+   "value": "+0.01 (toward D if positive)",
+   "n": 15,
+   "reading": "Sensitivity only; method tags are pollster-level and many pollsters are untagged"
+  },
+  {
+   "key": "prereg H1_lv_screen",
+   "section": "Pre-registered (scored after certification)",
+   "evidence": "Among Senate surveys that published both likely-voter (LV) and registered-voter (RV) results, was the LV version less accurate and more Republican than the RV version?",
+   "value": "awaiting results",
+   "n": null,
+   "reading": "Supports if: primary > 0 with the 90% interval above 0, and secondary < 0. Contradicts if: primary < 0 with the 90% interval below 0."
+  },
+  {
+   "key": "prereg H2_recalled_vote",
+   "section": "Pre-registered (scored after certification)",
+   "evidence": "Were Senate polls from pollsters verified to weight on recalled 2024 vote more Republican-skewed than polls from pollsters verified not to?",
+   "value": "awaiting results",
+   "n": null,
+   "reading": "Supports if: primary < 0 with the 90% interval below 0, and the recall group's mean absolute error is larger. Contradicts if: primary > 0 with the 90% interval above 0."
+  },
+  {
+   "key": "prereg H3_average_without_recall",
+   "section": "Pre-registered (scored after certification)",
+   "evidence": "Would the simple 30-day average have been more accurate without pollsters verified to weight on recalled 2024 vote?",
+   "value": "awaiting results",
+   "n": null,
+   "reading": "Supports if: primary <= -0.5 points and the full average's mean signed error < 0. Contradicts if: primary >= +0.5 points."
+  },
+  {
+   "key": "prereg H4_direction",
+   "section": "Pre-registered (scored after certification)",
+   "evidence": "Across competitive states, were the frozen v19 simple averages too Republican overall?",
+   "value": "awaiting results",
+   "n": null,
+   "reading": "Supports if: mean signed error < 0 with the 90% state-bootstrap interval below 0. Contradicts if: mean signed error > 0 with the interval above 0."
+  }
+ ],
+ "house": [
+  {
+   "pollster": "co/efficient",
+   "polls": 12,
+   "states": 10,
+   "lean": -3.4,
+   "lean_label": "R+3.4",
+   "recall": "unknown",
+   "party": "yes"
+  },
+  {
+   "pollster": "Stetson University",
+   "polls": 2,
+   "states": 1,
+   "lean": -2.8,
+   "lean_label": "R+2.8",
+   "recall": "unknown",
+   "party": "unknown"
+  },
+  {
+   "pollster": "Quantus Insights",
+   "polls": 13,
+   "states": 10,
+   "lean": -2.3,
+   "lean_label": "R+2.3",
+   "recall": "unknown",
+   "party": "unknown"
+  },
+  {
+   "pollster": "The Tyson Group",
+   "polls": 2,
+   "states": 1,
+   "lean": -2,
+   "lean_label": "R+2.0",
+   "recall": "unknown",
+   "party": "unknown"
+  },
+  {
+   "pollster": "National Public Affairs",
+   "polls": 5,
+   "states": 3,
+   "lean": -1.7,
+   "lean_label": "R+1.7",
+   "recall": "unknown",
+   "party": "unknown"
+  },
+  {
+   "pollster": "Trafalgar Group",
+   "polls": 20,
+   "states": 12,
+   "lean": -1.6,
+   "lean_label": "R+1.6",
+   "recall": "unknown",
+   "party": "unknown"
+  },
+  {
+   "pollster": "Emerson College",
+   "polls": 9,
+   "states": 4,
+   "lean": -1.5,
+   "lean_label": "R+1.5",
+   "recall": "no",
+   "party": "yes"
+  },
+  {
+   "pollster": "High Point Univ.",
+   "polls": 2,
+   "states": 1,
+   "lean": -1.5,
+   "lean_label": "R+1.5",
+   "recall": "yes",
+   "party": "unknown"
+  },
+  {
+   "pollster": "Fox News",
+   "polls": 9,
+   "states": 5,
+   "lean": -1.4,
+   "lean_label": "R+1.4",
+   "recall": "no",
+   "party": "no"
+  },
+  {
+   "pollster": "East Carolina Univ.",
+   "polls": 2,
+   "states": 1,
+   "lean": -1.3,
+   "lean_label": "R+1.3",
+   "recall": "unknown",
+   "party": "unknown"
+  },
+  {
+   "pollster": "Mason-Dixon",
+   "polls": 3,
+   "states": 3,
+   "lean": -0.9,
+   "lean_label": "R+0.9",
+   "recall": "unknown",
+   "party": "unknown"
+  },
+  {
+   "pollster": "Public Policy Polling",
+   "polls": 2,
+   "states": 2,
+   "lean": -0.9,
+   "lean_label": "R+0.9",
+   "recall": "unknown",
+   "party": "unknown"
+  },
+  {
+   "pollster": "InsiderAdvantage",
+   "polls": 23,
+   "states": 13,
+   "lean": -0.8,
+   "lean_label": "R+0.8",
+   "recall": "unknown",
+   "party": "yes"
+  },
+  {
+   "pollster": "Glengariff Group",
+   "polls": 2,
+   "states": 1,
+   "lean": -0.8,
+   "lean_label": "R+0.8",
+   "recall": "unknown",
+   "party": "unknown"
+  },
+  {
+   "pollster": "Texas Southern University",
+   "polls": 2,
+   "states": 1,
+   "lean": -0.8,
+   "lean_label": "R+0.8",
+   "recall": "unknown",
+   "party": "unknown"
+  },
+  {
+   "pollster": "Research Co.",
+   "polls": 3,
+   "states": 3,
+   "lean": -0.8,
+   "lean_label": "R+0.8",
+   "recall": "no",
+   "party": "no"
+  },
+  {
+   "pollster": "RedBox Research",
+   "polls": 6,
+   "states": 5,
+   "lean": -0.7,
+   "lean_label": "R+0.7",
+   "recall": "yes",
+   "party": "yes"
+  },
+  {
+   "pollster": "Rasmussen Reports",
+   "polls": 19,
+   "states": 10,
+   "lean": -0.5,
+   "lean_label": "R+0.5",
+   "recall": "unknown",
+   "party": "unknown"
+  },
+  {
+   "pollster": "ActiVote",
+   "polls": 9,
+   "states": 5,
+   "lean": -0.2,
+   "lean_label": "R+0.2",
+   "recall": "unknown",
+   "party": "unknown"
+  },
+  {
+   "pollster": "UMass Lowell",
+   "polls": 3,
+   "states": 3,
+   "lean": 0,
+   "lean_label": "Even 0.0",
+   "recall": "yes",
+   "party": "no"
+  },
+  {
+   "pollster": "Alaska Survey Research",
+   "polls": 3,
+   "states": 1,
+   "lean": 0.3,
+   "lean_label": "D+0.3",
+   "recall": "unknown",
+   "party": "unknown"
+  },
+  {
+   "pollster": "Cygnal",
+   "polls": 2,
+   "states": 2,
+   "lean": 0.3,
+   "lean_label": "D+0.3",
+   "recall": "unknown",
+   "party": "unknown"
+  },
+  {
+   "pollster": "Univ. of New Hampshire",
+   "polls": 4,
+   "states": 2,
+   "lean": 0.3,
+   "lean_label": "D+0.3",
+   "recall": "unknown",
+   "party": "unknown"
+  },
+  {
+   "pollster": "Verasight",
+   "polls": 2,
+   "states": 2,
+   "lean": 0.3,
+   "lean_label": "D+0.3",
+   "recall": "yes",
+   "party": "yes"
+  },
+  {
+   "pollster": "Suffolk University",
+   "polls": 6,
+   "states": 4,
+   "lean": 0.4,
+   "lean_label": "D+0.4",
+   "recall": "no",
+   "party": "yes"
+  },
+  {
+   "pollster": "Bowling Green Univ.",
+   "polls": 2,
+   "states": 1,
+   "lean": 0.5,
+   "lean_label": "D+0.5",
+   "recall": "unknown",
+   "party": "unknown"
+  },
+  {
+   "pollster": "Data for Progress",
+   "polls": 4,
+   "states": 4,
+   "lean": 0.6,
+   "lean_label": "D+0.6",
+   "recall": "unknown",
+   "party": "unknown"
+  },
+  {
+   "pollster": "YouGov",
+   "polls": 24,
+   "states": 11,
+   "lean": 0.6,
+   "lean_label": "D+0.6",
+   "recall": "yes",
+   "party": "yes"
+  },
+  {
+   "pollster": "Big Data Poll",
+   "polls": 5,
+   "states": 5,
+   "lean": 0.6,
+   "lean_label": "D+0.6",
+   "recall": "unknown",
+   "party": "unknown"
+  },
+  {
+   "pollster": "AARP",
+   "polls": 5,
+   "states": 5,
+   "lean": 0.7,
+   "lean_label": "D+0.7",
+   "recall": "unknown",
+   "party": "unknown"
+  },
+  {
+   "pollster": "Guidant Polling",
+   "polls": 2,
+   "states": 2,
+   "lean": 0.7,
+   "lean_label": "D+0.7",
+   "recall": "unknown",
+   "party": "unknown"
+  },
+  {
+   "pollster": "Abacus Data",
+   "polls": 5,
+   "states": 5,
+   "lean": 0.9,
+   "lean_label": "D+0.9",
+   "recall": "unknown",
+   "party": "unknown"
+  },
+  {
+   "pollster": "Echelon Insights",
+   "polls": 6,
+   "states": 6,
+   "lean": 1,
+   "lean_label": "D+1.0",
+   "recall": "unknown",
+   "party": "unknown"
+  },
+  {
+   "pollster": "CNN / SSRS",
+   "polls": 8,
+   "states": 6,
+   "lean": 1,
+   "lean_label": "D+1.0",
+   "recall": "unknown",
+   "party": "unknown"
+  },
+  {
+   "pollster": "Michigan State Univ.",
+   "polls": 3,
+   "states": 1,
+   "lean": 1,
+   "lean_label": "D+1.0",
+   "recall": "unknown",
+   "party": "unknown"
+  },
+  {
+   "pollster": "SurveyUSA",
+   "polls": 6,
+   "states": 3,
+   "lean": 1,
+   "lean_label": "D+1.0",
+   "recall": "unknown",
+   "party": "unknown"
+  },
+  {
+   "pollster": "Elon University",
+   "polls": 2,
+   "states": 1,
+   "lean": 1.1,
+   "lean_label": "D+1.1",
+   "recall": "unknown",
+   "party": "unknown"
+  },
+  {
+   "pollster": "GBAO",
+   "polls": 5,
+   "states": 3,
+   "lean": 1.1,
+   "lean_label": "D+1.1",
+   "recall": "unknown",
+   "party": "unknown"
+  },
+  {
+   "pollster": "Change Research",
+   "polls": 5,
+   "states": 2,
+   "lean": 1.3,
+   "lean_label": "D+1.3",
+   "recall": "unknown",
+   "party": "unknown"
+  },
+  {
+   "pollster": "Mitchell Research",
+   "polls": 2,
+   "states": 1,
+   "lean": 1.3,
+   "lean_label": "D+1.3",
+   "recall": "unknown",
+   "party": "unknown"
+  },
+  {
+   "pollster": "Texas Public Opinion Research",
+   "polls": 3,
+   "states": 1,
+   "lean": 1.3,
+   "lean_label": "D+1.3",
+   "recall": "unknown",
+   "party": "unknown"
+  },
+  {
+   "pollster": "Global Strategy Group",
+   "polls": 3,
+   "states": 2,
+   "lean": 1.3,
+   "lean_label": "D+1.3",
+   "recall": "unknown",
+   "party": "unknown"
+  },
+  {
+   "pollster": "New River / GSG",
+   "polls": 3,
+   "states": 3,
+   "lean": 1.5,
+   "lean_label": "D+1.5",
+   "recall": "yes",
+   "party": "unknown"
+  },
+  {
+   "pollster": "Siena College",
+   "polls": 20,
+   "states": 11,
+   "lean": 1.8,
+   "lean_label": "D+1.8",
+   "recall": "no",
+   "party": "unknown"
+  },
+  {
+   "pollster": "Saint Anselm College",
+   "polls": 3,
+   "states": 1,
+   "lean": 1.8,
+   "lean_label": "D+1.8",
+   "recall": "unknown",
+   "party": "unknown"
+  },
+  {
+   "pollster": "Wash. Post-Schar School",
+   "polls": 3,
+   "states": 3,
+   "lean": 1.9,
+   "lean_label": "D+1.9",
+   "recall": "unknown",
+   "party": "unknown"
+  },
+  {
+   "pollster": "Marist Poll",
+   "polls": 10,
+   "states": 5,
+   "lean": 2,
+   "lean_label": "D+2.0",
+   "recall": "unknown",
+   "party": "unknown"
+  },
+  {
+   "pollster": "Harper Polling",
+   "polls": 3,
+   "states": 1,
+   "lean": 2.1,
+   "lean_label": "D+2.1",
+   "recall": "unknown",
+   "party": "unknown"
+  },
+  {
+   "pollster": "St. Pete Polls",
+   "polls": 3,
+   "states": 1,
+   "lean": 2.6,
+   "lean_label": "D+2.6",
+   "recall": "unknown",
+   "party": "unknown"
+  },
+  {
+   "pollster": "Impact Research",
+   "polls": 4,
+   "states": 2,
+   "lean": 3.2,
+   "lean_label": "D+3.2",
+   "recall": "unknown",
+   "party": "unknown"
+  },
+  {
+   "pollster": "Concord Public Opinion Partners",
+   "polls": 2,
+   "states": 2,
+   "lean": 3.5,
+   "lean_label": "D+3.5",
+   "recall": "unknown",
+   "party": "unknown"
+  }
+ ],
+ "context": [
+  {
+   "key": "approval_silver",
+   "variable": "Trump job approval, Silver Bulletin average (approve / disapprove / net)",
+   "value": "37.3 / 59.9 / -22.6",
+   "as_of": "2026-10-30",
+   "source": "Silver Bulletin via Wikipedia table",
+   "source_url": "https://en.wikipedia.org/wiki/Opinion_polling_on_the_second_Trump_presidency",
+   "use": "context only - not applied to any margin"
+  },
+  {
+   "key": "approval_econ",
+   "variable": "Trump job approval, The Economist average",
+   "value": "34 / 61 / -27",
+   "as_of": "2026-10-30",
+   "source": "The Economist via Wikipedia table",
+   "source_url": "https://en.wikipedia.org/wiki/Opinion_polling_on_the_second_Trump_presidency",
+   "use": "context only"
+  },
+  {
+   "key": "approval_nyt",
+   "variable": "Trump job approval, New York Times average",
+   "value": "37 / 60 / -23",
+   "as_of": "2026-10-30",
+   "source": "NYT via Wikipedia table",
+   "source_url": "https://en.wikipedia.org/wiki/Opinion_polling_on_the_second_Trump_presidency",
+   "use": "context only"
+  },
+  {
+   "key": "ev_total",
+   "variable": "Early ballots cast nationwide (in person + mail)",
+   "value": "48,508,702 (26,175,091 in person; 22,452,937 mail)",
+   "as_of": "reported late Oct (article dated by URL Oct 30)",
+   "source": "UF Election Lab as reported by Voz",
+   "source_url": "https://voz.us/en/politics/261030/1000205/early-voting-midterms-2026-breaks-the-record.html",
+   "use": "context only; record for a midterm at that point per the report"
+  },
+  {
+   "key": "ev_tx",
+   "variable": "Early ballots cast, Texas",
+   "value": "6,859,288",
+   "as_of": "same report",
+   "source": "UF Election Lab via Voz",
+   "source_url": "https://voz.us/en/politics/261030/1000205/early-voting-midterms-2026-breaks-the-record.html",
+   "use": "context only"
+  },
+  {
+   "key": "ev_fl",
+   "variable": "Early ballots cast, Florida",
+   "value": "4,406,146",
+   "as_of": "same report",
+   "source": "UF Election Lab via Voz",
+   "source_url": "https://voz.us/en/politics/261030/1000205/early-voting-midterms-2026-breaks-the-record.html",
+   "use": "context only"
+  },
+  {
+   "key": "ev_ga",
+   "variable": "Early ballots cast, Georgia",
+   "value": "2,595,894",
+   "as_of": "same report",
+   "source": "UF Election Lab via Voz",
+   "source_url": "https://voz.us/en/politics/261030/1000205/early-voting-midterms-2026-breaks-the-record.html",
+   "use": "context only"
+  },
+  {
+   "key": "ev_fl_party",
+   "variable": "Florida early ballots by party registration (R / D / other)",
+   "value": "40.4% / 38.6% / 21.1%",
+   "as_of": "about Oct 30",
+   "source": "UF Election Lab via FOX 13",
+   "source_url": "https://www.fox13news.com/news/florida-early-voting-more-than-4-2-million-ballots-cast-ahead-election-day",
+   "use": "registration, not candidate votes"
+  },
+  {
+   "key": "ev_pattern",
+   "variable": "Expert note on early vs Election Day voting",
+   "value": "Democrats generally vote earlier, Republicans more on Election Day (M. McDonald)",
+   "as_of": "2026-10-23",
+   "source": "WYPR interview",
+   "source_url": "https://www.wypr.org/2026-10-23/millions-of-americans-have-already-cast-their-votes-for-the-midterms-data-shows",
+   "use": "why early-vote party splits cannot be read as margins"
+  },
+  {
+   "key": "mi_stevens",
+   "variable": "Michigan: Democrat Haley Stevens endorsed Republican Mike Rogers",
+   "value": "event on Nov 1, after Siena fieldwork",
+   "as_of": "2026-11-01",
+   "source": "AP (linked in repository README)",
+   "source_url": "https://apnews.com/article/d7053bbd0ed2fd70756896c6e4b66a27",
+   "use": "no poll measures its effect"
+  }
+ ],
+ "late": [
+  {
+   "id": "AK-V20-SIENA",
+   "race": "AK Senate",
+   "pollster": "Siena College",
+   "field": "release 2026-11-01",
+   "sample": "610 LV",
+   "result": "D/I 48 - R 46",
+   "verification": "shares, design effects and MOE read by Claude on the Siena release (Nov 1); sample sizes from NYT as quoted by Daily Kos (secondary)",
+   "source_url": "https://sri.siena.edu/2026/11/01/nytimes-siena-poll-of-likely-voters-alaska-iowa-kansas-maine-michigan-ohio-and-texas/"
+  },
+  {
+   "id": "IA-V20-SIENA",
+   "race": "IA Senate",
+   "pollster": "Siena College",
+   "field": "release 2026-11-01",
+   "sample": "705 LV",
+   "result": "D/I 48 - R 47",
+   "verification": "shares, design effects and MOE read by Claude on the Siena release (Nov 1); sample sizes from NYT as quoted by Daily Kos (secondary)",
+   "source_url": "https://sri.siena.edu/2026/11/01/nytimes-siena-poll-of-likely-voters-alaska-iowa-kansas-maine-michigan-ohio-and-texas/"
+  },
+  {
+   "id": "KS-V20-SIENA",
+   "race": "KS Senate",
+   "pollster": "Siena College",
+   "field": "release 2026-11-01",
+   "sample": "736 LV",
+   "result": "D/I 49 - R 44",
+   "verification": "shares, design effects and MOE read by Claude on the Siena release (Nov 1); sample sizes from NYT as quoted by Daily Kos (secondary)",
+   "source_url": "https://sri.siena.edu/2026/11/01/nytimes-siena-poll-of-likely-voters-alaska-iowa-kansas-maine-michigan-ohio-and-texas/"
+  },
+  {
+   "id": "ME-V20-SIENA",
+   "race": "ME Senate",
+   "pollster": "Siena College",
+   "field": "release 2026-11-01",
+   "sample": "714 LV",
+   "result": "D/I 51 - R 45",
+   "verification": "shares, design effects and MOE read by Claude on the Siena release (Nov 1); sample sizes from NYT as quoted by Daily Kos (secondary)",
+   "source_url": "https://sri.siena.edu/2026/11/01/nytimes-siena-poll-of-likely-voters-alaska-iowa-kansas-maine-michigan-ohio-and-texas/"
+  },
+  {
+   "id": "MI-V20-SIENA",
+   "race": "MI Senate",
+   "pollster": "Siena College",
+   "field": "release 2026-11-01",
+   "sample": "1011 LV",
+   "result": "D/I 53 - R 42",
+   "verification": "shares, design effects and MOE read by Claude on the Siena release (Nov 1); sample sizes from NYT as quoted by Daily Kos (secondary)",
+   "source_url": "https://sri.siena.edu/2026/11/01/nytimes-siena-poll-of-likely-voters-alaska-iowa-kansas-maine-michigan-ohio-and-texas/"
+  },
+  {
+   "id": "OH-V20-SIENA",
+   "race": "OH Senate",
+   "pollster": "Siena College",
+   "field": "release 2026-11-01",
+   "sample": "717 LV",
+   "result": "D/I 49 - R 44",
+   "verification": "shares, design effects and MOE read by Claude on the Siena release (Nov 1); sample sizes from NYT as quoted by Daily Kos (secondary)",
+   "source_url": "https://sri.siena.edu/2026/11/01/nytimes-siena-poll-of-likely-voters-alaska-iowa-kansas-maine-michigan-ohio-and-texas/"
+  },
+  {
+   "id": "TX-V20-SIENA",
+   "race": "TX Senate",
+   "pollster": "Siena College",
+   "field": "release 2026-11-01",
+   "sample": "1215 LV",
+   "result": "D/I 50 - R 43",
+   "verification": "shares, design effects and MOE read by Claude on the Siena release (Nov 1); sample sizes from NYT as quoted by Daily Kos (secondary)",
+   "source_url": "https://sri.siena.edu/2026/11/01/nytimes-siena-poll-of-likely-voters-alaska-iowa-kansas-maine-michigan-ohio-and-texas/"
+  },
+  {
+   "id": "TX-V20-ATLAS",
+   "race": "TX Senate",
+   "pollster": "AtlasIntel",
+   "field": "2026-10-28 to 2026-11-01",
+   "sample": "1678 A",
+   "result": "D/I 52.2 - R 46.2",
+   "verification": "dates, sample and adult population read by Claude on the AtlasIntel index; candidate shares from trackers via ChatGPT (PDF not machine-readable here)",
+   "source_url": "https://www.atlasintel.org/poll/usa-texas-2026-11-01"
+  },
+  {
+   "id": "TX-V20-TRAF",
+   "race": "TX Senate",
+   "pollster": "Trafalgar Group",
+   "field": "2026-10-31 to 2026-11-01",
+   "sample": "1089 LV",
+   "result": "D/I 47.5 - R 48.1",
+   "verification": "read by Claude on the Trafalgar report PDF",
+   "source_url": "https://www.thetrafalgargroup.org/wp-content/uploads/2026/11/TX-Midterms-Report-1101.pdf"
+  },
+  {
+   "id": "MI-V20-RESCO",
+   "race": "MI Senate",
+   "pollster": "Research Co.",
+   "field": "2026-10-30 to 2026-11-01",
+   "sample": "450 LV",
+   "result": "D/I 51 - R 48",
+   "verification": "decided-voter shares, dates, sample and weighting read by Claude on the Research Co. release (published 2026-11-02 03:10 UTC)",
+   "source_url": "https://researchco.ca/2026/11/01/midterms-2026-one/"
+  },
+  {
+   "id": "MN-V20-RESCO",
+   "race": "MN Senate",
+   "pollster": "Research Co.",
+   "field": "2026-10-30 to 2026-11-01",
+   "sample": "450 LV",
+   "result": "D/I 52 - R 47",
+   "verification": "decided-voter shares, dates, sample and weighting read by Claude on the Research Co. release (published 2026-11-02 03:10 UTC)",
+   "source_url": "https://researchco.ca/2026/11/01/midterms-2026-one/"
+  },
+  {
+   "id": "OH-V20-RESCO",
+   "race": "OH Senate",
+   "pollster": "Research Co.",
+   "field": "2026-10-30 to 2026-11-01",
+   "sample": "450 LV",
+   "result": "D/I 49 - R 48",
+   "verification": "decided-voter shares, dates, sample and weighting read by Claude on the Research Co. release (published 2026-11-02 03:10 UTC)",
+   "source_url": "https://researchco.ca/2026/11/01/midterms-2026-one/"
+  },
+  {
+   "id": "IA-V20-GRAYHOUSE",
+   "race": "IA Senate",
+   "pollster": "GrayHouse",
+   "field": "2026-10-28 to 2026-10-31",
+   "sample": "601 LV",
+   "result": "D/I 46 - R 48",
+   "verification": "read by Claude on the GrayHouse release (published 2026-11-02 06:54 UTC, before the 08:08 ET freeze)",
+   "source_url": "https://www.grayhouse.com/post/grayhouse-poll-hinson-leads-in-iowa-by-2"
+  },
+  {
+   "id": "GB26V20-ATLAS",
+   "race": "National generic ballot",
+   "pollster": "AtlasIntel",
+   "field": "2026-10-28 to 2026-11-01",
+   "sample": "3566 A",
+   "result": "D 55.5 - R 41.4",
+   "verification": "dates, sample and adult population read by Claude on the AtlasIntel index; shares from trackers via ChatGPT, pending PDF confirmation",
+   "source_url": "https://www.atlasintel.org/poll/usa-national-2026-11-01"
+  }
+ ],
+ "generic": {
+  "simple": 8.6,
+  "lv_only": 8.6,
+  "releases": 37,
+  "v19_frozen": 8.5
+ },
+ "methods": [
+  "Model 1 (published poll averages) applies the five unchanged v19 averaging methods to the v20 dataset: every v19 input poll plus 13 Senate polls and 1 national poll released before or around the freeze and verified afterwards. Raw margins; 30-day window (three most recent polls if fewer); as of Nov 2.",
+  "Models 2 and 3 change one thing at a time: dropping polls with partisan or campaign sponsors (either side), symmetrically trimming the three most Republican- and three most Democratic-leaning pollsters, or setting aside pollsters verified to weight on recalled 2024 vote. These are sensitivity checks, not corrections.",
+  "Model 4 applies each documented historical polling miss (AAPOR 2016-2024, AAPOR Senate 2022 and 2024, Silver Bulletin 2018 and 2022, the 2025 off-year governor races, the 2021 New Jersey race and the 2024 generic ballot) uniformly to every race. Model 5 shows registered- versus likely-voter versions and turnout-screen scenarios.",
+  "Uncertainty: one shared error per simulation (Student-t, 4 degrees of freedom, mean zero, SD from the root-mean-square of past cycle-level misses) plus independent state errors (SD from AAPOR Senate poll errors after removing each cycle's mean and typical sampling error) plus each state average's own sampling noise. 20,000 simulations per setting, fixed seed. No setting assumes polls lean toward either party.",
+  "Validation on documented misses and leave-one-cycle-out tests shows the central setting under-covers large past misses (some of which were selected because they were notable). The probabilities are therefore labeled experimental; the historical-scenario seat range is the primary statement of uncertainty.",
+  "Context variables (presidential approval, early-vote counts and party-registration shares) are shown with sources and dates and never converted into margin adjustments. Early-vote registration is not candidate support.",
+  "Pre-registered tests of the likely-voter and recalled-vote hypothesis (preregistration_mike.json) will be scored once, after certification, with score_v20.js. A pattern by method is observational and cannot by itself prove cause.",
+  "Limitations: post-freeze intake covers the named late releases and PollCheck lists checked on Nov 2, not every poll; several fields rest on secondary sources (marked per poll); Siena fieldwork dates and AtlasIntel candidate shares were not readable from Claude's tools; the Nov 1 Michigan endorsement is not measured by any poll."
+ ],
+ "links": [
+  {
+   "label": "Repository",
+   "url": "https://github.com/Marxicano/polling-lab-2026"
+  },
+  {
+   "label": "Frozen v19 snapshot",
+   "url": "https://github.com/Marxicano/polling-lab-2026/blob/main/data/snapshot_2026-11-02.csv"
+  },
+  {
+   "label": "Freeze record",
+   "url": "https://github.com/Marxicano/polling-lab-2026/blob/main/SNAPSHOT_RECORD.md"
+  },
+  {
+   "label": "Post-freeze audit",
+   "url": "https://github.com/Marxicano/polling-lab-2026/blob/main/POST_FREEZE_INDEPENDENT_AUDIT_2026-11-02.md"
+  },
+  {
+   "label": "Scenario explorer (ChatGPT)",
+   "url": "https://github.com/Marxicano/polling-lab-2026/blob/main/scenario-explorer.html"
+  }
+ ]
+}

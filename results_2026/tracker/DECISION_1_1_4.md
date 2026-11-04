@@ -1,0 +1,14 @@
+# Decision: a missing Maine denominator and an official final ranked-choice round (tracker 1.1.4)
+
+**Question.** A Maine candidate has more than half of the candidate votes, but the Round 0 ballots-cast count (blank, overvoted and excluded first rankings included) is not recorded. 1.1.3 withheld the first-round winner and also refused a final-round report until the count was entered. Kimi's test withholds the winner but accepts the final round.
+
+**Law.** 21-A M.R.S. §723-A(2): a candidate wins outright with first rankings on more than 50% of all ballots cast for the office, including blank and overvoted first rankings; "if no candidate has been assigned ranking number one on more than 50% of the ballots cast for that particular office, the ranked-choice voting count must proceed in rounds," and with two or fewer continuing candidates the one with the most votes wins. The Secretary of State conducts that count centrally only after making exactly this determination. The point is not hypothetical: in Maine's 2nd District in 2024, Rep. Jared Golden's campaign argued in a Nov 7 letter to the Secretary of State that blank first choices should not count toward the threshold; the statute's text, quoted above, includes them.
+
+**Decision: Kimi is right about the final round; 1.1.3 was right about the first-round winner.**
+- An official final ranked-choice round is the authority's own legal finding that there was no first-round majority. The tracker exists to record official outcomes, not to re-adjudicate them, so missing tracker-side data should not block an official certified result. 1.1.3's block protected against nothing (it never produced a wrong winner) but could leave a certified official outcome unrecorded.
+- The tracker still never declares a first-round winner it cannot verify, and never invents the denominator.
+- A certified final round decides the winner, labeled with the statutory basis and flagged until the Round 0 counts are entered.
+- Missing data and contradicting data are different. If the recorded counts show a majority, a final round is refused, and counts showing a majority are refused once a final round exists. Both are stop-and-escalate cases, as ChatGPT advised in its 1.1.2 review.
+- Alaska and Georgia are unaffected: their legal denominators are the candidate-vote totals, so the case cannot arise.
+
+**Smallest change.** In results_lib.js: remove the rejection of a final round when the Maine test is "unknown"; when it is unknown and a certified final round exists, take that round's winner with the flag; refuse a first-round report whose recorded counts show a majority once a final round exists; show a discrepancy, never a winner, if both ever coexist. Conventions 1.1.4 change only the missing-denominator rule. The polling margin, polling error (candidate-vote denominator), frozen v19/v20/v20.1 data and H1-H4 are unchanged.

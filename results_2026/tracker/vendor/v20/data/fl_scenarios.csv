@@ -1,0 +1,6 @@
+scenario,d_reg_to_d,d_reg_to_r,r_reg_to_d,r_reg_to_r,npa_to_d,npa_to_r,oth_to_d,oth_to_r,note
+"Strict party line, no-party voters split evenly",1.0,0.0,0.0,1.0,0.5,0.5,0.5,0.5,Reference point only
+"Typical loyalty, no-party voters even",0.92,0.07,0.06,0.93,0.48,0.48,0.45,0.45,Illustrative assumption
+"Typical loyalty, no-party voters lean D by 10",0.92,0.07,0.06,0.93,0.53,0.43,0.5,0.45,Illustrative assumption
+"Typical loyalty, no-party voters lean R by 10",0.92,0.07,0.06,0.93,0.43,0.53,0.45,0.5,Illustrative assumption
+"Typical loyalty, no-party voters split like NYT/Siena's independents",0.92,0.07,0.06,0.93,0.52,0.38,0.45,0.45,"Uses the 52-38 independents split from the NYT/Siena crosstab (secondary source). Poll 'independents' may be self-identified rather than no-party registrants, and subgroup error is large."

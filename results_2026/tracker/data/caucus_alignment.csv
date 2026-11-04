@@ -1,0 +1,4 @@
+state,senator_or_candidate,party,caucus,status,term_or_note,source
+ME,Angus King,I,D,sitting; seat not up in 2026,caucuses with Democrats,https://www.senate.gov/about/parties-leadership/party-division.shtml
+VT,Bernie Sanders,I,D,sitting; seat not up in 2026,caucuses with Democrats,https://www.senate.gov/about/parties-leadership/party-division.shtml
+NE,Dan Osborn,I,unconfirmed,2026 candidate,has not committed to either caucus; counted as unaligned unless an official statement is recorded,v20/data/races (candidate); caucus not assumed

@@ -1,0 +1,17 @@
+{
+ "printed_at_utc": "2026-11-04T04:56:55.871Z",
+ "returns": {
+  "rows": 0,
+  "head": "GENESIS-polling-lab-2026-results"
+ },
+ "untracked": {
+  "rows": 0,
+  "head": "GENESIS-polling-lab-2026-untracked"
+ },
+ "domains": {
+  "rows": 0,
+  "head": "GENESIS-polling-lab-2026-domains"
+ },
+ "conventions_sha256": "8b58b910860094c1eec78cf2653910afe640ab296e96670eb1726112c294a839",
+ "dependency_manifest_sha256": "0c42360cac97409dc3923a2b09e55ca86f1e6473f2e7bc84ccf616b2ca72a69b"
+}

@@ -1,0 +1,36 @@
+Tracker 1.1.2 code, before the 1.1.3 fix  (2026-11-03 10:05 EST, Node v22.22.2)
+
+=== ChatGPT's Maine blank-ballot demonstration (unchanged script, via wrapper) ===
+   REAL MAINE THRESHOLD (all 100,000 ballots, blanks included): 48000/100000 = 48%; no first-round majority.
+   TRACKER (95,000 entered candidate votes, 5,000 blanks omitted): {"winner":"D","winner_candidate":"Troy Jackson","winner_basis":"certified first-round majority","firstRoundTotal":95000}
+   REJECTS potential actual RCV final: rejected (ME): no further ranked-choice round: Troy Jackson won a first-round majority
+FAIL Maine blank-ballot demonstration: the tracker still declares a first-round majority from candidate votes only
+exit 1
+
+=== ChatGPT's original 1.1.1 RCV final-round script (unchanged) ===
+PASS AK rejects three-candidate purported final RCV round: rejected (AK): a final ranked-choice round must list exactly two continuing candidates (Alaska and Maine tabulate until two remain unless someone wins the first round)
+PASS AK correct two-finalist ranked-choice result: independent wins
+PASS ME rejects three-candidate purported final RCV round: rejected (ME): a final ranked-choice round must list exactly two continuing candidates (Alaska and Maine tabulate until two remain unless someone wins the first round)
+PASS ME correct two-finalist ranked-choice result: independent wins
+exit 0
+
+=== Claude 1.1.3 regression tests ===
+Tracker 1.1.3 regression tests (legal majority denominator vs polling-error denominator)
+  FAIL M1 Maine 48/42/5 with 5,000 blank first rankings: no first-round majority (48% of 100,000 ballots); final round decides
+       -> winner=D basis=certified first-round majority
+  FAIL M2 Maine with the blank count not recorded: winner withheld for human review, polling score kept, final round blocked
+       -> winner=D basis=certified first-round majority
+  FAIL M3 Maine unambiguous majority on the legal denominator: first-round winner; no final round accepted
+       -> Cannot read properties of undefined (reading 'result')
+  PASS M4 Maine with no candidate above 50% even of candidate votes: no denominator needed for a final round
+  FAIL M5 denominator fields must reconcile, carry an official source, agree across rows, and appear only on first-round reports
+       -> ballots cast not equal to candidate votes plus blank, overvote and excluded (accepted)
+  FAIL M6 Alaska: the legal threshold is a majority of active ballots (AS 15.15.350(d)), so blank or overvoted ballots do not enter it
+       -> Cannot read properties of undefined (reading 'denominator')
+  FAIL M7 Georgia unchanged: majority of the votes cast for candidates
+       -> Cannot read properties of undefined (reading 'denominator')
+  FAIL M8 conventions 1.1.3 separate the two denominators; 1.1.1 archived; frozen data, pre-registration and vendored files unchanged
+       -> conventions do not state both denominators
+
+1 of 8 checks pass; failing: M1, M2, M3, M5, M6, M7, M8
+exit 1

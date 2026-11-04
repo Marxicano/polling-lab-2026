@@ -1,0 +1,27 @@
+Tracker 1.1.1 code, before the 1.1.2 fix  (2026-11-03 09:36 EST, Node v22.22.2)
+
+=== Reconstruction of ChatGPT's RCV final-round edge test (original not attached) ===
+FAIL AK three-candidate rcv_final must be rejected: accepted; winner="I"
+PASS AK two-finalist rcv_final (R 45%, I 55%) accepted and I wins: winner="I"
+FAIL ME three-candidate rcv_final must be rejected: accepted; winner="I"
+PASS ME two-finalist rcv_final (R 45%, I 55%) accepted and I wins: winner="I"
+
+2 RCV final-round check(s) FAIL
+exit 1
+
+=== Claude 1.1.2 regression tests ===
+Tracker 1.1.2 regression tests (final ranked-choice round: exactly two finalists)
+  FAIL F1-AK AK: a final round with three or four continuing candidates is rejected
+       -> 3-candidate final round accepted
+  PASS F2-AK AK: a lawful two-finalist final round is accepted and decides the winner; polling error unchanged
+  FAIL F1-ME ME: a final round with three or four continuing candidates is rejected
+       -> 3-candidate final round accepted
+  PASS F2-ME ME: a lawful two-finalist final round is accepted and decides the winner; polling error unchanged
+  FAIL F3 data-entry guide explains Maine Round 0 versus Round 1 and the Georgia runoff replacement exception
+       -> Maine Round 0 / Round 1 distinction missing
+  PASS F4 conventions, static data, vendored dependencies and frozen anchors unchanged from 1.1.1
+  FAIL F5 ChatGPT's 1.1 edge-test file is archived byte-for-byte; the copy that runs differs only in its final-round fixtures
+       -> original not archived unchanged
+
+3 of 7 checks pass; failing: F1-AK, F1-ME, F3, F5
+exit 1

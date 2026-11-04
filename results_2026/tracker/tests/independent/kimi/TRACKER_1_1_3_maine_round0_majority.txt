@@ -1,0 +1,65 @@
+'use strict';
+
+// Report-level statutory denominator for Maine's election-night Round 0.
+// Existing total_votes remains the candidate-vote/scoring denominator.
+const MAJORITY_FIELD = 'majority_denominator';
+
+function count(value, label) {
+  if (typeof value === 'number') {
+    if (!Number.isSafeInteger(value) || value < 0) throw new Error(`${label} must be a nonnegative safe integer`);
+    return value;
+  }
+  if (typeof value === 'string' && /^\d+$/.test(value.trim())) {
+    const n = Number(value.trim());
+    if (Number.isSafeInteger(n)) return n;
+  }
+  throw new Error(`${label} must be a nonnegative safe integer`);
+}
+
+function assessMaineRound0(rows) {
+  if (!Array.isArray(rows) || rows.length === 0) throw new Error('Maine Round 0 report has no candidate rows');
+  const votes = rows.map((row, i) => count(row.votes, `votes[${i}]`));
+  const totals = rows.map((row, i) => count(row.total_votes, `total_votes[${i}]`));
+  if (new Set(totals).size !== 1) throw new Error('total_votes must be identical on every candidate row');
+  const candidateVoteTotal = votes.reduce((a, b) => a + b, 0);
+  if (totals[0] !== candidateVoteTotal) throw new Error('total_votes must equal the candidate-vote total, including OTH/write-ins');
+
+  const raw = rows.map(row => row[MAJORITY_FIELD]);
+  const missing = raw.map(v => v === undefined || v === null || (typeof v === 'string' && v.trim() === ''));
+  if (missing.some(Boolean) && !missing.every(Boolean)) {
+    throw new Error(`${MAJORITY_FIELD} must be identical on every candidate row`);
+  }
+
+  let denominator = null;
+  if (!missing.every(Boolean)) {
+    const values = raw.map((v, i) => count(v, `${MAJORITY_FIELD}[${i}]`));
+    if (new Set(values).size !== 1) throw new Error(`${MAJORITY_FIELD} must be identical on every candidate row`);
+    denominator = values[0];
+    if (denominator <= 0) throw new Error(`${MAJORITY_FIELD} must be positive`);
+    if (denominator < candidateVoteTotal) {
+      throw new Error(`${MAJORITY_FIELD} cannot be less than the candidate-vote total`);
+    }
+  }
+
+  const leaderVotes = Math.max(...votes);
+  const common = {
+    candidate_vote_total: candidateVoteTotal,
+    majority_denominator: denominator,
+    leader_votes: leaderVotes,
+  };
+  if (denominator === null) {
+    // Adding blank/overvoted ballots can only increase the denominator. If the
+    // leader already fails the candidate-vote threshold, no majority is possible.
+    if (2 * leaderVotes <= candidateVoteTotal) {
+      return { ...common, status: 'no_majority', reason: 'candidate-vote upper bound' };
+    }
+    return { ...common, status: 'review', reason: 'Maine Round 0 majority denominator unavailable; no majority inferred' };
+  }
+  return {
+    ...common,
+    status: 2 * leaderVotes > denominator ? 'majority' : 'no_majority',
+    reason: 'statutory Round 0 ballots-cast denominator',
+  };
+}
+
+module.exports = { MAJORITY_FIELD, assessMaineRound0 };

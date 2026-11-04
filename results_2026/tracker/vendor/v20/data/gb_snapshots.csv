@@ -1,0 +1,9 @@
+key,series,aggregator,measure,as_of,dem,rep,margin_published,note,source_url
+silver_2026-01-22,silver_default,Silver Bulletin,Default average,2026-01-22,,,5.3,Average at the launch of the 2026 tracker,https://www.natesilver.net/p/midterm-polls-have-good-news-great
+silver_2026-07-10,silver_default,Silver Bulletin,Default average,2026-07-10,,,6.3,,https://www.natesilver.net/p/generic-ballot-average-2026-nate-silver-bulletin-congress-polls
+silver_2026-08-03,silver_default,Silver Bulletin,Default average,2026-08-03,,,6.4,,https://natesilver.net/p/generic-ballot-average-2026-nate-silver-bulletin-congress-polls
+silver_2026-09-08,silver_default,Silver Bulletin,Default average,2026-09-08,,,6.6,,https://www.natesilver.net/generic-ballot-average-2026-nate-silver-bulletin-congress-polls
+silver_2026-10-07,silver_default,Silver Bulletin,Default average,2026-10-07,,,8.9,As reported by Political.org,https://political.org/2026/10/08/is-a-democratic-blue-wave-turning-into-a-midterm-tsunami-new-polling-points-to-a-rout/
+silver_2026-10-26,silver_default,Silver Bulletin,Default average,2026-10-26,,,9.0,All populations; uses the likely-voter version when a pollster releases both,https://www.natesilver.net/p/generic-ballot-average-2026-nate-silver-bulletin-congress-polls
+silverlv_2026-10-26,silver_lv,Silver Bulletin,Likely-voter adjusted,2026-10-26,,,9.5,The version its forecast uses; applies a likely-voter adjustment,https://www.natesilver.net/p/generic-ballot-average-2026-nate-silver-bulletin-congress-polls
+fpo_2026-10-26,fpo,FiftyPlusOne,Quality and recency weighted,2026-10-26,52.2,43.1,,Published as vote shares; margin computed here,https://fiftyplusone.news/polls/generic-ballot/generic-ballot

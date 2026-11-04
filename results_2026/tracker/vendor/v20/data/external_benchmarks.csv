@@ -1,0 +1,8 @@
+key,measure,value,unit,source,source_url
+enten_senate,"Average Republican gain from registered to likely voters, key 2026 Senate polls releasing both",4,points,"Harry Enten, CNN, Oct 28 2026",https://transcripts.cnn.com/show/cnc/date/2026-10-28/segment/06
+enten_national,"Same measure, national House ballot",1,points,"Harry Enten, CNN, Oct 28 2026",https://transcripts.cnn.com/show/cnc/date/2026-10-28/segment/06
+enten_hist_national,"Republican gain in party ID from all to validated voters, midterms with Republican presidents 1982-2018",1,points,"Harry Enten, CNN, Oct 28 2026",https://transcripts.cnn.com/show/cnc/date/2026-10-28/segment/06
+enten_hist_2018_key,"Same, key 2018 Senate races",2,points,"Harry Enten, CNN, Oct 28 2026",https://transcripts.cnn.com/show/cnc/date/2026-10-28/segment/06
+enten_hist_2026_states,"Same, the key 2026 Senate states in 2018",1,points,"Harry Enten, CNN, Oct 28 2026",https://transcripts.cnn.com/show/cnc/date/2026-10-28/segment/06
+mike_senate,Mike from PA: Democratic Senate seats expected,56,seats,"Mike from PA on X, Oct 28 2026 12:45 PM (screenshot)",
+mike_house,Mike from PA: Democratic House seats expected,250,seats,"Mike from PA on X, Oct 28 2026 12:45 PM (screenshot)",

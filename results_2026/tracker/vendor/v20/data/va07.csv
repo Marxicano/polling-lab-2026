@@ -1,0 +1,9 @@
+key,short_label,label,kind,est_turnout,margin,dem_votes,rep_votes,source
+s2014,2014-style electorate,The types of people who voted in 2014,Scenario,250000,-5,,,"NYT Upshot/Siena live poll of Virginia 7th district, 2018, 500 interviews (shown in the shared clip)"
+s_history,Past voting history,People whose voting history suggests they will vote,Scenario,277000,-2,,,"NYT Upshot/Siena live poll of Virginia 7th district, 2018, 500 interviews (shown in the shared clip)"
+s_estimate,The Times's estimate,The Times's own estimate,Published estimate,280000,-2,,,"NYT Upshot/Siena live poll of Virginia 7th district, 2018, 500 interviews (shown in the shared clip)"
+s_truthful,"Self-reported, adjusted","People who say they will vote, adjusted for past truthfulness",Scenario,297000,-2,,,"NYT Upshot/Siena live poll of Virginia 7th district, 2018, 500 interviews (shown in the shared clip)"
+s_certain,Almost certain to vote,People who say they are almost certain to vote,Scenario,342000,3,,,"NYT Upshot/Siena live poll of Virginia 7th district, 2018, 500 interviews (shown in the shared clip)"
+s2016,2016-style electorate,The types of people who voted in 2016,Scenario,371000,0,,,"NYT Upshot/Siena live poll of Virginia 7th district, 2018, 500 interviews (shown in the shared clip)"
+s_all,All active registered voters,Every active registered voter,Scenario,496000,2,,,"NYT Upshot/Siena live poll of Virginia 7th district, 2018, 500 interviews (shown in the shared clip)"
+result,Actual result,Actual result (unofficial count),Result,,,175817,169226,https://richmondfreepress.com/news/2018/nov/08/newcomer-abigail-spanberger-claims-narrow-win-over

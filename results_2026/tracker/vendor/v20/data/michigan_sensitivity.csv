@@ -1,0 +1,6 @@
+method,n_releases,raw_margin_d,as_of,note
+"All recent releases, including disclosed partisan sponsor",16,3.7,2026-10-29,Descriptive sample mean only; no house adjustment; not a prediction
+Excluding flagged partisan-sponsored survey,15,3.62,2026-10-29,Descriptive sample mean only; no house adjustment; not a prediction
+One latest release per pollster,13,3.48,2026-10-29,Descriptive sample mean only; no house adjustment; not a prediction
+Likely-voter only,15,3.48,2026-10-29,Descriptive sample mean only; no house adjustment; not a prediction
+Last 10 days by publication date,6,3.87,2026-10-29,Descriptive sample mean only; no house adjustment; not a prediction

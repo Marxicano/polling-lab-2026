@@ -1,0 +1,50 @@
+Tracker 1.0 code, before any fix — review regression tests
+Run: node results_2026/tracker/tests/test_review_regressions.js  (2026-11-03 02:54 EST)
+
+Tracker review regression tests (ChatGPT, 2026-11-03)
+  FAIL B1a single-candidate certified report is rejected (was accepted and scored +50)
+       -> one Brown row with no Husted row was accepted
+  FAIL B1b duplicate candidate rows in one report are rejected
+       -> duplicate Hinson row accepted
+  FAIL B1c candidate votes must add up to total_votes
+       -> votes summing to less than total accepted
+  PASS B1d negative, fractional and unsafe vote numbers are rejected
+  FAIL B1e rows of one report must agree on source, status metadata and reporting share
+       -> mixed metadata accepted
+  FAIL B1f a report cannot be split or extended across appends
+       -> report split across two appends accepted
+  FAIL B1g named candidates must carry their own party
+       -> Brown recorded as Republican accepted
+  FAIL B2a an untracked-seat result for a nonexistent state cannot change the seat count
+       -> nonexistent state ZZ moved the base from 43 D / 42 R to 44 D / 41 R
+  FAIL B2b untracked results: tracked states, wrong holder, non-authority URL and contradictions are rejected
+       -> no validated append path for untracked results
+  FAIL B3 a recount after certification suspends the score and winner until a recount is certified
+       -> recount ignored: comparable=certified
+  FAIL B4 tracker builds and scores from a checkout containing only the files the GitHub repo actually has
+       -> Command failed: /usr/bin/node -e require('./results_2026/tracker/build_dashboard.js').build({ outDir: process.argv[1], builtAt: '2026-11-03T12:00:00Z' }) /tmp/clean-out-PefpRS
+  FAIL B5 party seats and caucus alignment are reported separately (41 D / 42 R / 2 I; caucus 43 / 42)
+       -> base reported as {"D":43,"R":42,"I":0,"untracked":20} instead of party seats 41 D / 42 R / 2 I
+  FAIL B6a every build verifies all dependencies, including the pre-registration, scorer and registry
+       -> no dependency verification
+  FAIL B6b a root missing the pre-registration, scorer and registry cannot build (was: builds)
+       -> dashboard built without the pre-registration, scorer and registry
+  FAIL B6c tampering with any pinned input (e.g. states.csv or run_v20.js) stops the build
+       -> no vendored copy of v20/data/states.csv
+  FAIL A1 a results host that is only pending verification is rejected until its authority link is recorded
+       -> no separate list of pending result hosts
+  FAIL A2 registered H1-H4 scoring is recorded once, with input fingerprints, and never silently recomputed
+       -> no one-time registered scoring record
+  FAIL A3 chain heads can be printed for independent anchoring; wording does not claim tamper-proofing
+       -> no chain-head printer
+  FAIL A4 a reporting share needs its unit, and provisional labels say which unit reached 100%
+       -> reported_pct=100 accepted without a unit
+  FAIL A6 chamber control is not computed until all 20 untracked contests are confirmed
+       -> control computed while 20 untracked contests are only assumed
+  FAIL A7 Mississippi disclosure separates sponsorship from firm alignment
+       -> Mississippi wording still calls all three polls Democratic-sponsored
+  FAIL A8 small screens: tables fit a 320-pixel viewport
+       -> no small-screen table rule
+
+1 of 22 review checks pass; failing: B1a, B1b, B1c, B1e, B1f, B1g, B2a, B2b, B3, B4, B5, B6a, B6b, B6c, A1, A2, A3, A4, A6, A7, A8
+exit code: 1

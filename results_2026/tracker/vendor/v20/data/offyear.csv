@@ -1,0 +1,4 @@
+key,race,year,poll_avg_margin,result_margin,poll_avg_source,source_url
+nj_2021,New Jersey governor,2021,7.8,2.8,RealClearPolitics final average,https://www.realclearpolling.com/stories/analysis/are-nj-and-virginia-governors-races-now-toss-ups
+nj_2025,New Jersey governor,2025,3.3,13,RealClearPolitics average; result is the count reported the week after the election,https://www.realclearpolling.com/stories/analysis/how-polls-undercounted-democratic-support-on-tuesday
+va_2025,Virginia governor,2025,10.2,15.2,RealClearPolitics average; result is the count reported the week after the election,https://www.realclearpolling.com/stories/analysis/how-polls-undercounted-democratic-support-on-tuesday

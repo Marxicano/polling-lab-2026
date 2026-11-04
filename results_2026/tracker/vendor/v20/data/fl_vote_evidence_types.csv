@@ -1,0 +1,6 @@
+key,evidence_type,what_it_measures,candidate_information,source,source_url,status
+official,Verified ballot records,"Ballots received by party registration (mail and early), statewide","None: registration only, no candidate choice",Florida Division of Elections daily statistics (loaded as fl_early_vote_official),https://countyfilesvbm-ev.floridados.gov/VoteByMailEarlyVotingReports/PublicStats,loaded (Oct 28 08:07 ET)
+tracker,Third-party compilation of ballot records,Same counts compiled from county reports at a later time,None,FL Voice tracker (fl_early_vote),,loaded (Oct 28 11:01 ET)
+self_reported,Self-reported votes of early voters in polls,How respondents who say they already voted report having voted,"Yes, but self-reported and subject to nonresponse and recall error",RedBox Florida poll Q1-Q2 (already-voted respondents asked their choice); split published only in the crosstabs file,https://afightworthhaving.com/polling/2026/florida/crosstabs.csv,not yet extracted
+topline,Estimated support among likely voters,"Vote intention plus self-reported early votes, weighted",Yes,All Senate polls (senate_polls),,loaded
+independents,Subgroup estimates,"Vote choice among independents, defined per poll","Yes, with large subgroup error",fl_crosstabs (group_type column says self-identified vs registration),,loaded

@@ -1,0 +1,51 @@
+state,name,col,row,race,seat,incumbent,incumbent_party,incumbent_status,dem_candidate,rep_candidate,ind_candidate,forecaster_rating
+AK,Alaska,0,0,yes,Regular,Dan Sullivan,R,Running,Mary Peltola,Dan Sullivan,,Competitive
+AL,Alabama,6,6,yes,Regular,Tommy Tuberville,R,Running for governor (open seat),Everett Wess,Barry Moore,,Rated safe
+AR,Arkansas,4,5,yes,Regular,Tom Cotton,R,Running,Hallie Shoffner,Tom Cotton,,Rated safe
+AZ,Arizona,1,5,no,,,,,,,,
+CA,California,0,4,no,,,,,,,,
+CO,Colorado,2,4,yes,Regular,John Hickenlooper,D,Running,John Hickenlooper,Mark Baisley,,Rated safe
+CT,Connecticut,9,3,no,,,,,,,,
+DE,Delaware,9,4,yes,Regular,Chris Coons,D,Running,Chris Coons,Michael Katz,,Rated safe
+FL,Florida,8,7,yes,Special,Ashley Moody,R,Running (appointed 2025),Angie Nixon,Ashley Moody,,Competitive
+GA,Georgia,7,6,yes,Regular,Jon Ossoff,D,Running,Jon Ossoff,Mike Collins,,Competitive
+HI,Hawaii,0,7,no,,,,,,,,
+IA,Iowa,4,3,yes,Regular,Joni Ernst,R,Not running (open seat),Josh Turek,Ashley Hinson,,Competitive
+ID,Idaho,1,2,yes,Regular,Jim Risch,R,Running,,Jim Risch,Todd Achilles,Rated safe
+IL,Illinois,5,2,yes,Regular,Dick Durbin,D,Not running (open seat),Juliana Stratton,Don Tracy,,Rated safe
+IN,Indiana,5,3,no,,,,,,,,
+KS,Kansas,3,5,yes,Regular,Roger Marshall,R,Running,Adam Hamilton,Roger Marshall,,Competitive
+KY,Kentucky,5,4,yes,Regular,Mitch McConnell,R,Not running (open seat),Charles Booker,Andy Barr,,Rated safe
+LA,Louisiana,4,6,yes,Regular,Bill Cassidy,R,Lost primary (open seat),Jamie Davis,Julia Letlow,,Rated safe
+MA,Massachusetts,9,2,yes,Regular,Ed Markey,D,Running,Ed Markey,John Deaton,,Rated safe
+MD,Maryland,8,4,no,,,,,,,,
+ME,Maine,10,0,yes,Regular,Susan Collins,R,Running,Troy Jackson,Susan Collins,,Competitive
+MI,Michigan,6,2,yes,Regular,Gary Peters,D,Not running (open seat),Abdul El-Sayed,Mike Rogers,,Competitive
+MN,Minnesota,4,2,yes,Regular,Tina Smith,D,Not running (open seat),Peggy Flanagan,Michele Tafoya,,Competitive
+MO,Missouri,4,4,no,,,,,,,,
+MS,Mississippi,5,6,yes,Regular,Cindy Hyde-Smith,R,Running,Scott Colom,Cindy Hyde-Smith,,Competitive
+MT,Montana,2,2,yes,Regular,Steve Daines,R,Not running (open seat),Alani Bankhead,Kurt Alme,Seth Bodnar,Rated safe
+NC,North Carolina,6,5,yes,Regular,Thom Tillis,R,Not running (open seat),Roy Cooper,Michael Whatley,,Competitive
+ND,North Dakota,3,2,no,,,,,,,,
+NE,Nebraska,3,4,yes,Regular,Pete Ricketts,R,Running,,Pete Ricketts,Dan Osborn,Competitive
+NH,New Hampshire,10,1,yes,Regular,Jeanne Shaheen,D,Not running (open seat),Chris Pappas,John Sununu,,Competitive
+NJ,New Jersey,8,3,yes,Regular,Cory Booker,D,Running,Cory Booker,Justin Murphy,,Rated safe
+NM,New Mexico,2,5,yes,Regular,Ben Ray Luján,D,Running,Ben Ray Luján,Larry Marker,,Rated safe
+NV,Nevada,1,3,no,,,,,,,,
+NY,New York,8,2,no,,,,,,,,
+OH,Ohio,6,3,yes,Special,Jon Husted,R,Running (appointed 2025),Sherrod Brown,Jon Husted,,Competitive
+OK,Oklahoma,3,6,yes,Regular,Alan Armstrong,R,Took office 2026; not on the ballot (open seat),N'Kiyla Thomas,Kevin Hern,,Rated safe
+OR,Oregon,0,3,yes,Regular,Jeff Merkley,D,Running,Jeff Merkley,David Smith,,Rated safe
+PA,Pennsylvania,7,3,no,,,,,,,,
+RI,Rhode Island,10,3,yes,Regular,Jack Reed,D,Running,Jack Reed,Raymond McKay,,Rated safe
+SC,South Carolina,7,5,yes,Regular,Darline Graham,R,Took office 2026; on the ballot,Annie Andrews,Darline Graham,,Competitive
+SD,South Dakota,3,3,yes,Regular,Mike Rounds,R,Running,,Mike Rounds,Brian Bengs,Rated safe
+TN,Tennessee,5,5,yes,Regular,Bill Hagerty,R,Running,Marquita Bradshaw,Bill Hagerty,,Rated safe
+TX,Texas,3,7,yes,Regular,John Cornyn,R,Lost primary (open seat),James Talarico,Ken Paxton,,Competitive
+UT,Utah,1,4,no,,,,,,,,
+VA,Virginia,7,4,yes,Regular,Mark Warner,D,Running,Mark Warner,Bert Mizusawa,,Rated safe
+VT,Vermont,9,1,no,,,,,,,,
+WA,Washington,0,2,no,,,,,,,,
+WI,Wisconsin,5,1,no,,,,,,,,
+WV,West Virginia,6,4,yes,Regular,Shelley Moore Capito,R,Running,Rachel Fetty Anderson,Shelley Moore Capito,,Rated safe
+WY,Wyoming,2,3,yes,Regular,Cynthia Lummis,R,Not running (open seat),James Byrd,Harriet Hageman,,Rated safe
