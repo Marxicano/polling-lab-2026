@@ -1,0 +1,10 @@
+{
+  "title": "Polling Lab v20.1 exploratory analyses (not part of the H1-H4 pre-registration)",
+  "registered_at_et": "2026-11-02, before any 2026 results exist",
+  "relationship_to_preregistration": "The published v20 pre-registration (preregistration_mike.json, SHA-256 15da8d6c9d3c37cb4b3f1ba79b7a9372e9e2b81eae9ef40c6e16e551a3cdd1af) is unchanged and remains the only confirmatory test set. E1-E3 are exploratory and must be reported as such.",
+  "analyses": [
+    { "id": "E1_rolling_origin_cycles", "what": "Rolling-origin backtest of mean rules on AAPOR all-office cycle errors 2016-2024 (train on earlier cycles only), scored by residual, t(4) coverage, log score and normal CRPS", "status": "computed pre-election (v201_rolling_origin); descriptive; four folds", "decision_use": "None: the zero-mean baseline is retained by rule; the analysis only documents how alternatives would have scored" },
+    { "id": "E2_recall_stratified_scenario", "what": "Polls from pollsters documented to weight on recalled 2024 vote moved toward the challenger by kappa x b (kappa 0.5 or 1; b 1.0 or 2.2), others unchanged", "status": "computed pre-election (v201_recall_scenarios); hypothetical", "decision_use": "None before results. After certification, report whether the scenario averages were closer to results than the unadjusted averages, as an exploratory comparison only" },
+    { "id": "E3_proper_scores", "what": "After certification: Brier score of the v20 central simulation's per-state probabilities and normal-approximation CRPS of state margins (predictive SD = sqrt(sigma_sys^2 + sigma_state^2 + se^2)), plus the same for the regional-correlation diagnostic", "status": "code in score_v201.js; runs only on certified results", "decision_use": "Calibration evidence for future cycles; does not alter v20 or H1-H4" }
+  ]
+}

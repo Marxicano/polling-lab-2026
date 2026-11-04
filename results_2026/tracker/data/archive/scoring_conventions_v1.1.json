@@ -1,0 +1,35 @@
+{
+  "title": "Results-phase measurement conventions for the 2026 Senate Polling Lab tracker",
+  "version": "1.1",
+  "written": "2026-11-03 (Eastern), before any 2026 returns were entered",
+  "supersedes": "1.0 (data/archive/scoring_conventions_v1.0.json, SHA-256 d2b75c8b51174d08944a08b8b858cd041fa83562fe0a9991d95c2c21fa765325), revised in response to ChatGPT's independent tracker review of 2026-11-03. Both versions predate any results.",
+  "relationship": "Operational definitions only. They do not change the frozen v19 snapshot, the v20 or v20.1 estimates, the H1-H4 pre-registration (15da8d6c...d1af) or ChatGPT's SCORING_PLAN_2026-11-02.md.",
+  "result_margin": "Challenger share minus Republican share, in percentage points, of all votes counted for the office in the round used (minor candidates and write-ins included). Every report must list both named candidates exactly once and candidate rows that sum exactly to total_votes; otherwise it is rejected.",
+  "primary_round": "first",
+  "primary_round_reason": "The frozen averages use first-choice or head-to-head poll numbers as published. Final ranked-choice rounds are recorded separately and decide winners only.",
+  "comparability_limitation": "A head-to-head poll question is not identical to a first-choice ballot share; in Alaska and Maine the comparison is disclosed as approximate.",
+  "ranked_choice_states": ["AK", "ME"],
+  "runoff_states": ["GA"],
+  "runoff_rule": "Georgia: the November count is scored; the seat is assigned only after a certified majority or a certified runoff (scheduled Dec 1, 2026).",
+  "statuses": ["unofficial", "certified", "recount", "recount_certified", "amended_certified"],
+  "status_lifecycle": {
+    "unofficial": "Allowed only before any certification or recount report for that round.",
+    "certified": "First certified canvass.",
+    "recount": "A recount or contest is under way. Suspends comparisons, errors and the winner for that round until a later recount_certified or amended_certified report.",
+    "recount_certified": "Certified result after a recount; allowed only after a recount report.",
+    "amended_certified": "An official correction to a certified result; allowed only after a certified report.",
+    "ordering": "The latest report by report_timestamp_utc determines the state of a round, subject to the rules above."
+  },
+  "comparison_rules": {
+    "certified": "Rounds whose latest report is certified, recount_certified or amended_certified enter the primary v19 and secondary v20 scorecards.",
+    "unofficial_complete": "An unofficial report is compared, labeled provisional, only when it reports 100 percent of its stated unit (ballots or precincts). Provisional comparisons never count as scores; 100 percent of precincts may still exclude ballots counted later.",
+    "unofficial_partial": "Counts and reporting share only: no error, no winner, no projection.",
+    "reporting_unit": "Any reported share must state its unit (ballots, precincts or counties) and the authority's own status wording."
+  },
+  "sources": "Results only from the state election authority's confirmed domains (and their subdomains). A separate results host is accepted only after a domain-verification record shows the authority's own page linking to it. News projections, AP calls and aggregators are never inputs. Mississippi waits for statewide official returns.",
+  "seat_accounting": "Seats are reported two ways: party affiliation (Democratic, Republican, independent) and caucus alignment. Sitting independents Angus King and Bernie Sanders caucus with Democrats (senate.gov). A newly elected independent is unaligned unless an official statement is recorded. The frozen v19 53/47 figure is caucus-equivalent (independents who caucus with Democrats counted as D).",
+  "untracked_contests": "Each of the 20 untracked 2026 races counts as an assumption (held by its current party) until a certified result from that state's authority is recorded. Chamber control is not computed until all 15 tracked and all 20 untracked contests are confirmed.",
+  "registered_tests_gate": "Run the unchanged registered scorer once all 15 races have certified first-round results, or on 2027-01-15 with the certified races available (reporting what was missing). The first run is recorded once, with input fingerprints, and never overwritten; later analyses with amended data are labeled revisions.",
+  "exploratory": "v20.1 E2-E3 are run under the same gate and labeled exploratory.",
+  "revisions": "New official reports are appended as new rows. The logs are hash-chained, which detects edits and deletions but not a complete rewrite; publish chain heads in separate dated commits to anchor them. Corrections to poll data go to corrections_ledger.csv and never alter frozen files."
+}

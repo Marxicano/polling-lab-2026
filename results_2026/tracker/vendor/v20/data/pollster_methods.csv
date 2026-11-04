@@ -1,0 +1,100 @@
+pollster,mode,lv_screen,recalled_vote_weighting,party_weighting,source_url,verification,tag_scope
+A2 Insights,,unknown,unknown,unknown,,needs verification from the pollster's methodology statement,
+AARP,,unknown,unknown,unknown,,needs verification from the pollster's methodology statement,
+ActiVote,"Forced two-party choice, no undecided option",unknown,unknown,unknown,https://www.activote.net/polls/generic-ballot/,mode from release,pollster-general
+Alaska Survey Research,,unknown,unknown,unknown,,needs verification from the pollster's methodology statement,
+AtlasIntel,"Online, proprietary Random Digital Recruitment with post-stratification",not stated,not stated (post-stratification variables not disclosed in the sources found),not stated,https://atlasintel.org/media/atlasintel-is-the-most-accurate-pollster-of-the-us-presidential-election-2nd-time-in-a-row,pollster description of its method; weighting targets not disclosed,pollster-general
+Bowling Green Univ.,,unknown,unknown,unknown,,needs verification from the pollster's methodology statement,
+CBS / YouGov,,unknown,unknown,unknown,,needs verification from the pollster's methodology statement,
+CNN / SSRS,Online and telephone; registered voters sampled from voter lists and a probability-based panel,"soft: all registered voters kept and weighted by predicted likelihood of voting (CNN/SSRS state polls, Sept and Oct 2026)",not stated (weighting variables not in the coverage read),not stated,https://ssrs.com/news/maine-and-michigan-senate-races-2026/,SSRS September release (Claude) and SSRS October release (ChatGPT),survey
+Catawba College,,unknown,unknown,unknown,,needs verification from the pollster's methodology statement,
+Change Research,,unknown,unknown,unknown,,needs verification from the pollster's methodology statement,
+Christopher Newport U.,,unknown,unknown,unknown,,needs verification from the pollster's methodology statement,
+Cygnal,,unknown,unknown,unknown,,needs verification from the pollster's methodology statement,
+Data for Progress,,unknown,unknown,unknown,,needs verification from the pollster's methodology statement,
+EMC Research,,unknown,unknown,unknown,,needs verification from the pollster's methodology statement,
+EPIC-MRA,,unknown,unknown,unknown,,needs verification from the pollster's methodology statement,
+East Carolina Univ.,,unknown,unknown,unknown,,needs verification from the pollster's methodology statement,
+Echelon Insights,,unknown,unknown,unknown,,needs verification from the pollster's methodology statement,
+Elon University,,unknown,unknown,unknown,,needs verification from the pollster's methodology statement,
+Emerson College,"Mixed: text-to-web, IVR landline, online panel",turnout modeling (details not stated),"no: weighting variables listed as gender, education, race, age, party registration and region (Iowa release, Aug 2026)",yes (party registration),https://emersoncollegepolling.com/iowa-2026-poll/,"survey release (Iowa, Aug 2026); 2024 vote is asked in crosstabs but not listed as a weight",survey
+Fox News,Voter-file sample; live phone interviews plus text-to-web (Fox official 2026 statement),"probabilistic model: past vote history, interest, intention to vote, age, education, race, ethnicity, marital status (Michigan release, Sept 2026)","no: weighting variables listed as age, race, education and area (Michigan release, Sept 2026)","no: Fox states its polls are not weighted by party identification (methodology statement, Apr 2026)",https://www.foxnews.com/politics/fox-news-poll-michigan-voters-split-between-el-sayed-rogers.amp,survey release (Michigan Sept 2026) plus pollster statement (Apr 2026); other Fox state polls assumed to use the same template,survey
+GQR,,unknown,unknown,unknown,,needs verification from the pollster's methodology statement,
+Glengariff Group,,unknown,unknown,unknown,,needs verification from the pollster's methodology statement,
+Guidant Polling,,unknown,unknown,unknown,,needs verification from the pollster's methodology statement,
+Harper Polling,,unknown,unknown,unknown,,needs verification from the pollster's methodology statement,
+Harris (HarrisX),,unknown,unknown,unknown,,needs verification from the pollster's methodology statement,
+HarrisX,,unknown,unknown,unknown,,needs verification from the pollster's methodology statement,
+Hart Research / Public Opinion Strategies,,unknown,unknown,unknown,,needs verification from the pollster's methodology statement,
+High Point Univ.,"Online, fieldwork by YouGov",vote-history and self-report model,yes,not stated,https://www.highpoint.edu/src/files/2023/08/HPU-Poll-120-Memo-1.pdf,pollster statement (spring 2026 memo),pollster-general
+Impact Research,,unknown,unknown,unknown,,needs verification from the pollster's methodology statement,
+InsiderAdvantage,Mixed text and online panel (April 2026 national release); cell/text used in 2024 state surveys,Likely voters reported; screening thresholds not disclosed in cited releases,not stated,yes: political affiliation (April 2026 national release),https://insideradvantage.com/insideradvantage-national-survey-trump-job-approval-bouncing-back-approve-44-disapprove-49/,2026 primary pollster national release; party weighting for its specific Senate state polls not yet verified,pollster-general
+Ipsos,Online probability panel (KnowledgePanel),not stated,yes (per ABC News/Ipsos statement),yes (Pew NPORS party ID),https://www.goodmorningamerica.com/news/story/abc-news-polling-methodology-standards-145373,statement covers ABC News/Ipsos; Reuters/Ipsos assumed similar,pollster-general
+James Madison Institute,,unknown,unknown,unknown,,needs verification from the pollster's methodology statement,
+John Zogby Strategies,,unknown,unknown,unknown,,needs verification from the pollster's methodology statement,
+Kaplan Strategies,,unknown,unknown,unknown,,needs verification from the pollster's methodology statement,
+MDW Communications,,unknown,unknown,unknown,,needs verification from the pollster's methodology statement,
+Maine People's Resource Center,,unknown,unknown,unknown,,needs verification from the pollster's methodology statement,
+Marist Poll,"Multi-mode: phone from L2 voter file, text, online panels",soft: probability-of-voting weight on registered voters,not stated in the excerpt,not stated in the excerpt,https://maristpoll.marist.edu/wp-content/uploads/2026/10/Marist-Poll_MI-NOS-and-Tables_202610191238FFx09@Jal.pdf,"pollster statement (Oct 2026), partial",survey
+Mason-Dixon,,unknown,unknown,unknown,,needs verification from the pollster's methodology statement,
+Michigan State Univ.,,unknown,unknown,unknown,,needs verification from the pollster's methodology statement,
+Mitchell Research,,unknown,unknown,unknown,,needs verification from the pollster's methodology statement,
+Morning Consult,,unknown,unknown,unknown,,needs verification from the pollster's methodology statement,
+N+ Univision,,unknown,unknown,unknown,,needs verification from the pollster's methodology statement,
+NH Journal,,unknown,unknown,unknown,,needs verification from the pollster's methodology statement,
+National Public Affairs,,unknown,unknown,unknown,,needs verification from the pollster's methodology statement,
+New River / GSG,Not stated,"soft: registered voters with vote history, no exclusion by stated likelihood",yes (reported 2024 vote),not stated,https://www.cookpolitical.com/sites/default/files/2026-09/September%202026%20CPR%20Battleground%20Districts%20Methodology.pdf,pollster statement for the Cook House battleground project; Senate project assumed same,pollster-general
+Nexus/Strategic Partners Solutions,,unknown,unknown,unknown,,needs verification from the pollster's methodology statement,
+OnMessage,,unknown,unknown,unknown,,needs verification from the pollster's methodology statement,
+OnMessage Inc.,,unknown,unknown,unknown,,needs verification from the pollster's methodology statement,
+Opinion Diagnostics,,unknown,unknown,unknown,,needs verification from the pollster's methodology statement,
+Overton Insights,,unknown,unknown,unknown,,needs verification from the pollster's methodology statement,
+Public Policy Polling,,unknown,unknown,unknown,,needs verification from the pollster's methodology statement,
+Quantus Insights,"SMS-to-mobile, using active registered voter file (2026 Montana); Iowa: SMS invitations",Iowa: 24 declared nonvoters excluded from 738 completes; Montana: election-voter subset for ballot items,not stated (asking respondents for 2024 vote does not prove weighting to that variable),not stated (Montana disclosure lists demographic/geographic raking),https://quantusinsights.org/polling/f/montana-senate-alme-leads-by-16-as-bodnar-consolidates,"2026 pollster releases, methodology varies by state; no affirmative recalled-vote weighting evidence",survey
+Quinnipiac,"Live-interviewer RDD phone, landline and cell",likely voters (screen not described in excerpt),"no: adult sample weighted to Census data by sample balancing (New Jersey release, Oct 2025)","no: party ID is asked and reported, not listed as a weight (New Jersey release, Oct 2025)",https://poll.qu.edu/images/polling/nj/nj10152025_demos_njpa20.pdf,"survey release (NJ, Oct 9-13 2025); the final Oct 30 NJ release assumed to use the same procedure",survey
+Roanoke College,,unknown,unknown,unknown,,needs verification from the pollster's methodology statement,
+Rosetta Stone,,unknown,unknown,unknown,,needs verification from the pollster's methodology statement,
+Rutgers-Eagleton,,unknown,unknown,unknown,,needs verification from the pollster's methodology statement,
+Saint Anselm College,,unknown,unknown,unknown,,needs verification from the pollster's methodology statement,
+Siena College,Voter-file sample (NYT/Siena),not stated in summary,"no: uses a modeled ""synthetic past vote"" from the voter file since May 2026",not stated,https://en.wikipedia.org/wiki/Siena_Research_Institute,secondary summary of the NYT methodology,secondary
+St. Pete Polls,,unknown,unknown,unknown,,needs verification from the pollster's methodology statement,
+State Navigate,,unknown,unknown,unknown,,needs verification from the pollster's methodology statement,
+Stetson University,,unknown,unknown,unknown,,needs verification from the pollster's methodology statement,
+Suffolk University,"Live phone, landline and cell, probability proportionate to size",self-reported: very or somewhat likely to vote (Massachusetts statements),"no: quota and demographic targets listed as gender, race, education, age and party affiliation (Massachusetts statements, Nov 2025 and Feb 2026)",yes (party affiliation quota or target),https://www.suffolk.edu/academics/research-at-suffolk/political-research-center/polls/massachusetts/2025,pollster statements for Massachusetts polls; Senate-state releases assumed to use the same procedure,pollster-general
+SurveyUSA,Mixed; optimized per project,filtered from registered voters; described per release,"not stated for 2026 (its 2024 Minnesota releases weighted to recalled 2020 vote; 2026 KSTP boilerplate lists only gender, age and race)",not stated,https://kstp.com/?p=4002360,2026 general boilerplate plus 2024 releases; the specific 2026 Senate releases were not checked,pollster-general
+Susquehanna Polling,,unknown,unknown,unknown,,needs verification from the pollster's methodology statement,
+TIPP,,unknown,unknown,unknown,,needs verification from the pollster's methodology statement,
+Targoz Market Research,,unknown,unknown,unknown,,needs verification from the pollster's methodology statement,
+Tavern Research,,unknown,unknown,unknown,,needs verification from the pollster's methodology statement,
+Texas Public Opinion Research,,unknown,unknown,unknown,,needs verification from the pollster's methodology statement,
+Texas Pulse Poll,,unknown,unknown,unknown,,needs verification from the pollster's methodology statement,
+Texas Southern University,,unknown,unknown,unknown,,needs verification from the pollster's methodology statement,
+The Citadel,,unknown,unknown,unknown,,needs verification from the pollster's methodology statement,
+Trafalgar Group,"Mix of live phone, IVR, texts, email, online targeted opt-in and digital callback",not stated in general methodology,not stated,not stated,https://www.thetrafalgargroup.org/polling-methodology/,Pollster official general method; no explicit 2026 sample-specific party or prior-vote weighting statement,pollster-general
+TrueDot.ai,AI research platform,unknown,unknown,unknown,https://thehill.com/homenews/campaign/6143963-democrats-lead-congressional-ballot-ddhq/,mode from release,secondary
+UMass Lowell,"Online, fieldwork by YouGov",soft: likely-voter battery slightly raises weights; no exclusion,yes,no separate party target (2024 vote only),https://www.uml.edu/docs/2026-October-National-Methodology_tcm18-423716.pdf,pollster statement (Oct 2026),survey
+Univ. of Houston,,unknown,unknown,unknown,,needs verification from the pollster's methodology statement,
+Univ. of Houston - Texas Southern U.,,unknown,unknown,unknown,,needs verification from the pollster's methodology statement,
+Univ. of New Hampshire,,unknown,unknown,unknown,,needs verification from the pollster's methodology statement,
+Univ. of North Florida,,unknown,unknown,unknown,,needs verification from the pollster's methodology statement,
+Univ. of Texas - Tyler,,unknown,unknown,unknown,,needs verification from the pollster's methodology statement,
+University of Houston Hobby School,,unknown,unknown,unknown,,needs verification from the pollster's methodology statement,
+University of Texas,,unknown,unknown,unknown,,needs verification from the pollster's methodology statement,
+Verasight,Online panel,not stated,yes,yes (3-way party ID),https://www.gelliottmorris.com/p/2026-07-23-lab-npors-pid5-weighting,analyst statement for the Strength In Numbers poll (Jul 2026),pollster-general
+Victory Insights,,unknown,unknown,unknown,,needs verification from the pollster's methodology statement,
+Wash. Post-Schar School,,unknown,unknown,unknown,,needs verification from the pollster's methodology statement,
+Wedgewood Polls,,unknown,unknown,unknown,,needs verification from the pollster's methodology statement,
+Wick,,unknown,unknown,unknown,,needs verification from the pollster's methodology statement,
+YouGov,Online opt-in panel with sample matching,not stated in the national statement,yes,yes (baseline party ID from Nov 2024 profile),https://yougov.com/en-us/articles/55603-congressional-election-2026-midterms-donald-trump-september-18-21-2026-economist-yougov-poll,"pollster statement (Economist/YouGov national, Sept 2026); state polls assumed similar",pollster-general
+Z to A Research,,unknown,unknown,unknown,,needs verification from the pollster's methodology statement,
+Zenith Research,,unknown,unknown,unknown,,needs verification from the pollster's methodology statement,
+co/efficient,"Mobile text responses and landline interviews (Florida Oct 18–20; Minnesota Sept 14–15, 2026)",Likely general-election voters; selection rule not detailed in cited disclosures,not stated,yes: registered party (FL) or party affiliation (MN) in 2026 state polls,https://battlegrounds.coefficient.org/fl/,2026 pollster primary Florida and Minnesota state methodology; other states not separately checked,survey
+Prolific,Online panel,modeled turnout using stated likelihood calibrated to past midterms,yes (certified 2024 results and 2020 vote),yes (Pew NPORS party identification),https://www.prolific.com/resources/poll-democrats-lead-by-11-points-here-s-how-we-reached-that-number,survey release (Oct 2026 generic-ballot poll),survey
+Focaldata,,unknown,unknown,unknown,,needs verification from the pollster's methodology statement,
+Leger,,unknown,unknown,unknown,,needs verification from the pollster's methodology statement,
+RMG Research,,unknown,unknown,unknown,,needs verification from the pollster's methodology statement,
+SurveyMonkey,,unknown,unknown,unknown,,needs verification from the pollster's methodology statement,
+The Rainey Center,,unknown,unknown,unknown,,needs verification from the pollster's methodology statement,
+RedBox Research,"Text-message invitation to a web survey, voter-file sample (English only)",soft: each respondent weighted by a voter-file turnout score adjusted by stated likelihood; no hard screen,yes: weighted to the certified 2024 result through recalled vote (Florida Oct 2026 methodology),yes (party registration),https://afightworthhaving.com/polling/2026/florida/methodology,"survey methodology page (Florida, Oct 2026); Michigan release says the same",survey
+Research Co.,Online panel,likely voters (screen not described),"no: weighted only to census age and gender (Nov 1, 2026 release)",no: weighted only to census age and gender,https://researchco.ca/2026/11/01/midterms-2026-one/,"survey release (Nov 1, 2026), read by Claude",survey
+GrayHouse,Voter-file sample; SMS text-to-web plus live phone,political-engagement turnout model,"yes: 2024 presidential vote target Trump 54, Harris 43 (Iowa, Oct 28-31, 2026)",yes (party registration),https://www.grayhouse.com/post/grayhouse-poll-hinson-leads-in-iowa-by-2,"survey release (Nov 2, 2026), read by Claude",survey

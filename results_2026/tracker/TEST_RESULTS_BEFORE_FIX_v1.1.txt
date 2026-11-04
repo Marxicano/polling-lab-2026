@@ -1,0 +1,39 @@
+Tracker 1.1 code, before the 1.1.1 fixes
+(2026-11-03 08:49 EST, Node v22.22.2)
+
+=== ChatGPT's independent edge tests (unchanged) ===
+FAIL AK certified RCV final: third candidate 55% must not be called R/D: winner="R" expected I
+FAIL GA certified first round: third candidate 55% wins outright: winner=null, basis="runoff pending"; expected I
+FAIL AK active final-round recount: no race-level certified score: winner=null, comparable=certified, v19error=-2.5; expected no active score
+
+3 independent edge check(s) FAIL: tracker is still pre-release
+exit 1
+
+=== Claude 1.1.1 regression tests ===
+Tracker 1.1.1 regression tests (winner selection and recount scope)
+  FAIL W1 Alaska: a certified ranked-choice final round won by a third candidate is called for that candidate
+       -> winner=R undefined
+  FAIL W2 Georgia: a certified November majority by a third candidate wins outright; no runoff is accepted
+       -> winner=null basis=runoff pending
+  FAIL W3 plurality state: a third-party plurality winner is called for that candidate, with its party kept
+       -> winner=R/undefined
+  FAIL W4 an aggregated "other candidates" row that leads cannot produce a winner
+       -> winner=R basis=certified count
+  PASS W5 an exact tie for first place produces no winner
+  FAIL W6 Georgia runoff: only the top two November candidates, and the runoff winner by votes
+       -> wrong runoff pair (rejected for another reason: rejected (GA): report must list Jon Ossoff and Mike Collins exactly once)
+  FAIL W7 ranked-choice final rounds: only without a first-round majority, only first-round candidates, no aggregates, decisive
+       -> final round after a first-round majority (accepted)
+  FAIL W8 ballot party codes are validated, and only one aggregate row is allowed
+       -> unknown party code (accepted)
+  FAIL W9 seats: a third-party winner counts as independent/other and unaligned
+       -> {"D":41,"R":43,"I":2} {"D":43,"R":43,"unaligned":0}
+  FAIL A9a ranked-choice recount in any round suspends the whole race (score and winner): same ballots
+       -> comparable=certified error=-2.5 winner=null
+  PASS A9b Georgia runoff recount (separate ballots) keeps the certified November score but withholds the winner
+  FAIL A9c conventions 1.1.1 state the winner and recount-scope rules and are pinned; 1.1 archived unchanged
+       -> conventions version 1.1
+  PASS F1 frozen anchors unchanged
+
+3 of 13 checks pass; failing: W1, W2, W3, W4, W6, W7, W8, W9, A9a, A9c
+exit 1

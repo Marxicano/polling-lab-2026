@@ -1,0 +1,69 @@
+{
+  "title": "Results-phase measurement conventions for the 2026 Senate Polling Lab tracker",
+  "version": "1.1.3",
+  "written": "2026-11-03 (Eastern), before any 2026 returns were entered",
+  "supersedes": "1.1.1 (data/archive/scoring_conventions_v1.1.1.json, SHA-256 7f22e564dc8929b038616f9a1b2ef9271018e388c93bb2085b4c54510a9c5794), revised after ChatGPT's review of tracker 1.1.2 (Maine majority denominator). 1.1 and 1.0 are also archived. All versions predate any results.",
+  "relationship": "Operational definitions only. They do not change the frozen v19 snapshot, the v20 or v20.1 estimates, the H1-H4 pre-registration (15da8d6c...d1af) or ChatGPT's SCORING_PLAN_2026-11-02.md.",
+  "result_margin": "Challenger share minus Republican share, in percentage points, of all votes counted for the office in the round used (minor candidates and write-ins included). Every report must list both named candidates exactly once and candidate rows that sum exactly to total_votes; otherwise it is rejected.",
+  "majority_denominators": {
+    "polling_error": "Unchanged and registered: candidate votes. The polling margin and error use the sum of votes for all candidates and write-ins in the round used (result_margin above); blank, overvoted or otherwise uncounted ballots are not in it.",
+    "legal_majority": {
+      "ME": "All ballots cast for the office, including ballots whose first ranking is blank, overvoted or for an excluded candidate (21-A M.R.S. §723-A(2)). Numerator: first-ranking (Round 0) votes for the leading candidate.",
+      "AK": "Active ballots in the initial tabulation (AS 15.15.350(d)): ballots counted for a candidate; inactive ballots (blank, overvote, two consecutive skipped rankings) are excluded, so this equals the candidate-vote total of Alaska's first-round tabulation.",
+      "GA": "Votes cast for the office: the candidate-vote total, write-ins included.",
+      "other": "Plurality; no majority required."
+    },
+    "data": "First-round reports may carry ballots_cast_for_office, blank_first_rank, overvote_first_rank, excluded_first_rank and denominator_source_url (an official page showing those counts). They must reconcile exactly: ballots cast = candidate votes + blank + overvoted + excluded first rankings. Blank and overvoted ballots are never entered as candidates or as OTH.",
+    "missing": "Maine: if any candidate has more than half of the candidate votes and the ballots-cast fields are not recorded, the first-round winner is withheld for human review and no final ranked-choice round is accepted until they are. If no candidate has more than half even of the candidate votes, there is no majority under either denominator and the fields are not needed."
+  },
+  "primary_round": "first",
+  "primary_round_reason": "The frozen averages use first-choice or head-to-head poll numbers as published. Final ranked-choice rounds are recorded separately and decide winners only.",
+  "comparability_limitation": "A head-to-head poll question is not identical to a first-choice ballot share; in Alaska and Maine the comparison is disclosed as approximate.",
+  "ranked_choice_states": [
+    "AK",
+    "ME"
+  ],
+  "runoff_states": [
+    "GA"
+  ],
+  "runoff_rule": "Georgia: the November count is scored; the seat is assigned only after a certified majority or a certified runoff (scheduled Dec 1, 2026).",
+  "winner_rules": "The official winner is chosen from all candidates in the certified deciding round, never from the sign of the two-candidate polling margin. Plurality states: the candidate with the most votes. Georgia: a candidate with more than half of the November votes wins outright; otherwise the certified runoff between the top two November candidates decides. Alaska and Maine: a first-round majority wins; otherwise the certified final ranked-choice round, which must give one candidate a majority of continuing ballots, decides. An aggregate row of other candidates and write-ins can never win; if it could contain the leader, or first place is tied, no winner is recorded. The polling error remains the first-round challenger-minus-Republican margin for every race.",
+  "ballot_party_codes": {
+    "D": "Democratic",
+    "R": "Republican",
+    "I": "independent",
+    "L": "Libertarian",
+    "G": "Green",
+    "CON": "Constitution",
+    "OTH": "aggregate of other candidates and write-ins (at most one row per first-round report; never in final or runoff rounds; never a winner)"
+  },
+  "seat_category": "Winners are counted as Democratic, Republican, or independent/other (any other party); caucus alignment is recorded separately.",
+  "statuses": [
+    "unofficial",
+    "certified",
+    "recount",
+    "recount_certified",
+    "amended_certified"
+  ],
+  "status_lifecycle": {
+    "unofficial": "Allowed only before any certification or recount report for that round.",
+    "certified": "First certified canvass.",
+    "recount": "A recount or contest is under way. Suspends comparisons, errors and the winner for that round until a later recount_certified or amended_certified report.",
+    "recount_certified": "Certified result after a recount; allowed only after a recount report.",
+    "amended_certified": "An official correction to a certified result; allowed only after a certified report.",
+    "ordering": "The latest report by report_timestamp_utc determines the state of a round, subject to the rules above."
+  },
+  "recount_scope": "A recount suspends what depends on the ballots being recounted. Alaska and Maine: every ranked-choice round is a tabulation of the same ballots, so a recount in any round suspends the whole race: the first-round polling score, the comparison and the winner. Georgia: the December runoff is a separate election with separate ballots, so a runoff recount withholds only the winner and leaves the certified November score in place; a November recount suspends the score and the winner. Other states: one round, so a recount suspends the race. If a ranked-choice recount changes first-choice totals, record them as a recount_certified first-round report.",
+  "comparison_rules": {
+    "certified": "Rounds whose latest report is certified, recount_certified or amended_certified enter the primary v19 and secondary v20 scorecards.",
+    "unofficial_complete": "An unofficial report is compared, labeled provisional, only when it reports 100 percent of its stated unit (ballots or precincts). Provisional comparisons never count as scores; 100 percent of precincts may still exclude ballots counted later.",
+    "unofficial_partial": "Counts and reporting share only: no error, no winner, no projection.",
+    "reporting_unit": "Any reported share must state its unit (ballots, precincts or counties) and the authority's own status wording."
+  },
+  "sources": "Results only from the state election authority's confirmed domains (and their subdomains). A separate results host is accepted only after a domain-verification record shows the authority's own page linking to it. News projections, AP calls and aggregators are never inputs. Mississippi waits for statewide official returns.",
+  "seat_accounting": "Seats are reported two ways: party affiliation (Democratic, Republican, independent) and caucus alignment. Sitting independents Angus King and Bernie Sanders caucus with Democrats (senate.gov). A newly elected independent is unaligned unless an official statement is recorded. The frozen v19 53/47 figure is caucus-equivalent (independents who caucus with Democrats counted as D).",
+  "untracked_contests": "Each of the 20 untracked 2026 races counts as an assumption (held by its current party) until a certified result from that state's authority is recorded. Chamber control is not computed until all 15 tracked and all 20 untracked contests are confirmed.",
+  "registered_tests_gate": "Run the unchanged registered scorer once all 15 races have certified first-round results, or on 2027-01-15 with the certified races available. The January 15 date is an administrative cutoff, not a statistical result: the registered minimum-data rules and sign conventions still apply, and missing races are reported. The first run is recorded once, with input fingerprints, and never overwritten; later analyses with amended data are labeled revisions.",
+  "exploratory": "v20.1 E2-E3 are run under the same gate and labeled exploratory.",
+  "revisions": "New official reports are appended as new rows. The logs are hash-chained, which detects edits and deletions but not a complete rewrite; publish chain heads in separate dated commits to anchor them. Corrections to poll data go to corrections_ledger.csv and never alter frozen files."
+}

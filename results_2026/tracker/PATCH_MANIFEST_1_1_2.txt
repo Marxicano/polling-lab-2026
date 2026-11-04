@@ -1,0 +1,22 @@
+# Tracker 1.1.2 patch over tracker 1.1.1. status | path | sha256 in 1.1.1 | sha256 in 1.1.2
+# Moved (not edited): ChatGPT's 1.1 edge-test file now lives byte-for-byte in tests/independent/original/; the copy at its old path has updated final-round fixtures.
+# Unchanged and not included: vendored dependencies, conventions (1.1.1), static data, v19, v20, v20.1, the H1-H4 pre-registration.
+changed | docs/results/data/results_dashboard.json | 4c1372f7fa5ba2f02947774c19aa5d22dfb62ac48ab528084eb433d0719cd450 | 01e49c5f29b29ccd1a43b036f8710bebb2f6be78e2986f4f92808542798c06e0
+changed | docs/results/index.html | 544260cfb001ff2a9f9cf3f3579c6719c7c8799ae17b5c5a0e09b0a59738d615 | 636cb39d1ecbc497abe88e47d776653e3f67b2b661bec3cab1afececf03585d1
+changed | results_2026/tracker/CHANGELOG_RESULTS_TRACKER.md | cc392abbf6611ff2ded33ac33ecc55b3d57282f1296b75cff0383d5b2852d513 | dce11428316ef52e39e8c2a6aef551bed64653450906e17b5b1012f5ce82017c
+changed | results_2026/tracker/DATA_ENTRY_GUIDE.md | 23e914c9d4c9d86c352060ce4fd69b06950542316f2820e1eccc0b409bc16b93 | baa60557cfe26b495c0cbc50bafebb450c635b8b103be8196293cd83cbeae9c1
+changed | results_2026/tracker/README.md | 7d3fe8f50520ecb6327ffd2b3257f6a7aad601e80fb73198f17f4e8a5218cc45 | 80381bef3911922e48148a374af4914f24d823154dec3793f507b9c59613976c
+changed | results_2026/tracker/REVIEW_GUIDE_RESULTS_TRACKER.md | 5e0ceee5498f9e93270370dade16da10dced4bf57cb10440a4ed87fe6789c395 | 232fbb66e102cac07eee37aceada5c3cd0e8a370e6197452fc03c233e2144bfa
+changed | results_2026/tracker/SHA256SUMS_RESULTS_TRACKER.txt | be322b5fddf87d420825f2d7bf1f9c597de82221c0f1f86ef546c8cd34594fcc | fea78ff0f76532d8f33070cd61b722dc03cb9b0e00f9d0352df89f5498feec2e
+changed | results_2026/tracker/build_dashboard.js | 7b4d94a3a43e8738caf4529ce588946a75ea12e714cca84b0e7b250f2da030d4 | 0de7b9cd7316cd168e52254255f8ab910951dc3f0fc8481c2f671aee26dda552
+changed | results_2026/tracker/lib/results_lib.js | 5d722ebd1b8ff5eb90e7470078958aaed11c0c07daa09f5ffb32ad00b3272abe | 7aa0f93ca367050cdad5ffd7439958d55db891b1a458bf7318249e00e6982403
+changed | results_2026/tracker/tests/independent/TRACKER_1_1_INDEPENDENT_EDGE_REGRESSIONS.js | 9d93452fcf16f2c839e8c23a5c33c4fb527c0d9f955d67e40d4ed661d6a39a53 | f588db829ce36f279e9d4df69b70d477b99957715e30334a594f0c13020c054b
+changed | results_2026/tracker/tests/run_all_with_tracker.js | 68f128d192e9f1fe89958a4cf501a4439e8fe71f606cb7b1b556ad12082e7638 | a6444a80af7621ef56bbdefed267c12bf3807bcd4925abbbf03bf249c481041c
+changed | results_2026/tracker/tests/run_tracker_tests.js | 45625911d58817115a1b70c765fa91e10f2658011fe4a4864686ddb3a72ecb41 | d59abf55caffde07cfcf366bc553915fd89b4a0bcc3e828f3d7267ef451a3133
+changed | results_2026/tracker/tests/test_review_1_1_1.js | af66718480c20912821ea6bad697fa29a922e21754b22f9da5603b456e82c1fe | 34667c46dccbb81f6d75e6f0bdde26af0a62a04107fef40bf2efff60319d6423
+new | results_2026/tracker/SHA256SUMS_DOCS_RESULTS_v1.1.2.txt |  | 6f9119dafd8f1bba6d0c0ea65910b766db8abf0d14361141b16962c634356571
+new | results_2026/tracker/TEST_RESULTS_BEFORE_FIX_v1.1.1.txt |  | 0138d6bde1f8080cd46f33a153331bcfedeb1d607b2b469e92dd3f1ded3ce842
+new | results_2026/tracker/TEST_RESULTS_v1.1.2.txt |  | e991a20763c49612434b3717990d260fc25e09c4a9c7e2789cdb3e986493a11a
+new | results_2026/tracker/tests/independent/TRACKER_1_1_1_RCV_FINAL_ROUND_EDGE_reconstructed.js |  | 46922faafb5c02e3aff6bb445a3d90564fe150e85b4d35b1fde60beab2ec3bdc
+new | results_2026/tracker/tests/independent/original/TRACKER_1_1_INDEPENDENT_EDGE_REGRESSIONS.js |  | 9d93452fcf16f2c839e8c23a5c33c4fb527c0d9f955d67e40d4ed661d6a39a53
+new | results_2026/tracker/tests/test_review_1_1_2.js |  | 91746205eea7a4164282acca9172dffa26b170bfb9c98f295eaa4b0170fedd1c

@@ -1,0 +1,55 @@
+'use strict';
+const assert = require('assert/strict');
+const { assessMaineRound0 } = require('./maine_round0_majority.js');
+let passed = 0;
+function rows(votes, denominator, reportedTotal) {
+  return votes.map((v, i) => {
+    const row = { candidate: `C${i}`, votes: String(v), total_votes: String(reportedTotal ?? votes.reduce((a,b)=>a+b,0)) };
+    if (denominator !== undefined) row.majority_denominator = Array.isArray(denominator) ? String(denominator[i]) : String(denominator);
+    return row;
+  });
+}
+function test(name, fn) {
+  try { fn(); passed++; console.log(`PASS ${passed}: ${name}`); }
+  catch (e) { console.error(`FAIL: ${name}: ${e.message}`); process.exitCode = 1; }
+}
+function throws(fn, pattern) { assert.throws(fn, pattern); }
+
+test('ChatGPT 48/42/5/5 case: 48,000 is not a majority of 100,000 ballots', () => {
+  const x = assessMaineRound0(rows([48000,42000,5000],100000));
+  assert.equal(x.status,'no_majority');
+  assert.equal(x.candidate_vote_total,95000); // scoring denominator is unchanged
+  assert.equal(x.majority_denominator,100000); // legal denominator is separate
+});
+test('Same candidate-vote-only majority without the statutory denominator goes to review', () => {
+  const x = assessMaineRound0(rows([48000,42000,5000]));
+  assert.equal(x.status,'review');
+  assert.match(x.reason,/no majority inferred/);
+});
+test('Unambiguous Round 0 majority: 51,000 of 100,000 passes', () => {
+  assert.equal(assessMaineRound0(rows([51000,39000,5000],100000)).status,'majority');
+});
+test('Exactly 50,000 of 100,000 is not more than 50%', () => {
+  assert.equal(assessMaineRound0(rows([50000,40000,5000],100000)).status,'no_majority');
+});
+test('Missing denominator needs no review when no majority is mathematically possible', () => {
+  assert.equal(assessMaineRound0(rows([40000,40000,15000])).status,'no_majority');
+});
+test('Statutory denominator below the candidate-vote total is rejected', () => {
+  throws(()=>assessMaineRound0(rows([48000,42000,5000],94999)),/cannot be less/);
+});
+test('Inconsistent denominators across candidate rows are rejected', () => {
+  throws(()=>assessMaineRound0(rows([48000,42000,5000],[100000,99999,100000])),/identical/);
+});
+test('Partially missing denominators are rejected', () => {
+  const x=rows([48000,42000,5000],100000); delete x[1].majority_denominator;
+  throws(()=>assessMaineRound0(x),/identical/);
+});
+test('Candidate-vote reconciliation remains enforced', () => {
+  throws(()=>assessMaineRound0(rows([48000,42000,5000],100000,96000)),/candidate-vote total/);
+});
+test('Malformed and noninteger statutory denominators are rejected', () => {
+  throws(()=>assessMaineRound0(rows([48000,42000,5000],'100000.5')),/nonnegative safe integer/);
+  throws(()=>assessMaineRound0(rows([48000,42000,5000],'unknown')),/nonnegative safe integer/);
+});
+console.log(`${passed}/10 denominator contract checks passed`);

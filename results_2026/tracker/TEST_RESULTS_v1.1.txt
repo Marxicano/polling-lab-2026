@@ -1,0 +1,61 @@
+Polling Lab 2026 — results tracker 1.1 (pre-release) — full test output
+Run from the repository root: node results_2026/tracker/tests/run_all_with_tracker.js   (Node v22.22.2, 2026-11-03 03:05 EST)
+
+OK   v19_frozen/test_engine.js  PASS: closest-race windows fully dated, no duplicates, date ordering, Alaska ranked-choice final rou
+OK   v19_frozen/test_reconciliation.js  PASS: v13 merge survey uniqueness, RedBox, Marist shares, source metadata, freeze scripts, ActiVote 
+OK   v19_frozen/test_scoring.js  PASS: scoring raw vs. normalized two-party, generic, and optional chamber counts
+OK   v19_frozen/test_v16_1_audit.js  PASS: v16.1 coverage, fieldwork integrity, source/version guards, sponsorship flags, zero duplicates
+OK   v19_frozen/test_v17.js  PASS: every October Senate entry dated, generic intake, ActiVote wave rule, no duplicates, method se
+OK   v19_frozen/test_v17_1.js  PASS: Nov 1 Senate/GBC intake, source IDs, one-release dedupe, recency and separate Nebraska indepen
+OK   v19_frozen/test_v18.js  PASS: Nov 1 late polls present once, no duplicates, ActiVote boundary-day rule, method set unchanged
+OK   v19_frozen/test_v18_1.js  PASS: independent Nov1 missing-poll intake, distinct RedBox waves, Alaska RCV, Emerson generic dedup
+OK   v19_frozen/test_v19.js  PASS: Nov 2 intake present once, disputed Florida poll pending, no duplicates, October polls dated, 
+OK   v20/tests/test_v20.js  PASS: 18 v20 checks (separation, data, models, uncertainty, scoring).
+OK   v20/tests/test_v20_site.js  PASS: site builds with freshness, experimental labels, sources, separation banner, mobile/dark suppo
+OK   v20_1/tests/test_v201.js  PASS: 13 v20.1 checks (separation, pre-registration, Kimi evidence, RedBox, Florida, backtest, diagn
+OK   v20_1/tests/test_v201_site.js  PASS: v20.1 page builds separately, shows unchanged v20 figures and hashes, links back to v20, no ex
+ALL 13 SUITES PASSED
+OK   explorer/test_explorer.js  PASS: 6 explorer checks.
+ALL 14 SUITES PASSED
+OK   results_2026/tracker/tests/test_tracker.js  PASS: 9 results-tracker checks.
+OK   results_2026/tracker/tests/test_review_regressions.js  22 of 22 review checks pass
+ALL SUITES PASSED (tracker 1.1, pre-release)
+
+=== Detail: tracker suite ===
+  ok  60 vendored dependencies verified against the published checksum lists and public anchors; checkout copies match; v1.0 conventions archived byte-for-byte
+  ok  real data: 15 tracked and 20 untracked contests, 35 authorities, empty logs, pending result hosts not usable yet
+  ok  validation: news, http and look-alike hosts, status/date mismatches, unknown states and rounds, missing authority wording, Mississippi county pages, single-candidate reports and nonexistent untracked states are all rejected
+  ok  hash-chained logs: edits and deletions stop the tracker; the original log loads again
+  ok  lifecycle: partial → provisional (unit shown) → certified → amended → recount (suspended) → certified after recount; no unofficial or second "certified" after certification
+  ok  ranked choice scored on the first round; Georgia waits for a certified runoff; Osborn counted as independent and unaligned
+  ok  seats: party 51/47/2 and caucus 53/47 when results equal the frozen margins; control only after all 35 contests confirmed; registered tests recorded once through the unchanged scorer, tamper-checked, fallback date honored
+  ok  dashboard: pre-release label, party and caucus rows, control withheld, untracked contests marked assumed, no recorded result, no external scripts, small-screen rule
+  ok  nothing outside results_2026/tracker and docs/results changed during the tests
+PASS: 9 results-tracker checks.
+
+=== Detail: review regression suite (on tracker 1.0, 21 of these 22 checks failed; see TEST_RESULTS_BEFORE_FIX_v1.0.txt) ===
+Tracker review regression tests (ChatGPT, 2026-11-03)
+  PASS B1a single-candidate certified report is rejected (was accepted and scored +50)
+  PASS B1b duplicate candidate rows in one report are rejected
+  PASS B1c candidate votes must add up to total_votes
+  PASS B1d negative, fractional and unsafe vote numbers are rejected
+  PASS B1e rows of one report must agree on source, status metadata and reporting share
+  PASS B1f a report cannot be split or extended across appends
+  PASS B1g named candidates must carry their own party
+  PASS B2a an untracked-seat result for a nonexistent state cannot change the seat count
+  PASS B2b untracked results: tracked states, wrong holder, non-authority URL and contradictions are rejected
+  PASS B3 a recount after certification suspends the score and winner until a recount is certified
+  PASS B4 tracker builds and scores from a checkout containing only the files the GitHub repo actually has
+  PASS B5 party seats and caucus alignment are reported separately (41 D / 42 R / 2 I; caucus 43 / 42)
+  PASS B6a every build verifies all dependencies, including the pre-registration, scorer and registry
+  PASS B6b a root missing the pre-registration, scorer and registry cannot build (was: builds)
+  PASS B6c tampering with any pinned input (e.g. states.csv or run_v20.js) stops the build
+  PASS A1 a results host that is only pending verification is rejected until its authority link is recorded
+  PASS A2 registered H1-H4 scoring is recorded once, with input fingerprints, and never silently recomputed
+  PASS A3 chain heads can be printed for independent anchoring; wording does not claim tamper-proofing
+  PASS A4 a reporting share needs its unit, and provisional labels say which unit reached 100%
+  PASS A6 chamber control is not computed until all 20 untracked contests are confirmed
+  PASS A7 Mississippi disclosure separates sponsorship from firm alignment
+  PASS A8 small screens: tables fit a 320-pixel viewport
+
+22 of 22 review checks pass

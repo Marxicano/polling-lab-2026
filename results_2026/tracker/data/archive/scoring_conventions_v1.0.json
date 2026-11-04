@@ -1,0 +1,24 @@
+{
+  "title": "Results-phase measurement conventions for the 2026 Senate Polling Lab tracker",
+  "written": "2026-11-02 (Eastern), before any 2026 results exist",
+  "relationship": "Operational definitions only. They do not change the frozen v19 snapshot (7cd5e1f9...c461), the v20 estimates, the H1-H4 pre-registration (preregistration_mike.json, 15da8d6c...d1af) or ChatGPT's SCORING_PLAN_2026-11-02.md. Where the plan leaves a measurement choice open, this file fixes it in advance.",
+  "result_margin": "Challenger share minus Republican share, in percentage points, of all votes counted for the office in the round used (minor candidates and write-ins included in the denominator).",
+  "primary_round": "first",
+  "primary_round_reason": "The frozen averages use first-choice or head-to-head poll numbers as published. Final ranked-choice rounds are recorded and shown separately and never substituted for the first round in error scoring.",
+  "ranked_choice_states": ["AK", "ME"],
+  "runoff_states": ["GA"],
+  "runoff_rule": "Georgia: the November count is scored; the seat is assigned only when a certified runoff (or a certified majority in November) exists.",
+  "independent_challenger": { "NE": "Dan Osborn (independent); his share is the challenger share and his seat is counted as independent." },
+  "statuses": ["unofficial", "certified", "amended_certified", "recount"],
+  "comparison_rules": {
+    "certified": "A race enters the primary v19 scorecard and the secondary v20 scorecard only with a certified (or amended certified) first-round return.",
+    "unofficial_complete": "An unofficial return is compared, labeled provisional, only when the authority reports all precincts or ballots counted (reported_pct = 100). Provisional comparisons never count as scores.",
+    "unofficial_partial": "Partial returns are shown as counts with their reporting share only: no error, no winner, no projection.",
+    "recount": "A race under recount is shown but excluded from all comparisons until a certified result exists."
+  },
+  "registered_tests_gate": "Run v20/score_v20.js, unchanged, once all 15 races have certified first-round returns. If any race is still uncertified on 2027-01-15, run then with the certified races available and report which races were missing and which minimum-data rules failed. No interim H1-H4 decisions before the gate.",
+  "exploratory": "v20.1 E2-E3 (score_v201.js) run under the same gate and are labeled exploratory.",
+  "sources": "Only the state election authority's own domains listed in official_sources.csv. News projections, AP calls and aggregator tallies are never inputs. Mississippi has no statewide election-night reporting in 2026, so it waits for statewide official returns.",
+  "seat_accounting": "Certified winners for the 15 tracked races; the 20 other races up in 2026 are assumed to stay with the party holding them unless noncompetitive_overrides.csv records an official result.",
+  "revisions": "Every new official report is appended as new rows; earlier rows are never edited (hash chain). Corrections to poll data go to corrections_ledger.csv and never alter frozen files."
+}

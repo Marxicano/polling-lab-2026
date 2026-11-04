@@ -1,0 +1,5 @@
+key,metric,value,as_of,source,note
+flv_2024,Party-registration shift of ballots cast vs. 2024 (same point),D+8.8,2026-10-28,FL Voice tracker (screenshot),Reported by the tracker; method not published in the screenshot
+flv_2022,Party-registration shift of ballots cast vs. 2022 (same point),D+5.1,2026-10-28,FL Voice tracker (screenshot),
+zd_2026,"In-person early vote, cumulative party-registration margin, day 9",R+8.2,2026 day 9,Zachary Donnini post on X (shown on stream),In-person early voting only
+zd_2024,Same measure at day 9 in 2024,R+24.5,2024 day 9,Zachary Donnini post on X (shown on stream),

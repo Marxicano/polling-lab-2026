@@ -1,0 +1,366 @@
+{
+ "title": "Byte-identical copies of the published v19, v20 and v20.1 files the tracker needs",
+ "note": "Copied from the published packages; each hash equals the entry in the published checksum list named in vouched_by. Never edit these files.",
+ "files": [
+  {
+   "path": "checksums/SHA256SUMS_V20.txt",
+   "sha256": "b144fbff97a4400019aade6bc2b4a3a3e5a00bc7ce4bf1f27fab9f9b552a42ba",
+   "vouched_by": "pinned in lib/deps.js",
+   "entry": "checksums/SHA256SUMS_V20.txt"
+  },
+  {
+   "path": "checksums/SHA256SUMS_V20_1.txt",
+   "sha256": "3ef784da452a37930766715219db3287138e70c5e7eca86fda3dd6b1f00ddd48",
+   "vouched_by": "pinned in lib/deps.js",
+   "entry": "checksums/SHA256SUMS_V20_1.txt"
+  },
+  {
+   "path": "docs/data/site_v20.json",
+   "sha256": "dd6876b0bc61b8faf9aa584c71e39935b557775c50f7ea20e260797eab9a9d89",
+   "vouched_by": "checksums/SHA256SUMS_V20.txt",
+   "entry": "docs/data/site_v20.json"
+  },
+  {
+   "path": "v19_frozen/SHA256SUMS.txt",
+   "sha256": "24446e1de0550836f83bb379f2e6c80774331d9e8950fa365ef8327583da7464",
+   "vouched_by": "pinned in lib/deps.js",
+   "entry": "v19_frozen/SHA256SUMS.txt"
+  },
+  {
+   "path": "v19_frozen/data/snapshot_2026-11-02.csv",
+   "sha256": "7cd5e1f9581a0edaaca6c69148c8dbd97cdb1c34ff7e2542d691535fb270c461",
+   "vouched_by": "v19_frozen/SHA256SUMS.txt",
+   "entry": "data/snapshot_2026-11-02.csv"
+  },
+  {
+   "path": "v19_frozen/engine.js",
+   "sha256": "0d65ddd6be1b3d52259f8ab55f035222db4bea163c320d29bb481c216a9a59c5",
+   "vouched_by": "v19_frozen/SHA256SUMS.txt",
+   "entry": "engine.js"
+  },
+  {
+   "path": "v20/data/analyst_claims.csv",
+   "sha256": "ad47d04b5ee8faa6845b6857fb453e747815baff21458cfb27ad34ba5a00e1af",
+   "vouched_by": "checksums/SHA256SUMS_V20.txt",
+   "entry": "v20/data/analyst_claims.csv"
+  },
+  {
+   "path": "v20/data/calibration_errors.csv",
+   "sha256": "b96ba19a8c9273a4c5ddf2f5112927ae273f21a21b43079e2a8f5310584474bd",
+   "vouched_by": "checksums/SHA256SUMS_V20.txt",
+   "entry": "v20/data/calibration_errors.csv"
+  },
+  {
+   "path": "v20/data/claims.csv",
+   "sha256": "f93c62454d6d10ed7f4ddbc4896dc5093398e2a20422f7f7a803a7158e6c2428",
+   "vouched_by": "checksums/SHA256SUMS_V20.txt",
+   "entry": "v20/data/claims.csv"
+  },
+  {
+   "path": "v20/data/context_variables.csv",
+   "sha256": "dc505f67fca0e752a345edb8ce73333bda60c864f8b24debb2d921ab07f70601",
+   "vouched_by": "checksums/SHA256SUMS_V20.txt",
+   "entry": "v20/data/context_variables.csv"
+  },
+  {
+   "path": "v20/data/data_status.csv",
+   "sha256": "855a76c3da8980e493f9be54f7c44f8b67a540c32fcbded9912fc9432081a60f",
+   "vouched_by": "checksums/SHA256SUMS_V20.txt",
+   "entry": "v20/data/data_status.csv"
+  },
+  {
+   "path": "v20/data/external_benchmarks.csv",
+   "sha256": "0d2fd8f8c18e4915d9974a23812b77678605fa6824771f551d5d50f21f0e871c",
+   "vouched_by": "checksums/SHA256SUMS_V20.txt",
+   "entry": "v20/data/external_benchmarks.csv"
+  },
+  {
+   "path": "v20/data/fl_crosstabs.csv",
+   "sha256": "7c6ebe026d88532e969b4388d34a35d2a1f8df7ef0ad6117c101a0f91d3676d9",
+   "vouched_by": "checksums/SHA256SUMS_V20.txt",
+   "entry": "v20/data/fl_crosstabs.csv"
+  },
+  {
+   "path": "v20/data/fl_early_vote.csv",
+   "sha256": "4584a3e7fc040b51bbc091b8e160aa63b0eeb508165724b6206107b4fbb0e27f",
+   "vouched_by": "checksums/SHA256SUMS_V20.txt",
+   "entry": "v20/data/fl_early_vote.csv"
+  },
+  {
+   "path": "v20/data/fl_early_vote_official.csv",
+   "sha256": "f36a7b639c36206fe1d0a7751304eb7918793f4bcbccdda835dbf5f3548a5071",
+   "vouched_by": "checksums/SHA256SUMS_V20.txt",
+   "entry": "v20/data/fl_early_vote_official.csv"
+  },
+  {
+   "path": "v20/data/fl_redbox_full_electorate_targets.csv",
+   "sha256": "cded275f8e72a3b3d82858b7feec5e07d85fcb99f8853b5f0db2e0faeaaed765",
+   "vouched_by": "checksums/SHA256SUMS_V20.txt",
+   "entry": "v20/data/fl_redbox_full_electorate_targets.csv"
+  },
+  {
+   "path": "v20/data/fl_redbox_kimi_subgroup_full.csv",
+   "sha256": "04cb7253a63e2fb62521435e53912f757f88b8c5bccc26c14647f207abeb312d",
+   "vouched_by": "checksums/SHA256SUMS_V20.txt",
+   "entry": "v20/data/fl_redbox_kimi_subgroup_full.csv"
+  },
+  {
+   "path": "v20/data/fl_redbox_model_assumptions.csv",
+   "sha256": "ce29cd4eedfe5a41a42342f95ad64872c42d9b8d53d00e5d54dcfc77dafecf57",
+   "vouched_by": "checksums/SHA256SUMS_V20.txt",
+   "entry": "v20/data/fl_redbox_model_assumptions.csv"
+  },
+  {
+   "path": "v20/data/fl_redbox_observed_modelled_distinctions.csv",
+   "sha256": "e385b8ec45cbe09b43ebdffc153db9057560f69c3a7626a8096f6607f4f17704",
+   "vouched_by": "checksums/SHA256SUMS_V20.txt",
+   "entry": "v20/data/fl_redbox_observed_modelled_distinctions.csv"
+  },
+  {
+   "path": "v20/data/fl_redbox_subgroup_precision.csv",
+   "sha256": "e92a8952f2de39f9936918f463daa64cc14be39b51c3f0fa896d170e5ad0bb03",
+   "vouched_by": "checksums/SHA256SUMS_V20.txt",
+   "entry": "v20/data/fl_redbox_subgroup_precision.csv"
+  },
+  {
+   "path": "v20/data/fl_redbox_vote_status.csv",
+   "sha256": "a5dbe34b85483fad04f8cb8fbd8b9a6be45c774129019882e90209c70aa8d018",
+   "vouched_by": "checksums/SHA256SUMS_V20.txt",
+   "entry": "v20/data/fl_redbox_vote_status.csv"
+  },
+  {
+   "path": "v20/data/fl_reported_metrics.csv",
+   "sha256": "95f9bd7319f88004f011dd55082358375bbed322d9b6669ab10827761f2b3af0",
+   "vouched_by": "checksums/SHA256SUMS_V20.txt",
+   "entry": "v20/data/fl_reported_metrics.csv"
+  },
+  {
+   "path": "v20/data/fl_scenarios.csv",
+   "sha256": "c97adfe611924588c83a573e00caeeb32f3b9629d13b9ff6ff533bc4df3fbb61",
+   "vouched_by": "checksums/SHA256SUMS_V20.txt",
+   "entry": "v20/data/fl_scenarios.csv"
+  },
+  {
+   "path": "v20/data/fl_vote_evidence_types.csv",
+   "sha256": "ed55f81f45a24c5ede8fa29360ffd447ea089043a6521250068395cc318f6f70",
+   "vouched_by": "checksums/SHA256SUMS_V20.txt",
+   "entry": "v20/data/fl_vote_evidence_types.csv"
+  },
+  {
+   "path": "v20/data/gb_snapshots.csv",
+   "sha256": "630587e9762d252dbd0708f2bd3a99212eb1d3d1e75fa33c1cd1f7d2d6d6498e",
+   "vouched_by": "checksums/SHA256SUMS_V20.txt",
+   "entry": "v20/data/gb_snapshots.csv"
+  },
+  {
+   "path": "v20/data/generic_polls.csv",
+   "sha256": "f1c3e97d44c83a09991e0c0d8ecb26c29e703c2f6008bd1e794ad777e08a575f",
+   "vouched_by": "checksums/SHA256SUMS_V20.txt",
+   "entry": "v20/data/generic_polls.csv"
+  },
+  {
+   "path": "v20/data/generic_results.csv",
+   "sha256": "68322ccc38df0cdc813cbd49a7ef489a5e17da3b0ece03c308ec4d1eae49a2a7",
+   "vouched_by": "checksums/SHA256SUMS_V20.txt",
+   "entry": "v20/data/generic_results.csv"
+  },
+  {
+   "path": "v20/data/kimi_senate_historical_poll_errors.csv",
+   "sha256": "22d3ee99aa3fe1a5920bd0822ed76cc812abee16827c260f77be64feb75d9126",
+   "vouched_by": "checksums/SHA256SUMS_V20.txt",
+   "entry": "v20/data/kimi_senate_historical_poll_errors.csv"
+  },
+  {
+   "path": "v20/data/late_oct_releases.csv",
+   "sha256": "ae36e966b7f3ac9867bd8f06b9b82ad33c787037a0aeaaff12d9d998564ba9db",
+   "vouched_by": "checksums/SHA256SUMS_V20.txt",
+   "entry": "v20/data/late_oct_releases.csv"
+  },
+  {
+   "path": "v20/data/method_evidence.csv",
+   "sha256": "e9c21dbaf76177138569d33de50049961145f11655270cf792eb22280c9618dc",
+   "vouched_by": "checksums/SHA256SUMS_V20.txt",
+   "entry": "v20/data/method_evidence.csv"
+  },
+  {
+   "path": "v20/data/michigan_history_reference.csv",
+   "sha256": "a2814ad8d1baa2a8a98d783d8ad107dc2ed0684fee8da3084cb2b9979bd2af1b",
+   "vouched_by": "checksums/SHA256SUMS_V20.txt",
+   "entry": "v20/data/michigan_history_reference.csv"
+  },
+  {
+   "path": "v20/data/michigan_sensitivity.csv",
+   "sha256": "7ed08c2ddb7ba0e69a3dd6010dfae7187d713aa1a490f91dc289bf81770d475c",
+   "vouched_by": "checksums/SHA256SUMS_V20.txt",
+   "entry": "v20/data/michigan_sensitivity.csv"
+  },
+  {
+   "path": "v20/data/offyear.csv",
+   "sha256": "3ede3735f4e40d6bf82267803641dd2d9b55475ab884f88548390812b3d08326",
+   "vouched_by": "checksums/SHA256SUMS_V20.txt",
+   "entry": "v20/data/offyear.csv"
+  },
+  {
+   "path": "v20/data/polls_2025.csv",
+   "sha256": "6e9825b7bc0b16f1930153d6726ba89830783da400834f1f21acca61be7ed4cb",
+   "vouched_by": "checksums/SHA256SUMS_V20.txt",
+   "entry": "v20/data/polls_2025.csv"
+  },
+  {
+   "path": "v20/data/pollster_methods.csv",
+   "sha256": "36ed4a7e2b21dc5c004e22dad82fec89c2a5a3acc80e0a515066d87ae99fd1f1",
+   "vouched_by": "checksums/SHA256SUMS_V20.txt",
+   "entry": "v20/data/pollster_methods.csv"
+  },
+  {
+   "path": "v20/data/recall_targets.csv",
+   "sha256": "287513129da6072109dd0bb2f5f2fd08f8cda53ebea700794b9a2c0aeaff257f",
+   "vouched_by": "checksums/SHA256SUMS_V20.txt",
+   "entry": "v20/data/recall_targets.csv"
+  },
+  {
+   "path": "v20/data/results_2025.csv",
+   "sha256": "3b7c6286d16096a7dd2515ac0db30afc71f97df1c35cdc6b8e9cc24fa97c6e15",
+   "vouched_by": "checksums/SHA256SUMS_V20.txt",
+   "entry": "v20/data/results_2025.csv"
+  },
+  {
+   "path": "v20/data/senate_lv_rv_pairs.csv",
+   "sha256": "01468d168ae7d09cd4cbe177694c8ac4c8c56abc7d729a89379add86b85e3bd2",
+   "vouched_by": "checksums/SHA256SUMS_V20.txt",
+   "entry": "v20/data/senate_lv_rv_pairs.csv"
+  },
+  {
+   "path": "v20/data/senate_polls.csv",
+   "sha256": "0d85d572973d7f947a0430efc924f6110129dd6cbb3712d321b6916cb513782b",
+   "vouched_by": "checksums/SHA256SUMS_V20.txt",
+   "entry": "v20/data/senate_polls.csv"
+  },
+  {
+   "path": "v20/data/senate_totals.csv",
+   "sha256": "2e26d5e6cead963300a0570c4a6c7de3fa4b96fe1319636c05f11f78fab57258",
+   "vouched_by": "checksums/SHA256SUMS_V20.txt",
+   "entry": "v20/data/senate_totals.csv"
+  },
+  {
+   "path": "v20/data/state_misses.csv",
+   "sha256": "9b7b6ff5d8ef347775a47cea979d183ce4aacb79f21bfc40df25c5432c725b00",
+   "vouched_by": "checksums/SHA256SUMS_V20.txt",
+   "entry": "v20/data/state_misses.csv"
+  },
+  {
+   "path": "v20/data/states.csv",
+   "sha256": "faf55720c6e1d8792e9cae2645a89d3866fe83aedec0d999991ab606bb844878",
+   "vouched_by": "checksums/SHA256SUMS_V20.txt",
+   "entry": "v20/data/states.csv"
+  },
+  {
+   "path": "v20/data/track_record.csv",
+   "sha256": "e7c0960124a9b241e1c6cf8d002cb8e3402380e8d83e20fba258b038101c2167",
+   "vouched_by": "checksums/SHA256SUMS_V20.txt",
+   "entry": "v20/data/track_record.csv"
+  },
+  {
+   "path": "v20/data/v13_merge_sources.csv",
+   "sha256": "84c39f105a42766d018be4c621b239668fe578af4c34a4bcd96ab2d1aa192d95",
+   "vouched_by": "checksums/SHA256SUMS_V20.txt",
+   "entry": "v20/data/v13_merge_sources.csv"
+  },
+  {
+   "path": "v20/data/va07.csv",
+   "sha256": "1488300ffad9bb479bc39e4ac8a68444822bf14453a1b82d63ad069dd96fb868",
+   "vouched_by": "checksums/SHA256SUMS_V20.txt",
+   "entry": "v20/data/va07.csv"
+  },
+  {
+   "path": "v20/engine_v20.js",
+   "sha256": "18b400f305c13dc6aa59a3c9fc9fbaba24f7a2a863c24df2888f5d7bdae50704",
+   "vouched_by": "checksums/SHA256SUMS_V20.txt",
+   "entry": "v20/engine_v20.js"
+  },
+  {
+   "path": "v20/preregistration_mike.json",
+   "sha256": "15da8d6c9d3c37cb4b3f1ba79b7a9372e9e2b81eae9ef40c6e16e551a3cdd1af",
+   "vouched_by": "checksums/SHA256SUMS_V20.txt",
+   "entry": "v20/preregistration_mike.json"
+  },
+  {
+   "path": "v20/run_v20.js",
+   "sha256": "aed2c10ddf1738f8a098e0c36dcc6ae4e7a5933fb7dca0f6a781d450d7506c96",
+   "vouched_by": "checksums/SHA256SUMS_V20.txt",
+   "entry": "v20/run_v20.js"
+  },
+  {
+   "path": "v20/score_v20.js",
+   "sha256": "aaf67e7a575faeac3859073395387c2eb92ed5d8400dcebfec79a75f4171da59",
+   "vouched_by": "checksums/SHA256SUMS_V20.txt",
+   "entry": "v20/score_v20.js"
+  },
+  {
+   "path": "v20_1/data/calibration_sources_v201.csv",
+   "sha256": "685c13b0e100f2f4434ad3876c7ffd85804585f9571822dd4fd16454faf56ae5",
+   "vouched_by": "checksums/SHA256SUMS_V20_1.txt",
+   "entry": "v20_1/data/calibration_sources_v201.csv"
+  },
+  {
+   "path": "v20_1/data/fl_official_2026-11-02_0809.csv",
+   "sha256": "303019fe58bb1f4a314dc2785c57102e85a47efb60aec71013e7b11fc13b7df7",
+   "vouched_by": "checksums/SHA256SUMS_V20_1.txt",
+   "entry": "v20_1/data/fl_official_2026-11-02_0809.csv"
+  },
+  {
+   "path": "v20_1/data/kimi_assessment_v201.csv",
+   "sha256": "7eaab31c793b829984115d717c42e32c4e5c91bd3e7a1caf22291d4464f435b2",
+   "vouched_by": "checksums/SHA256SUMS_V20_1.txt",
+   "entry": "v20_1/data/kimi_assessment_v201.csv"
+  },
+  {
+   "path": "v20_1/data/recall_scenario_params_v201.csv",
+   "sha256": "444952a3d9d9423577ccb73e75864f6044427a2b420e1929c19011a54c9a4161",
+   "vouched_by": "checksums/SHA256SUMS_V20_1.txt",
+   "entry": "v20_1/data/recall_scenario_params_v201.csv"
+  },
+  {
+   "path": "v20_1/data/recall_targets_v201_correction.csv",
+   "sha256": "16c99e3246809050ae71a0f519c0192e7830d780a9bdbb77e77063e405090d6a",
+   "vouched_by": "checksums/SHA256SUMS_V20_1.txt",
+   "entry": "v20_1/data/recall_targets_v201_correction.csv"
+  },
+  {
+   "path": "v20_1/data/redbox_waves_v201.csv",
+   "sha256": "5f2736af921569757f18ed348eea9e74da22438c69d1fd0be3c489af5aaefae3",
+   "vouched_by": "checksums/SHA256SUMS_V20_1.txt",
+   "entry": "v20_1/data/redbox_waves_v201.csv"
+  },
+  {
+   "path": "v20_1/data/regions_v201.csv",
+   "sha256": "29687b030784a6f11693fd3205d472a80976b69e8e3d5a17a812d5e9b20b9b87",
+   "vouched_by": "checksums/SHA256SUMS_V20_1.txt",
+   "entry": "v20_1/data/regions_v201.csv"
+  },
+  {
+   "path": "v20_1/engine_v201.js",
+   "sha256": "b590503e87948f56b76b8f3f24437e4822f9f57928322d89eeba887dc8865093",
+   "vouched_by": "checksums/SHA256SUMS_V20_1.txt",
+   "entry": "v20_1/engine_v201.js"
+  },
+  {
+   "path": "v20_1/exploratory_registry_v201.json",
+   "sha256": "f0e7978b1fc5c79d4d1e4948a269aae21c57900b01a5edb7957d587c6a767677",
+   "vouched_by": "checksums/SHA256SUMS_V20_1.txt",
+   "entry": "v20_1/exploratory_registry_v201.json"
+  },
+  {
+   "path": "v20_1/run_v201.js",
+   "sha256": "cc2f2335687c955e49d394b0c9022d05078e233851b7a55a2ab3ea48503d8909",
+   "vouched_by": "checksums/SHA256SUMS_V20_1.txt",
+   "entry": "v20_1/run_v201.js"
+  },
+  {
+   "path": "v20_1/score_v201.js",
+   "sha256": "3aefd3bb6faa4c894e6d583ee1e9b19048d86b0f4ccd317c79ea732541c09e7c",
+   "vouched_by": "checksums/SHA256SUMS_V20_1.txt",
+   "entry": "v20_1/score_v201.js"
+  }
+ ]
+}

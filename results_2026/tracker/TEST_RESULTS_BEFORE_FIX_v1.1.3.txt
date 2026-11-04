@@ -1,0 +1,42 @@
+Tracker 1.1.3 code, before the 1.1.4 change  (2026-11-03 11:05 EST, Node v22.22.2)
+
+=== Kimi's Maine Round 0 integration regression (adapted copy; expectations unchanged) ===
+PASS 1: 48/42/5/5: no false Round 0 majority; scoring denominator stays 95,000
+PASS 2: 48/42/5/5: a two-candidate official RCV final is accepted after no majority
+FAIL: Candidate-vote-only majority without statutory denominator is withheld and flagged
+AssertionError [ERR_ASSERTION]: The input did not match the regular expression /denominator/i. Input:
+
+'cannot verify the first-round majority: ballots cast for the office (with blank and overvoted first rankings) not recorded; human review needed'
+
+FAIL: Missing denominator still permits an official two-candidate RCV final
+Error: rejected (ME): record the ballots cast for the office (including blank and overvoted first rankings) on the first-round report before entering a final round; the first-round majority cannot be checked without them
+PASS 3: Missing denominator needs no review when no majority is mathematically possible
+PASS 4: Unambiguous majority: 51,000 of 100,000 ballots elects the Democrat
+PASS 5: Exactly 50,000 of 100,000 ballots is not a majority
+PASS 6: Statutory denominator below candidate-vote total is rejected
+PASS 7: Inconsistent denominators across candidate rows are rejected
+PASS 8: Partially missing denominators across candidate rows are rejected
+PASS 9: Malformed statutory denominator is rejected
+PASS 10: Immutable input unchanged: data/snapshot_2026-11-02.csv
+PASS 11: Immutable input unchanged: v20/preregistration_mike.json
+11/12 tracker integration checks passed
+
+=== ChatGPT's 1.1.3 independent check (adapted path only) ===
+{"withDen":false,"firstRoundMargin":6.32,"error_v19":-3.22,"legalDenominator":null,"legalMajority":"unknown","winner":null,"winnerBasis":"cannot verify the first-round majority: ballots cast for the office (with blank and overvoted first rankings) not recorded; human review needed"}
+{"withDen":true,"firstRoundMargin":6.32,"error_v19":-3.22,"legalDenominator":100000,"legalMajority":"no","winner":null,"winnerBasis":"ranked-choice tabulation pending"}
+
+=== Claude 1.1.4 regression tests, run on the 1.1.3 code ===
+Tracker 1.1.4 regression tests (missing Maine denominator vs official final round)
+  FAIL D1 missing denominator: first-round winner withheld and flagged; an official final round is accepted and, once certified, decides (flagged)
+       -> before the final round: cannot verify the first-round majority: ballots cast for the office (with blank and overvoted first rankings) not recorded; human review needed
+  PASS D2 a recorded legal majority still blocks a final round (discrepancy: escalate)
+  FAIL D3 counts entered later that show a majority are refused once an official final round exists (escalate)
+       -> rejected (ME): record the ballots cast for the office (including blank and overvoted first rankings) on the first-round report before entering a final round; the first-round majority cannot be checked without them
+  FAIL D4 consistent counts entered later clear the flag
+       -> rejected (ME): record the ballots cast for the office (including blank and overvoted first rankings) on the first-round report before entering a final round; the first-round majority cannot be checked without them
+  PASS D5 Alaska and Georgia unaffected (their legal denominator is the candidate-vote total, never missing)
+  FAIL D6 conventions 1.1.4 state the rule; 1.1.3 archived; polling-error definition, frozen anchors and vendored files unchanged
+       -> ENOENT: no such file or directory, open '/tmp/before114/results_2026/tracker/data/archive/scoring_conventions_v1.1.3.json'
+
+2 of 6 checks pass; failing: D1, D3, D4, D6
+exit 1

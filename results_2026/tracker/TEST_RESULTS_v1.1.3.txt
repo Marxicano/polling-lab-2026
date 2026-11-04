@@ -1,0 +1,126 @@
+Polling Lab 2026 — results tracker 1.1.3 (pre-release) — full test output
+Run from the repository root: node results_2026/tracker/tests/run_all_with_tracker.js   (Node v22.22.2, 2026-11-03 10:07 EST)
+
+OK   v19_frozen/test_engine.js  PASS: closest-race windows fully dated, no duplicates, date ordering, Alaska ranked-choice final rou
+OK   v19_frozen/test_reconciliation.js  PASS: v13 merge survey uniqueness, RedBox, Marist shares, source metadata, freeze scripts, ActiVote 
+OK   v19_frozen/test_scoring.js  PASS: scoring raw vs. normalized two-party, generic, and optional chamber counts
+OK   v19_frozen/test_v16_1_audit.js  PASS: v16.1 coverage, fieldwork integrity, source/version guards, sponsorship flags, zero duplicates
+OK   v19_frozen/test_v17.js  PASS: every October Senate entry dated, generic intake, ActiVote wave rule, no duplicates, method se
+OK   v19_frozen/test_v17_1.js  PASS: Nov 1 Senate/GBC intake, source IDs, one-release dedupe, recency and separate Nebraska indepen
+OK   v19_frozen/test_v18.js  PASS: Nov 1 late polls present once, no duplicates, ActiVote boundary-day rule, method set unchanged
+OK   v19_frozen/test_v18_1.js  PASS: independent Nov1 missing-poll intake, distinct RedBox waves, Alaska RCV, Emerson generic dedup
+OK   v19_frozen/test_v19.js  PASS: Nov 2 intake present once, disputed Florida poll pending, no duplicates, October polls dated, 
+OK   v20/tests/test_v20.js  PASS: 18 v20 checks (separation, data, models, uncertainty, scoring).
+OK   v20/tests/test_v20_site.js  PASS: site builds with freshness, experimental labels, sources, separation banner, mobile/dark suppo
+OK   v20_1/tests/test_v201.js  PASS: 13 v20.1 checks (separation, pre-registration, Kimi evidence, RedBox, Florida, backtest, diagn
+OK   v20_1/tests/test_v201_site.js  PASS: v20.1 page builds separately, shows unchanged v20 figures and hashes, links back to v20, no ex
+ALL 13 SUITES PASSED
+OK   explorer/test_explorer.js  PASS: 6 explorer checks.
+ALL 14 SUITES PASSED
+OK   results_2026/tracker/tests/test_tracker.js  PASS: 9 results-tracker checks.
+OK   results_2026/tracker/tests/test_review_regressions.js  22 of 22 review checks pass
+OK   results_2026/tracker/tests/test_review_1_1_1.js  13 of 13 checks pass
+OK   results_2026/tracker/tests/test_review_1_1_2.js  7 of 7 checks pass
+OK   results_2026/tracker/tests/test_review_1_1_3.js  8 of 8 checks pass
+OK   results_2026/tracker/tests/independent/TRACKER_1_1_INDEPENDENT_EDGE_REGRESSIONS.js (ChatGPT 1.1 edge tests, final-round fixtures updated to two finalists)  All three independent edge checks pass
+OK   results_2026/tracker/tests/independent/TRACKER_1_1_1_RCV_FINAL_ROUND_EDGE_reconstructed.js (reconstruction of ChatGPT 1.1.1 RCV final-round test)  All four RCV final-round checks pass
+OK   results_2026/tracker/tests/independent/TRACKER_1_1_1_RCV_FINAL_ROUND_EDGE.js (ChatGPT original 1.1.1 RCV final-round test, unchanged)  PASS ME correct two-finalist ranked-choice result: independent wins
+OK   results_2026/tracker/tests/independent/run_maine_blank_ballot_demo.js (ChatGPT 1.1.2 Maine blank-ballot demonstration, unchanged, via wrapper)  PASS Maine blank-ballot demonstration: the false first-round majority no longer reproduces
+ALL SUITES PASSED (tracker 1.1.3, pre-release)
+
+=== Detail: 1.1.3 regression tests ===
+Tracker 1.1.3 regression tests (legal majority denominator vs polling-error denominator)
+  PASS M1 Maine 48/42/5 with 5,000 blank first rankings: no first-round majority (48% of 100,000 ballots); final round decides
+  PASS M2 Maine with the blank count not recorded: winner withheld for human review, polling score kept, final round blocked
+  PASS M3 Maine unambiguous majority on the legal denominator: first-round winner; no final round accepted
+  PASS M4 Maine with no candidate above 50% even of candidate votes: no denominator needed for a final round
+  PASS M5 denominator fields must reconcile, carry an official source, agree across rows, and appear only on first-round reports
+  PASS M6 Alaska: the legal threshold is a majority of active ballots (AS 15.15.350(d)), so blank or overvoted ballots do not enter it
+  PASS M7 Georgia unchanged: majority of the votes cast for candidates
+  PASS M8 conventions 1.1.3 separate the two denominators; 1.1.1 archived; frozen data, pre-registration and vendored files unchanged
+
+8 of 8 checks pass
+
+=== Detail: ChatGPT's Maine blank-ballot demonstration (unchanged; via wrapper) ===
+   REAL MAINE THRESHOLD (all 100,000 ballots, blanks included): 48000/100000 = 48%; no first-round majority.
+   TRACKER (95,000 entered candidate votes, 5,000 blanks omitted): {"winner":null,"winner_candidate":null,"winner_basis":"cannot verify the first-round majority: ballots cast for the office (with blank a
+   /mnt/user-data/outputs/polling-lab-results-2026-v1.1.3/results_2026/tracker/tests/independent/TRACKER_1_1_2_MAINE_BLANK_BALLOT_EDGE.js:24
+   if (me.winner !== 'D') throw new Error('Unexpected: tracker did not reproduce denominator issue');
+   Error: Unexpected: tracker did not reproduce denominator issue
+       at Object.<anonymous> (/mnt/user-data/outputs/polling-lab-results-2026-v1.1.3/results_2026/tracker/tests/independent/TRACKER_1_1_2_MAINE_BLANK_BALLOT_EDGE.js:24:30)
+PASS Maine blank-ballot demonstration: the false first-round majority no longer reproduces
+
+=== Detail: ChatGPT's original 1.1.1 RCV final-round test (unchanged) ===
+PASS AK rejects three-candidate purported final RCV round: rejected (AK): a final ranked-choice round must list exactly two continuing candidates (Alaska and Maine tabulate until two remain unless someone wins the first round)
+PASS AK correct two-finalist ranked-choice result: independent wins
+PASS ME rejects three-candidate purported final RCV round: rejected (ME): a final ranked-choice round must list exactly two continuing candidates (Alaska and Maine tabulate until two remain unless someone wins the first round)
+PASS ME correct two-finalist ranked-choice result: independent wins
+
+=== Detail: 1.1.2 regression tests ===
+Tracker 1.1.2 regression tests (final ranked-choice round: exactly two finalists)
+  PASS F1-AK AK: a final round with three or four continuing candidates is rejected
+  PASS F2-AK AK: a lawful two-finalist final round is accepted and decides the winner; polling error unchanged
+  PASS F1-ME ME: a final round with three or four continuing candidates is rejected
+  PASS F2-ME ME: a lawful two-finalist final round is accepted and decides the winner; polling error unchanged
+  PASS F3 data-entry guide explains Maine Round 0 versus Round 1 and the Georgia runoff replacement exception
+  PASS F4 the 1.1.1 conventions are preserved (active in 1.1.2; archived byte-for-byte from 1.1.3); vendored dependencies and frozen anchors unchanged
+  PASS F5 ChatGPT's 1.1 edge-test file is archived byte-for-byte; the copy that runs differs only in its final-round fixtures
+
+7 of 7 checks pass
+
+=== Detail: 1.1.1 regression tests ===
+Tracker 1.1.1 regression tests (winner selection and recount scope)
+  PASS W1 Alaska: a certified ranked-choice final round won by a third candidate is called for that candidate
+  PASS W2 Georgia: a certified November majority by a third candidate wins outright; no runoff is accepted
+  PASS W3 plurality state: a third-party plurality winner is called for that candidate, with its party kept
+  PASS W4 an aggregated "other candidates" row that leads cannot produce a winner
+  PASS W5 an exact tie for first place produces no winner
+  PASS W6 Georgia runoff: only the top two November candidates, and the runoff winner by votes
+  PASS W7 ranked-choice final rounds: only without a first-round majority, only first-round candidates, no aggregates, decisive
+  PASS W8 ballot party codes are validated, and only one aggregate row is allowed
+  PASS W9 seats: a third-party winner counts as independent/other and unaligned
+  PASS A9a ranked-choice recount in any round suspends the whole race (score and winner): same ballots
+  PASS A9b Georgia runoff recount (separate ballots) keeps the certified November score but withholds the winner
+  PASS A9c conventions 1.1.1 state the winner and recount-scope rules and are pinned; 1.1 archived unchanged
+  PASS F1 frozen anchors unchanged
+
+13 of 13 checks pass
+
+=== Detail: tracker suite ===
+  ok  60 vendored dependencies verified against the published checksum lists and public anchors; checkout copies match; v1.0 conventions archived byte-for-byte
+  ok  real data: 15 tracked and 20 untracked contests, 35 authorities, empty logs, pending result hosts not usable yet
+  ok  validation: news, http and look-alike hosts, status/date mismatches, unknown states and rounds, missing authority wording, Mississippi county pages, single-candidate reports and nonexistent untracked states are all rejected
+  ok  hash-chained logs: edits and deletions stop the tracker; the original log loads again
+  ok  lifecycle: partial → provisional (unit shown) → certified → amended → recount (suspended) → certified after recount; no unofficial or second "certified" after certification
+  ok  ranked choice scored on the first round; Georgia waits for a certified runoff; Osborn counted as independent and unaligned
+  ok  seats: party 51/47/2 and caucus 53/47 when results equal the frozen margins; control only after all 35 contests confirmed; registered tests recorded once through the unchanged scorer, tamper-checked, fallback date honored
+  ok  dashboard: pre-release label, party and caucus rows, control withheld, untracked contests marked assumed, no recorded result, no external scripts, small-screen rule
+  ok  nothing outside results_2026/tracker and docs/results changed during the tests
+PASS: 9 results-tracker checks.
+
+=== Detail: 1.1 review regressions ===
+Tracker review regression tests (ChatGPT, 2026-11-03)
+  PASS B1a single-candidate certified report is rejected (was accepted and scored +50)
+  PASS B1b duplicate candidate rows in one report are rejected
+  PASS B1c candidate votes must add up to total_votes
+  PASS B1d negative, fractional and unsafe vote numbers are rejected
+  PASS B1e rows of one report must agree on source, status metadata and reporting share
+  PASS B1f a report cannot be split or extended across appends
+  PASS B1g named candidates must carry their own party
+  PASS B2a an untracked-seat result for a nonexistent state cannot change the seat count
+  PASS B2b untracked results: tracked states, wrong holder, non-authority URL and contradictions are rejected
+  PASS B3 a recount after certification suspends the score and winner until a recount is certified
+  PASS B4 tracker builds and scores from a checkout containing only the files the GitHub repo actually has
+  PASS B5 party seats and caucus alignment are reported separately (41 D / 42 R / 2 I; caucus 43 / 42)
+  PASS B6a every build verifies all dependencies, including the pre-registration, scorer and registry
+  PASS B6b a root missing the pre-registration, scorer and registry cannot build (was: builds)
+  PASS B6c tampering with any pinned input (e.g. states.csv or run_v20.js) stops the build
+  PASS A1 a results host that is only pending verification is rejected until its authority link is recorded
+  PASS A2 registered H1-H4 scoring is recorded once, with input fingerprints, and never silently recomputed
+  PASS A3 chain heads can be printed for independent anchoring; wording does not claim tamper-proofing
+  PASS A4 a reporting share needs its unit, and provisional labels say which unit reached 100%
+  PASS A6 chamber control is not computed until all 20 untracked contests are confirmed
+  PASS A7 Mississippi disclosure separates sponsorship from firm alignment
+  PASS A8 small screens: tables fit a 320-pixel viewport
+
+22 of 22 review checks pass
